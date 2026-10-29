@@ -1,8 +1,7 @@
 name: Deploy to SiteGround
 
+# Manual only. A push must not replace the live site.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 concurrency:
