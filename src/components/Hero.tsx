@@ -32,21 +32,17 @@ export function Hero() {
         </div>
       ))}
       <div className="hero-foot">
-        <p className="hero-caption" aria-live="polite">
-          {heroSlides[current].caption}
-        </p>
-        <div className="dashes hero-dashes" role="tablist" aria-label="Choose a slide">
-          {heroSlides.map((s, i) => (
-            <button
-              key={i}
-              type="button"
-              role="tab"
-              aria-selected={i === current}
-              aria-label={`Slide ${i + 1}: ${s.caption}`}
-              onClick={() => setCurrent(i)}
-            />
-          ))}
-        </div>
+        <a className="hero-caption" href="#projects" aria-live="polite">
+          {heroSlides[current].caption} <span aria-hidden="true">→</span>
+        </a>
+        <button
+          className="hero-count"
+          type="button"
+          aria-label={`Slide ${current + 1} of ${count}. Show the next slide`}
+          onClick={() => setCurrent((i) => (i + 1) % count)}
+        >
+          {current + 1} / {count}
+        </button>
       </div>
     </section>
   );

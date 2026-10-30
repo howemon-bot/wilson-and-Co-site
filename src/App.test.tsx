@@ -13,13 +13,14 @@ describe('App', () => {
     expect(screen.getByRole('heading', { level: 1, name: hero.heading })).toBeInTheDocument();
   });
 
-  it('has three hero slides that can be picked from the dashes', async () => {
+  it('has three hero slides with a counter that moves to the next one', async () => {
     const user = userEvent.setup();
     expect(document.querySelectorAll('.hero .slide')).toHaveLength(3);
-    const tabs = within(screen.getByRole('tablist', { name: 'Choose a slide' })).getAllByRole('tab');
-    await user.click(tabs[2]);
-    expect(tabs[2]).toHaveAttribute('aria-selected', 'true');
-    expect(document.querySelector('.hero-caption')).toHaveTextContent(heroSlides[2].caption);
+    const counter = screen.getByRole('button', { name: /Slide 1 of 3/ });
+    expect(counter).toHaveTextContent('1 / 3');
+    await user.click(counter);
+    expect(counter).toHaveTextContent('2 / 3');
+    expect(screen.getByRole('link', { name: new RegExp(heroSlides[1].caption) })).toHaveAttribute('href', '#projects');
   });
 
   it('shows the wordmark as the header logo', () => {
@@ -30,9 +31,9 @@ describe('App', () => {
   it('has the homepage navigation', () => {
     const nav = screen.getByRole('navigation', { name: 'Main' });
     const expected: Record<string, string> = {
-      projects: '#projects',
-      'our services': '#services',
-      'contact us': '#contact',
+      Projects: '#projects',
+      Services: '#services',
+      Contact: '#contact',
     };
     for (const [name, href] of Object.entries(expected)) {
       expect(within(nav).getByRole('link', { name })).toHaveAttribute('href', href);
