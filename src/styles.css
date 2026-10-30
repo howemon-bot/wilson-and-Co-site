@@ -566,9 +566,9 @@ strong, b { font-weight: 400; }
   gap: 0.4em 1.1em;
   overflow: hidden;
   color: var(--teal);
-  font-size: clamp(0.72rem, 1.05vw, 0.9rem);
+  font-size: clamp(0.8rem, 1.25vw, 1.05rem);
   font-weight: 400;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
 }
 .opening-words span {

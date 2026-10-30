@@ -11,12 +11,12 @@ type Phase = 'enter' | 'mark' | 'words' | 'words-out' | 'wordmark' | 'reveal' | 
 const STEPS: [Phase, number][] = [
   ['mark', 80],
   ['words', 900],
-  ['words-out', 2500],
-  ['wordmark', 2900],
-  ['reveal', 3900],
-  ['settle', 5000],
+  ['words-out', 3100],
+  ['wordmark', 3500],
+  ['reveal', 4500],
+  ['settle', 5600],
 ];
-const END_MS = 6000;
+const END_MS = 6600;
 const SEEN_KEY = 'wco-opening-seen';
 const WORDS = ['Interiors.', 'Renovations.', 'Installations.'];
 
