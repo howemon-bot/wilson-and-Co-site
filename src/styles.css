@@ -456,7 +456,10 @@ strong, b { font-weight: 400; }
 }
 
 @media (max-width: 800px) {
-  .menu-btn { display: block; }
+  .menu-btn { display: block; font-size: 14px; letter-spacing: 0.08em; }
+  .site-header .logo { width: 128px; top: 26px; }
+  .site-header.is-solid .logo { width: 124px; }
+  .hero-foot { left: 20px; right: 20px; bottom: 22px; }
   .site-header nav {
     display: none;
     position: absolute;
