@@ -13,13 +13,13 @@ describe('App', () => {
     expect(screen.getByRole('heading', { level: 1, name: hero.heading })).toBeInTheDocument();
   });
 
-  it('has three hero slides with a counter that moves to the next one', async () => {
+  it('has hero slides with a counter that moves to the next one', async () => {
     const user = userEvent.setup();
-    expect(document.querySelectorAll('.hero .slide')).toHaveLength(3);
-    const counter = screen.getByRole('button', { name: /Slide 1 of 3/ });
-    expect(counter).toHaveTextContent('1 / 3');
+    expect(document.querySelectorAll('.hero .slide')).toHaveLength(heroSlides.length);
+    const counter = screen.getByRole('button', { name: new RegExp(`Slide 1 of ${heroSlides.length}`) });
+    expect(counter).toHaveTextContent(`1 / ${heroSlides.length}`);
     await user.click(counter);
-    expect(counter).toHaveTextContent('2 / 3');
+    expect(counter).toHaveTextContent(`2 / ${heroSlides.length}`);
     expect(screen.getByRole('link', { name: new RegExp(heroSlides[1].caption) })).toHaveAttribute('href', '#projects');
   });
 
