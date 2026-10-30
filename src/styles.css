@@ -163,6 +163,7 @@ strong, b { font-weight: 500; }
   height: 100svh;
   min-height: 560px;
   overflow: hidden;
+  overflow: clip; /* hidden still lets focus scroll the zoomed photos sideways */
   background: #243038;
 }
 .hero::before,
@@ -180,6 +181,7 @@ strong, b { font-weight: 500; }
 .slide {
   position: absolute;
   inset: 0;
+  overflow: clip;
   opacity: 0;
   transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
