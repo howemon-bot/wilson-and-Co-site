@@ -38,7 +38,7 @@ export const heroSlides: HeroSlide[] = [
   {
     image: '/images/hero-wandsworth.jpg',
     alt: 'Classical Beauty: the renovated house in Wandsworth at dusk, seen from the garden',
-    caption: 'Classical Beauty, Wandsworth',
+    caption: 'Garden Extension, Wandsworth',
     focus: '50% 60%',
     zoom: 1,
     tone: 'dark',
@@ -46,7 +46,7 @@ export const heroSlides: HeroSlide[] = [
   {
     image: '/images/hero-japandi-clot-living.jpg',
     alt: 'The living room of the Japandi apartment in Clot: a terracotta sofa, a teak coffee table and a rattan chair under a skylight',
-    caption: 'Japandi Style in Clot, the living room',
+    caption: 'Japandi Living Room, Clot',
     focus: '55% 62%',
     zoom: 1,
     tone: 'light',
@@ -54,7 +54,7 @@ export const heroSlides: HeroSlide[] = [
   {
     image: '/images/hero-japandi-clot-terrace.jpg',
     alt: 'The terrace of the Japandi apartment in Clot: rattan chairs and a stone table under climbing plants, seen through a black-framed glass door',
-    caption: 'Japandi Style in Clot, the terrace',
+    caption: 'Indoor Courtyard, Barcelona',
     focus: '50% 62%',
     zoom: 1,
     tone: 'light',
