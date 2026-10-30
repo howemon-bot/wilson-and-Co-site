@@ -32,8 +32,8 @@ export type HeroSlide = {
   tone: 'dark' | 'light';
 };
 
-// Slides that move on their own. The second Wandsworth framing will be
-// replaced as more project photographs are retouched.
+// Slides that move on their own, in this order. Add retouched project
+// photographs here; 'light' ones switch the header to black.
 export const heroSlides: HeroSlide[] = [
   {
     image: '/images/hero-wandsworth.jpg',
@@ -44,20 +44,20 @@ export const heroSlides: HeroSlide[] = [
     tone: 'dark',
   },
   {
+    image: '/images/hero-japandi-clot-living.jpg',
+    alt: 'The living room of the Japandi apartment in Clot: a terracotta sofa, a teak coffee table and a rattan chair under a skylight',
+    caption: 'Japandi Style in Clot, the living room',
+    focus: '55% 62%',
+    zoom: 1,
+    tone: 'light',
+  },
+  {
     image: '/images/hero-japandi-clot-terrace.jpg',
     alt: 'The terrace of the Japandi apartment in Clot: rattan chairs and a stone table under climbing plants, seen through a black-framed glass door',
     caption: 'Japandi Style in Clot, the terrace',
     focus: '50% 62%',
     zoom: 1,
     tone: 'light',
-  },
-  {
-    image: '/images/hero-wandsworth.jpg',
-    alt: 'The garden path and planting of the Wandsworth house',
-    caption: 'Classical Beauty, the garden',
-    focus: '62% 88%',
-    zoom: 1.3,
-    tone: 'dark',
   },
 ];
 
