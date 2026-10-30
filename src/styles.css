@@ -23,7 +23,7 @@ body {
   color: var(--ink);
   font-family: var(--font);
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -35,7 +35,7 @@ button, input { font: inherit; color: inherit; }
 a { color: inherit; }
 ul { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3, p { margin: 0; }
-/* Brandon Grotesque: Bold for titles, Regular for everything else. */
+/* Brandon Grotesque: Bold titles, Light text, Regular for small labels. */
 h1, h2, h3 { font-weight: 700; letter-spacing: 0.04em; line-height: 1.2; }
 strong, b { font-weight: 700; }
 :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
@@ -88,7 +88,7 @@ strong, b { font-weight: 700; }
   color: #fff;
   line-height: 0;
 }
-.site-header nav a { text-decoration: none; font-size: 14px; letter-spacing: 0.08em; }
+.site-header nav a { text-decoration: none; font-size: 14px; font-weight: 400; letter-spacing: 0.08em; }
 .site-header nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
 .menu-btn {
   display: none;
@@ -181,6 +181,7 @@ strong, b { font-weight: 700; }
 }
 .hero-caption {
   font-size: 0.7rem;
+  font-weight: 400;
   letter-spacing: 0.26em;
   text-transform: uppercase;
 }
@@ -202,7 +203,7 @@ strong, b { font-weight: 700; }
   max-width: 46rem;
   margin: 0 auto;
   font-size: clamp(1.4rem, 2.3vw, 1.95rem);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   letter-spacing: 0.025em;
 }
@@ -314,7 +315,7 @@ strong, b { font-weight: 700; }
 .project-row button:focus-visible figcaption,
 .project-row button:has(.ph) figcaption { opacity: 1; }
 .project-row h3 { color: #fff; font-size: 1.35rem; }
-.tags { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 0.3rem; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 0.3rem; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; }
 
 .gallery { padding: 1.4rem 0 2.2rem; }
 .gallery-head {
@@ -442,6 +443,7 @@ strong, b { font-weight: 700; }
   margin-top: 4.5rem;
   color: var(--muted);
   font-size: 0.7rem;
+  font-weight: 400;
   letter-spacing: 0.22em;
 }
 .privacy { max-width: 36rem; margin-top: 2.2rem; }
@@ -458,7 +460,7 @@ strong, b { font-weight: 700; }
 }
 
 @media (max-width: 800px) {
-  .menu-btn { display: block; font-size: 14px; letter-spacing: 0.08em; }
+  .menu-btn { display: block; font-size: 14px; font-weight: 400; letter-spacing: 0.08em; }
   .site-header .logo { width: 128px; top: 26px; }
   .site-header.is-solid .logo { width: 124px; }
   .hero-foot { left: 20px; right: 20px; bottom: 22px; }
