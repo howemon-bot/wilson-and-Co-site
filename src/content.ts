@@ -3,8 +3,8 @@
 // follows the homepage: oldest work first, newest last. Gallery files are
 // listed in the order the live project pages show them, so the first
 // picture in each gallery is the one the site leads with.
-// Files are not bundled yet — Img shows a placeholder until they are downloaded
-// into public/ (see scripts/fetch-images.sh).
+// Most files are not bundled yet — Img shows a placeholder until they are
+// added to public/ (see scripts/fetch-images.sh).
 
 export const company = {
   name: 'Wilson & Co',
@@ -18,9 +18,43 @@ export const hero = {
   kicker: 'Renovation & installation studio',
   heading:
     'Wilson & Co is a design-led studio for interiors, renovations and installations in Barcelona and the surrounding areas. We work with local materials wherever we can and take care of every detail, so you can focus on what really matters.',
-  image: '/images/hero-wandsworth.jpg',
-  imageAlt: 'Classical Beauty — the renovated house in Wandsworth, the oldest project photograph',
 };
+
+export type HeroSlide = {
+  image: string;
+  alt: string;
+  caption: string;
+  /** Point of the photo to keep in view, as a CSS position. */
+  focus: string;
+  /** Starting zoom. Above 1 crops in on the focus point. */
+  zoom: number;
+};
+
+// Three slides that move on their own. Until more photographs are ready,
+// all three use the Wandsworth house, framed on different parts of it.
+export const heroSlides: HeroSlide[] = [
+  {
+    image: '/images/hero-wandsworth.jpg',
+    alt: 'Classical Beauty: the renovated house in Wandsworth at dusk, seen from the garden',
+    caption: 'Classical Beauty, Wandsworth',
+    focus: '50% 60%',
+    zoom: 1,
+  },
+  {
+    image: '/images/hero-wandsworth.jpg',
+    alt: 'The glazed living room of the Wandsworth house, lit at dusk',
+    caption: 'Classical Beauty, the living room',
+    focus: '50% 66%',
+    zoom: 1.45,
+  },
+  {
+    image: '/images/hero-wandsworth.jpg',
+    alt: 'The garden path and planting of the Wandsworth house',
+    caption: 'Classical Beauty, the garden',
+    focus: '62% 88%',
+    zoom: 1.3,
+  },
+];
 
 export const film = {
   src: '/videos/WilsonandCo_Video_1080_HR.mp4',

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { film } from '../content';
 import { Img } from './Img';
+import { asset } from '../asset';
 
 export function Film() {
   const [failed, setFailed] = useState(false);
@@ -10,8 +11,8 @@ export function Film() {
         <Img src={film.poster} alt="" />
       ) : (
         <video
-          src={film.src}
-          poster={film.poster}
+          src={asset(film.src)}
+          poster={asset(film.poster)}
           controls
           muted
           playsInline

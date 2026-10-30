@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { company } from '../content';
+import { Logo } from './Logo';
 
 const links = [
   { href: '#projects', label: 'projects' },
@@ -21,7 +21,7 @@ export function Header() {
   return (
     <header className={solid ? 'site-header is-solid' : 'site-header'}>
       <a className="logo" href="#top">
-        {company.mark}
+        <Logo />
       </a>
       <button
         className="menu-btn"

@@ -10,6 +10,7 @@ import { Team } from './components/Team';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { BackToTop } from './components/BackToTop';
+import { Opening } from './components/Opening';
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
       </main>
       <Footer />
       <BackToTop />
+      <Opening />
     </>
   );
 }

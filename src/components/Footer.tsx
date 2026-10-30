@@ -1,11 +1,12 @@
 import { company } from '../content';
+import { Logo } from './Logo';
 
 export function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-top">
         <a className="logo" href="#top">
-          {company.mark}
+          <Logo />
         </a>
         <div>
           <h2>Social</h2>

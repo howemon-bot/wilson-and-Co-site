@@ -1,7 +1,7 @@
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
-import { company, contacts, hero, projects, services, team, testimonials } from './content';
+import { company, contacts, hero, heroSlides, projects, services, team, testimonials } from './content';
 
 describe('App', () => {
   beforeEach(() => {
@@ -9,8 +9,22 @@ describe('App', () => {
   });
 
   it('opens on the oldest photograph, then the studio line', () => {
-    expect(document.querySelector('.hero img')).toHaveAttribute('src', hero.image);
+    expect(document.querySelector('.hero .slide.is-active img')).toHaveAttribute('src', heroSlides[0].image);
     expect(screen.getByRole('heading', { level: 1, name: hero.heading })).toBeInTheDocument();
+  });
+
+  it('has three hero slides that can be picked from the dashes', async () => {
+    const user = userEvent.setup();
+    expect(document.querySelectorAll('.hero .slide')).toHaveLength(3);
+    const tabs = within(screen.getByRole('tablist', { name: 'Choose a slide' })).getAllByRole('tab');
+    await user.click(tabs[2]);
+    expect(tabs[2]).toHaveAttribute('aria-selected', 'true');
+    expect(document.querySelector('.hero-caption')).toHaveTextContent(heroSlides[2].caption);
+  });
+
+  it('shows the wordmark as the header logo', () => {
+    const header = document.querySelector('.site-header')!;
+    expect(within(header as HTMLElement).getByRole('img', { name: 'Wilson & Co.' })).toBeInTheDocument();
   });
 
   it('has the homepage navigation', () => {
