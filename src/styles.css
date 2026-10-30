@@ -197,7 +197,8 @@ strong, b { font-weight: 500; }
 }
 @keyframes drift {
   from { transform: scale(var(--zoom, 1)); }
-  to { transform: scale(calc(var(--zoom, 1) * 1.08)) translateY(-1%); }
+  /* Barely there: about 1% of the photo leaves each edge at the end. */
+  to { transform: scale(calc(var(--zoom, 1) * 1.025)); }
 }
 .hero-foot {
   position: absolute;
