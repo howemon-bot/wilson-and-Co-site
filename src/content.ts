@@ -28,7 +28,7 @@ export type HeroSlide = {
   focus: string;
   /** Starting zoom. Above 1 crops in on the focus point. */
   zoom: number;
-  /** 'light' photos switch the logo and menu over them to teal. */
+  /** 'light' photos switch the logo and menu over them to black. */
   tone: 'dark' | 'light';
 };
 

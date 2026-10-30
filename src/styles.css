@@ -108,7 +108,7 @@ strong, b { font-weight: 500; }
 }
 .site-header .logo {
   display: block;
-  width: 240px;
+  width: 210px;
   margin-right: auto;
   color: #fff;
   line-height: 0;
@@ -136,9 +136,9 @@ strong, b { font-weight: 500; }
   font-size: var(--t-body);
 }
 
-/* Over light photographs the logo and menu turn teal. */
+/* Over light photographs the logo and menu turn black. */
 [data-hero-tone="light"] .site-header:not(.is-solid),
-[data-hero-tone="light"] .site-header:not(.is-solid) .logo { color: var(--teal); }
+[data-hero-tone="light"] .site-header:not(.is-solid) .logo { color: var(--ink); }
 
 .site-header.is-solid {
   padding-block: 18px;
@@ -146,7 +146,7 @@ strong, b { font-weight: 500; }
   color: var(--ink);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
 }
-.site-header.is-solid .logo { width: 170px; color: var(--teal); }
+.site-header.is-solid .logo { width: 156px; color: var(--teal); }
 
 .mark {
   display: block;
@@ -486,8 +486,8 @@ strong, b { font-weight: 500; }
   .menu-btn { display: block; }
   .site-header { padding: 22px 20px; }
   .site-header.is-solid { padding-block: 16px; }
-  .site-header .logo { width: 150px; }
-  .site-header.is-solid .logo { width: 130px; }
+  .site-header .logo { width: 136px; }
+  .site-header.is-solid .logo { width: 124px; }
   .hero-foot { left: 20px; right: 20px; bottom: 24px; }
   .site-header nav {
     display: none;
