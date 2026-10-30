@@ -104,7 +104,7 @@ strong, b { font-weight: 500; }
   gap: 2rem;
   padding: 30px 40px;
   color: #fff;
-  transition: background-color 0.4s ease, padding 0.4s var(--ease), box-shadow 0.4s ease;
+  transition: color 1.2s ease, background-color 0.4s ease, padding 0.4s var(--ease), box-shadow 0.4s ease;
 }
 .site-header .logo {
   display: block;
@@ -112,7 +112,7 @@ strong, b { font-weight: 500; }
   margin-right: auto;
   color: #fff;
   line-height: 0;
-  transition: width 0.4s var(--ease), color 0.4s ease;
+  transition: width 0.4s var(--ease), color 1.2s ease;
 }
 .site-header nav ul { display: flex; }
 /* "Projects, Services, Contact" */
@@ -135,6 +135,10 @@ strong, b { font-weight: 500; }
   z-index: 2;
   font-size: var(--t-body);
 }
+
+/* Over light photographs the logo and menu turn teal. */
+[data-hero-tone="light"] .site-header:not(.is-solid),
+[data-hero-tone="light"] .site-header:not(.is-solid) .logo { color: var(--teal); }
 
 .site-header.is-solid {
   padding-block: 18px;
@@ -170,7 +174,8 @@ strong, b { font-weight: 500; }
   right: 0;
   pointer-events: none;
 }
-.hero::before { top: 0; height: 32%; background: linear-gradient(rgba(8, 18, 24, 0.34), transparent); }
+.hero::before { top: 0; height: 32%; background: linear-gradient(rgba(8, 18, 24, 0.34), transparent); transition: opacity 1.2s ease; }
+.hero.is-light::before { opacity: 0; }
 .hero::after { bottom: 0; height: 26%; background: linear-gradient(transparent, rgba(8, 18, 24, 0.3)); }
 .slide {
   position: absolute;

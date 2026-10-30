@@ -14,8 +14,17 @@ export function Hero() {
     return () => window.clearTimeout(t);
   }, [current, count]);
 
+  // Lets the header switch to teal over light photographs.
+  const tone = heroSlides[current].tone;
+  useEffect(() => {
+    document.documentElement.dataset.heroTone = tone;
+    return () => {
+      delete document.documentElement.dataset.heroTone;
+    };
+  }, [tone]);
+
   return (
-    <section className="hero" id="top" aria-roledescription="carousel" aria-label="Featured projects">
+    <section className={`hero is-${tone}`} id="top" aria-roledescription="carousel" aria-label="Featured projects">
       {heroSlides.map((s, i) => (
         <div
           key={i}

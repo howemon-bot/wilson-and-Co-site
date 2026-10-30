@@ -28,10 +28,12 @@ export type HeroSlide = {
   focus: string;
   /** Starting zoom. Above 1 crops in on the focus point. */
   zoom: number;
+  /** 'light' photos switch the logo and menu over them to teal. */
+  tone: 'dark' | 'light';
 };
 
-// Three slides that move on their own. Until more photographs are ready,
-// all three use the Wandsworth house, framed on different parts of it.
+// Slides that move on their own. The second Wandsworth framing will be
+// replaced as more project photographs are retouched.
 export const heroSlides: HeroSlide[] = [
   {
     image: '/images/hero-wandsworth.jpg',
@@ -39,13 +41,15 @@ export const heroSlides: HeroSlide[] = [
     caption: 'Classical Beauty, Wandsworth',
     focus: '50% 60%',
     zoom: 1,
+    tone: 'dark',
   },
   {
-    image: '/images/hero-wandsworth.jpg',
-    alt: 'The glazed living room of the Wandsworth house, lit at dusk',
-    caption: 'Classical Beauty, the living room',
-    focus: '50% 66%',
-    zoom: 1.45,
+    image: '/images/hero-japandi-clot-terrace.jpg',
+    alt: 'The terrace of the Japandi apartment in Clot: rattan chairs and a stone table under climbing plants, seen through a black-framed glass door',
+    caption: 'Japandi Style in Clot, the terrace',
+    focus: '50% 62%',
+    zoom: 1,
+    tone: 'light',
   },
   {
     image: '/images/hero-wandsworth.jpg',
@@ -53,6 +57,7 @@ export const heroSlides: HeroSlide[] = [
     caption: 'Classical Beauty, the garden',
     focus: '62% 88%',
     zoom: 1.3,
+    tone: 'dark',
   },
 ];
 
