@@ -5,7 +5,7 @@
   --teal: #005d72;
   --muted: #adadad;
   --header: 72px;
-  --font: "Jost", "Futura", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --font: "brandon-grotesque", "Futura", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
   --ease: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
@@ -22,8 +22,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font);
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 17px;
+  font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -35,8 +35,9 @@ button, input { font: inherit; color: inherit; }
 a { color: inherit; }
 ul { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3, p { margin: 0; }
-h1, h2, h3 { font-weight: 300; letter-spacing: 0.03em; line-height: 1.2; }
-strong, b { font-weight: 400; }
+/* Brandon Grotesque: Bold for titles, Regular for everything else. */
+h1, h2, h3 { font-weight: 700; letter-spacing: 0.04em; line-height: 1.2; }
+strong, b { font-weight: 700; }
 :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
 
 .visually-hidden {
@@ -193,7 +194,7 @@ strong, b { font-weight: 400; }
 .kicker {
   margin-bottom: 1.8rem;
   font-size: 0.74rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.3em;
   text-transform: uppercase;
 }
@@ -201,6 +202,7 @@ strong, b { font-weight: 400; }
   max-width: 46rem;
   margin: 0 auto;
   font-size: clamp(1.4rem, 2.3vw, 1.95rem);
+  font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.025em;
 }
@@ -219,7 +221,7 @@ strong, b { font-weight: 400; }
 .services h2 {
   padding-left: 4vw;
   margin-bottom: 1.25rem;
-  font-size: clamp(2.7rem, 5vw, 4.1rem);
+  font-size: clamp(2.1rem, 3.8vw, 3.1rem);
 }
 .services h2 a { text-decoration: none; }
 .tabs { position: relative; }
@@ -258,7 +260,7 @@ strong, b { font-weight: 400; }
 .vtitle {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-size: clamp(1.55rem, 2.15vw, 2.15rem);
+  font-size: clamp(1.35rem, 1.8vw, 1.8rem);
   white-space: nowrap;
 }
 .tab-copy { max-width: 36rem; padding: 0 8vw 0 0.5rem; }
@@ -311,7 +313,7 @@ strong, b { font-weight: 400; }
 .project-row button:hover figcaption,
 .project-row button:focus-visible figcaption,
 .project-row button:has(.ph) figcaption { opacity: 1; }
-.project-row h3 { color: #fff; font-size: 1.45rem; font-weight: 300; }
+.project-row h3 { color: #fff; font-size: 1.35rem; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 0.3rem; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; }
 
 .gallery { padding: 1.4rem 0 2.2rem; }
@@ -385,12 +387,12 @@ strong, b { font-weight: 400; }
   text-align: center;
   padding: 6.2rem 1.5rem 5.6rem;
 }
-.ethos h2 { font-size: clamp(1.8rem, 3.4vw, 2.7rem); margin-bottom: 1.1rem; }
+.ethos h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 1.1rem; }
 .ethos p { max-width: 52rem; margin: 0 auto 2rem; font-size: 0.98rem; line-height: 1.55; }
 .ethos a { font-size: 1.45rem; text-underline-offset: 6px; }
 
 .team { padding: 3.2rem 4vw 0; }
-.team h2 { font-size: clamp(2.6rem, 5vw, 4rem); margin-bottom: 1.1rem; }
+.team h2 { font-size: clamp(2.1rem, 3.8vw, 3.1rem); margin-bottom: 1.1rem; }
 .team-intro { max-width: 34rem; font-size: 1.12rem; line-height: 1.45; }
 .team ul {
   display: grid;
@@ -402,7 +404,7 @@ strong, b { font-weight: 400; }
 .portrait img,
 .portrait .ph { width: 100%; height: 100%; object-fit: cover; }
 .portrait .ph { background: #cfc6b8; color: #4e483f; }
-.team h3 { margin-top: 0.85rem; font-size: 1.35rem; font-weight: 300; }
+.team h3 { margin-top: 0.85rem; font-size: 1.25rem; }
 .role {
   margin: 0.15rem 0 0.55rem;
   font-size: 0.7rem;
@@ -414,9 +416,9 @@ strong, b { font-weight: 400; }
 .socials a { display: inline-flex; color: var(--ink); }
 
 .contact { padding: 4.5rem 4vw 4rem; }
-.contact h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.8rem; }
+.contact h2 { font-size: clamp(1.8rem, 3.2vw, 2.5rem); margin-bottom: 1.8rem; }
 .contact ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
-.contact h3 { font-size: 1.2rem; font-weight: 300; margin-bottom: 0.2rem; }
+.contact h3 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 .contact a { color: var(--teal); }
 
 .site-footer { background: #fff; padding: 4.2rem 8vw 2.5rem; }
@@ -432,7 +434,7 @@ strong, b { font-weight: 400; }
   color: var(--teal);
   line-height: 0;
 }
-.site-footer h2 { font-size: 0.74rem; font-weight: 400; margin-bottom: 1rem; letter-spacing: 0.26em; text-transform: uppercase; }
+.site-footer h2 { font-size: 0.74rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: 0.26em; text-transform: uppercase; }
 .site-footer li + li { margin-top: 0.35rem; }
 .site-footer a { text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; }
