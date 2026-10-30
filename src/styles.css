@@ -7,6 +7,16 @@
   --header: 72px;
   --font: "brandon-grotesque", "Futura", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
   --ease: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* Type scale. One weight (Regular) everywhere; size makes the hierarchy.
+     Medium is only for the small capital labels. */
+  --t-hero: clamp(2.9rem, 8.4vw, 7.5rem);      /* 46 → 120px, one big moment */
+  --t-display: clamp(2.75rem, 6.1vw, 5.5rem);  /* 44 → 88px, section titles */
+  --t-statement: clamp(1.5rem, 2.4vw, 2.125rem); /* 24 → 34px */
+  --t-project: clamp(1.5rem, 2.2vw, 2rem);     /* 24 → 32px */
+  --t-name: clamp(1.25rem, 1.7vw, 1.5rem);     /* 20 → 24px */
+  --t-body: clamp(1.0625rem, 1.25vw, 1.125rem); /* 17 → 18px */
+  --t-label: 0.8125rem;                        /* 13px */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -22,10 +32,10 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font);
-  font-size: 17px;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  line-height: 1.65;
+  font-size: var(--t-body);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,9 +45,27 @@ button, input { font: inherit; color: inherit; }
 a { color: inherit; }
 ul { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3, p { margin: 0; }
-/* Brandon Grotesque: Bold titles, Light text, Regular for small labels. */
-h1, h2, h3 { font-weight: 700; letter-spacing: 0.04em; line-height: 1.2; }
-strong, b { font-weight: 700; }
+h1, h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.15; }
+strong, b { font-weight: 500; }
+.display {
+  font-size: var(--t-display);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+/* Small capitals: tags, roles, captions, footer headings. */
+.kicker,
+.hero-caption,
+.tags,
+.role,
+.quotes figcaption,
+.site-footer h2,
+.legal {
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
 :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
 
 .visually-hidden {
@@ -88,7 +116,7 @@ strong, b { font-weight: 700; }
   color: #fff;
   line-height: 0;
 }
-.site-header nav a { text-decoration: none; font-size: 14px; font-weight: 400; letter-spacing: 0.08em; }
+.site-header nav a { text-decoration: none; font-size: 15px; letter-spacing: 0.02em; }
 .site-header nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
 .menu-btn {
   display: none;
@@ -179,12 +207,6 @@ strong, b { font-weight: 700; }
   gap: 1.5rem;
   color: #fff;
 }
-.hero-caption {
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-}
 .hero-dashes button { background: rgba(255, 255, 255, 0.42); }
 .hero-dashes button[aria-selected="true"] { background: #fff; }
 
@@ -192,21 +214,14 @@ strong, b { font-weight: 700; }
   padding: 7.5rem 1.5rem 5rem;
   text-align: center;
 }
-.kicker {
-  margin-bottom: 1.8rem;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-}
+.kicker { margin-bottom: 2rem; color: var(--teal); }
 .intro h1 {
-  max-width: 46rem;
+  max-width: 58rem;
   margin: 0 auto;
-  font-size: clamp(1.4rem, 2.3vw, 1.95rem);
-  font-weight: 300;
-  line-height: 1.5;
-  letter-spacing: 0.025em;
+  font-size: var(--t-statement);
+  line-height: 1.32;
 }
+.intro h1 .tone { color: var(--teal); }
 
 .film { background: #14181b; }
 .film video,
@@ -221,8 +236,7 @@ strong, b { font-weight: 700; }
 .services { padding-top: 2.2rem; }
 .services h2 {
   padding-left: 4vw;
-  margin-bottom: 1.25rem;
-  font-size: clamp(2.1rem, 3.8vw, 3.1rem);
+  margin-bottom: 2rem;
 }
 .services h2 a { text-decoration: none; }
 .tabs { position: relative; }
@@ -256,16 +270,15 @@ strong, b { font-weight: 700; }
   position: absolute;
   top: 0.85rem;
   font-size: 1.2rem;
-  font-weight: 400;
 }
 .vtitle {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-size: clamp(1.35rem, 1.8vw, 1.8rem);
+  font-size: clamp(1.5rem, 2vw, 1.875rem);
   white-space: nowrap;
 }
 .tab-copy { max-width: 36rem; padding: 0 8vw 0 0.5rem; }
-.tab-copy p { margin-bottom: 1.05rem; font-size: 1.02rem; }
+.tab-copy p { margin-bottom: 1.1rem; }
 .more { text-underline-offset: 3px; }
 .tabs-close {
   position: absolute;
@@ -314,8 +327,8 @@ strong, b { font-weight: 700; }
 .project-row button:hover figcaption,
 .project-row button:focus-visible figcaption,
 .project-row button:has(.ph) figcaption { opacity: 1; }
-.project-row h3 { color: #fff; font-size: 1.35rem; }
-.tags { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 0.3rem; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; }
+.project-row h3 { color: #fff; font-size: var(--t-project); }
+.tags { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; margin-top: 0.5rem; }
 
 .gallery { padding: 1.4rem 0 2.2rem; }
 .gallery-head {
@@ -325,7 +338,7 @@ strong, b { font-weight: 700; }
   gap: 0.8rem 1.4rem;
   padding: 0 4vw 1rem;
 }
-.gallery-head h3 { font-size: 1.6rem; }
+.gallery-head h3 { font-size: var(--t-project); }
 .gallery-head button {
   margin-left: auto;
   background: none;
@@ -348,13 +361,9 @@ strong, b { font-weight: 700; }
 
 .quotes { padding: 5.5rem 0 1.5rem; text-align: center; }
 .quotes figure { max-width: 46rem; margin: 0 auto; padding: 0 1.5rem; }
-.quotes blockquote p { font-size: 1.05rem; line-height: 1.6; }
+.quotes blockquote p { font-size: clamp(1.125rem, 1.5vw, 1.3rem); line-height: 1.55; }
 .quotes figcaption {
   margin-top: 1.8rem;
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
 }
 .quote-nav {
   display: grid;
@@ -388,13 +397,20 @@ strong, b { font-weight: 700; }
   text-align: center;
   padding: 6.2rem 1.5rem 5.6rem;
 }
-.ethos h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 1.1rem; }
-.ethos p { max-width: 52rem; margin: 0 auto 2rem; font-size: 0.98rem; line-height: 1.55; }
-.ethos a { font-size: 1.45rem; text-underline-offset: 6px; }
+.ethos { padding-block: 7.5rem 6.5rem; }
+.ethos h2 {
+  max-width: 14ch;
+  margin: 0 auto 2.4rem;
+  font-size: var(--t-hero);
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+}
+.ethos p { max-width: 44rem; margin: 0 auto 2.4rem; }
+.ethos a { font-size: var(--t-name); text-underline-offset: 6px; }
 
 .team { padding: 3.2rem 4vw 0; }
-.team h2 { font-size: clamp(2.1rem, 3.8vw, 3.1rem); margin-bottom: 1.1rem; }
-.team-intro { max-width: 34rem; font-size: 1.12rem; line-height: 1.45; }
+.team h2 { margin-bottom: 1.6rem; }
+.team-intro { max-width: 44rem; font-size: var(--t-name); line-height: 1.4; }
 .team ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -405,21 +421,15 @@ strong, b { font-weight: 700; }
 .portrait img,
 .portrait .ph { width: 100%; height: 100%; object-fit: cover; }
 .portrait .ph { background: #cfc6b8; color: #4e483f; }
-.team h3 { margin-top: 0.85rem; font-size: 1.25rem; }
-.role {
-  margin: 0.15rem 0 0.55rem;
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-}
+.team h3 { margin-top: 1rem; font-size: var(--t-name); }
+.role { margin: 0.2rem 0 0.6rem; color: var(--teal); }
 .socials { display: flex; gap: 0.7rem; }
 .socials a { display: inline-flex; color: var(--ink); }
 
 .contact { padding: 4.5rem 4vw 4rem; }
-.contact h2 { font-size: clamp(1.8rem, 3.2vw, 2.5rem); margin-bottom: 1.8rem; }
+.contact h2 { margin-bottom: 2.4rem; }
 .contact ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
-.contact h3 { font-size: 1.15rem; margin-bottom: 0.2rem; }
+.contact h3 { font-size: var(--t-name); margin-bottom: 0.2rem; }
 .contact a { color: var(--teal); }
 
 .site-footer { background: #fff; padding: 4.2rem 8vw 2.5rem; }
@@ -435,20 +445,17 @@ strong, b { font-weight: 700; }
   color: var(--teal);
   line-height: 0;
 }
-.site-footer h2 { font-size: 0.74rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: 0.26em; text-transform: uppercase; }
+.site-footer h2 { margin-bottom: 1rem; }
 .site-footer li + li { margin-top: 0.35rem; }
 .site-footer a { text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; }
 .legal {
   margin-top: 4.5rem;
   color: var(--muted);
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 0.22em;
 }
 .privacy { max-width: 36rem; margin-top: 2.2rem; }
-.privacy h2 { font-size: 1rem; margin-bottom: 0.4rem; }
-.privacy p { color: #444; font-size: 0.95rem; }
+.privacy h2 { margin-bottom: 0.5rem; }
+.privacy p { color: #444; }
 
 .to-top {
   position: fixed;
@@ -460,7 +467,7 @@ strong, b { font-weight: 700; }
 }
 
 @media (max-width: 800px) {
-  .menu-btn { display: block; font-size: 14px; font-weight: 400; letter-spacing: 0.08em; }
+  .menu-btn { display: block; font-size: 15px; letter-spacing: 0.02em; }
   .site-header .logo { width: 128px; top: 26px; }
   .site-header.is-solid .logo { width: 124px; }
   .hero-foot { left: 20px; right: 20px; bottom: 22px; }
@@ -497,7 +504,7 @@ strong, b { font-weight: 700; }
     padding: 1rem 1.2rem;
   }
   .plus { position: static; }
-  .vtitle { writing-mode: horizontal-tb; transform: none; font-size: 1.35rem; }
+  .vtitle { writing-mode: horizontal-tb; transform: none; font-size: var(--t-name); }
   .tab-copy { padding: 0 1.2rem 1.2rem 2.6rem; }
   .tabs-close { top: 0.6rem; }
   .project-row li { flex-basis: 88%; }
@@ -573,9 +580,9 @@ strong, b { font-weight: 700; }
   gap: 0.4em 1.1em;
   overflow: hidden;
   color: var(--teal);
-  font-size: clamp(0.8rem, 1.25vw, 1.05rem);
-  font-weight: 400;
-  letter-spacing: 0.32em;
+  font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 .opening-words span {

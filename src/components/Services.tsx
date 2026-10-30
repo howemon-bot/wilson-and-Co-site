@@ -6,7 +6,7 @@ export function Services() {
 
   return (
     <section className="services" id="services" aria-labelledby="services-title">
-      <h2 id="services-title">
+      <h2 id="services-title" className="display">
         <a href="#services">Services</a>
       </h2>
       <div className="tabs">
