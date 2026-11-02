@@ -1,13 +1,9 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { hero, heroSlides } from '../content';
 import { Img } from './Img';
+import { withItalics } from '../italics';
 
 const STAY_MS = 6500;
-
-// "*word*" in the content becomes an italic word.
-function withItalics(text: string) {
-  return text.split(/\*([^*]+)\*/).map((part, i) => (i % 2 ? <em key={i}>{part}</em> : <Fragment key={i}>{part}</Fragment>));
-}
 
 export function Hero() {
   const [current, setCurrent] = useState(0);

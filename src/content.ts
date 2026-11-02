@@ -65,33 +65,21 @@ export const film = {
   label: 'Wilson & Co film',
 };
 
-export type Service = { title: string; text: string; more: string };
+export type Service = { title: string; text: string };
 
+// Three columns after the film. *word* is set in italics.
 export const services: Service[] = [
   {
-    title: 'Interior Design',
-    text: 'Spaces planned around the way you live, with local materials and makers.',
-    more: 'Read more',
+    title: 'Interiors',
+    text: 'Spaces planned around the way you live, with *local materials* and makers.',
   },
   {
     title: 'Renovations',
-    text: 'Rethinking a space or your whole home, with one team throughout.',
-    more: 'read more',
+    text: 'From a single room to a full *reforma*, managed from the first sketch to the final detail.',
   },
   {
-    title: 'Electrical & solar',
-    text: 'From maintenance and new installations to full rewiring, fuse board upgrades, solar panels and EV chargers.',
-    more: 'read more',
-  },
-  {
-    title: 'Plumbing, heating & AC',
-    text: 'Your bathroom, kitchen, underfloor heating and climate systems, installed to last.',
-    more: 'read more',
-  },
-  {
-    title: 'Home Automation',
-    text: 'Simple control of your lighting, heating, blinds, security and entertainment.',
-    more: 'read more',
+    title: 'Installations',
+    text: 'Electrical, plumbing, air conditioning, solar, EV charging and home automation, *quietly built in*.',
   },
 ];
 

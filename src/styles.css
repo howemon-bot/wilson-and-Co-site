@@ -50,7 +50,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { font-weight: 400; letter-spacing: 0.015em; line-height: 1.15; }
 /* Display cut for everything at 20px and up. */
-h1, h2, h3, .display, .vtitle, .ethos a, .team-intro,
+h1, h2, h3, .display, .ethos a, .team-intro,
 .tags, .role, .quotes figcaption, .site-footer h2, .legal, .opening-words {
   font-family: var(--font-display);
 }
@@ -212,64 +212,16 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
 .film.is-still { height: auto; }
 .film.is-still .film-stage { position: relative; height: 82vh; }
 
-.services { padding-top: 2.2rem; }
-.services h2 {
-  padding-left: 4vw;
-  margin-bottom: 2rem;
+/* Services: three quiet columns. */
+.services { padding: clamp(5rem, 12vh, 8rem) 40px; }
+.services ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
 }
-.services h2 a { text-decoration: none; }
-.tabs { position: relative; }
-.tabs ul {
-  display: flex;
-  align-items: stretch;
-  min-height: 72vh;
-}
-.tabs li {
-  flex: 0 0 4.8rem;
-  display: flex;
-  border-left: 1px solid var(--line);
-  min-height: 72vh;
-}
-.tabs li.is-open { flex: 1 1 auto; align-items: center; }
-.tabs h3 { height: 100%; margin: 0; font-size: inherit; }
-.tabs h3 button {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  width: 4.8rem;
-  height: 100%;
-  padding: 1rem 0 14vh;
-  background: none;
-  border: 0;
-  cursor: pointer;
-}
-.plus {
-  position: absolute;
-  top: 0.85rem;
-  font-size: 1.2rem;
-}
-.vtitle {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: clamp(1.5rem, 2vw, 1.875rem);
-  white-space: nowrap;
-}
-.tab-copy { max-width: 36rem; padding: 0 8vw 0 0.5rem; }
-.tab-copy p { margin-bottom: 1.1rem; }
-.more { text-underline-offset: 3px; }
-.tabs-close {
-  position: absolute;
-  z-index: 2;
-  top: 0.35rem;
-  right: 1.3rem;
-  background: none;
-  border: 0;
-  font-size: 1.45rem;
-  line-height: 1;
-  cursor: pointer;
-}
+.services li { padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.services h3 { margin-bottom: 0.9rem; font-size: var(--t-name); }
+.services p { max-width: 24rem; }
 
 .project-row {
   display: flex;
@@ -459,27 +411,8 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   }
   .hero-media { grid-row: 1; height: 64svh; min-height: 340px; }
   .hero-text { grid-row: 2; padding: 2.75rem 20px 0; gap: 1.75rem; }
-  .tabs ul { flex-direction: column; min-height: 0; }
-  .tabs li,
-  .tabs li.is-open {
-    flex: none;
-    display: block;
-    min-height: 0;
-    border-left: 0;
-    border-top: 1px solid var(--line);
-  }
-  .tabs h3,
-  .tabs h3 button { height: auto; width: 100%; }
-  .tabs h3 button {
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 0.8rem;
-    padding: 1rem 1.2rem;
-  }
-  .plus { position: static; }
-  .vtitle { writing-mode: horizontal-tb; transform: none; font-size: var(--t-name); }
-  .tab-copy { padding: 0 1.2rem 1.2rem 2.6rem; }
-  .tabs-close { top: 0.6rem; }
+  .services { padding: 4.5rem 20px; }
+  .services ul { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
   .project-row li { flex-basis: 88%; }
   .gallery li { flex-basis: 78vw; }
   .team ul,
