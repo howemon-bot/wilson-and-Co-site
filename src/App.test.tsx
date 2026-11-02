@@ -80,7 +80,7 @@ describe('App', () => {
     );
     expect(coastal.images[0]).toContain('Solar_1.jpg');
     expect(coastal.images[3]).toContain('Solar_6.jpg');
-    await user.click(screen.getByRole('button', { name: 'Next' }));
+    await user.click(screen.getByRole('button', { name: /^Next/ }));
     expect(screen.getByRole('heading', { level: 2, name: 'Eixample Bathroom' })).toBeInTheDocument();
     await user.keyboard('{Escape}');
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
