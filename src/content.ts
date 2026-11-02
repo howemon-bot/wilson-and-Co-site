@@ -67,19 +67,19 @@ export const film = {
 
 export type Service = { title: string; text: string };
 
-// Three columns after the film. *word* is set in italics.
+// Three rows after the film. *word* is set in italics.
 export const services: Service[] = [
   {
     title: 'Interiors',
-    text: 'Spaces planned around the way you live, with *local materials* and makers.',
+    text: 'Spaces planned around the way you live. We design the layout, joinery, lighting and finishes, working with *local materials* and makers wherever we can, and see every detail through to the day you move in.',
   },
   {
     title: 'Renovations',
-    text: 'From a single room to a full *reforma*, managed from the first sketch to the final detail.',
+    text: 'From a single room to a full *reforma*, we rethink a space or your whole home with one team throughout. We manage the work from the first sketch to the final detail, so you have one point of contact and no loose ends.',
   },
   {
     title: 'Installations',
-    text: 'Electrical, plumbing, air conditioning, solar, EV charging and home automation, *quietly built in*.',
+    text: 'Electrical work from maintenance to full rewiring, plumbing, underfloor heating and air conditioning, solar panels and EV chargers, and simple home automation for lighting, heating, blinds and security. All *quietly built in*, and installed to last.',
   },
 ];
 
