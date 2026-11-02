@@ -714,26 +714,36 @@ html.is-playing { overflow: hidden; }
   position: fixed;
   inset: 0;
   z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  background: var(--paper);
-  color: var(--ink);
   visibility: hidden;
-  clip-path: inset(0 0 100% 0);
-  transition: clip-path 0.9s var(--ease), visibility 0s linear 0.9s;
+  transition: visibility 0s linear 0.8s;
 }
-.menu.is-open {
-  visibility: visible;
-  clip-path: inset(0 0 0 0);
-  transition: clip-path 0.9s var(--ease), visibility 0s;
-}
+.menu.is-open { visibility: visible; transition: visibility 0s; }
 html.is-menu-open { overflow: hidden; }
-.menu-body {
+.menu-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 24, 27, 0.32);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.6s ease;
+}
+.menu.is-open .menu-scrim { opacity: 1; }
+.menu-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(50vw, 760px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 150px 40px 40px;
+  padding: 150px clamp(2.5rem, 5vw, 5rem) 40px;
+  background: var(--teal);
+  color: var(--paper);
+  transform: translateX(100%);
+  transition: transform 0.8s var(--ease);
 }
+.menu.is-open .menu-panel { transform: none; }
 .menu-links a {
   display: inline-block;
   font-family: var(--font-display);
@@ -742,13 +752,13 @@ html.is-menu-open { overflow: hidden; }
   letter-spacing: 0.005em;
   text-decoration: none;
   opacity: 0;
-  transform: translateY(1.2rem);
+  transform: translateX(2rem);
   transition: opacity 0.6s ease, transform 0.8s var(--ease);
 }
 .menu.is-open .menu-links a { opacity: 1; transform: none; }
-.menu.is-open .menu-links li:nth-child(1) a { transition-delay: 0.35s; }
-.menu.is-open .menu-links li:nth-child(2) a { transition-delay: 0.43s; }
-.menu.is-open .menu-links li:nth-child(3) a { transition-delay: 0.51s; }
+.menu.is-open .menu-links li:nth-child(1) a { transition-delay: 0.25s; }
+.menu.is-open .menu-links li:nth-child(2) a { transition-delay: 0.32s; }
+.menu.is-open .menu-links li:nth-child(3) a { transition-delay: 0.39s; }
 .menu-links a:hover,
 .menu-links a[aria-current] { font-style: italic; }
 .menu-foot {
@@ -758,16 +768,11 @@ html.is-menu-open { overflow: hidden; }
 }
 .menu-foot a { text-decoration: none; }
 .menu-foot a:hover { text-decoration: underline; text-underline-offset: 4px; }
-.menu-media { position: relative; overflow: hidden; }
-.menu-media img,
-.menu-media .ph { width: 100%; height: 100%; object-fit: cover; }
 
 @media (max-width: 800px) {
   .menu-btn { width: 44px; height: 44px; }
-  .menu { grid-template-columns: minmax(0, 1fr); }
-  .menu-media { display: none; }
-  .menu-body { padding: 120px 20px 32px; }
+  .menu-panel { width: 100%; padding: 120px 20px 32px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .menu, .menu.is-open { clip-path: none; }
+  .menu-panel, .menu-links a { transition: none; }
 }

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 const LINKS = 'a, button, [role="button"], label, summary';
-const DARK = '.film, .ethos, .film-player';
+const DARK = '.film, .ethos, .film-player, .menu-panel';
 
 // A small dot that trails the mouse. It grows over things you can click and
 // turns light over dark sections. Mouse only, and not with reduced motion.

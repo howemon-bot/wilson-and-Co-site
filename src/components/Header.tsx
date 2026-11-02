@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { Logo } from './Logo';
-import { Img } from './Img';
 import { company, contacts } from '../content';
 
 const links = [
@@ -9,7 +8,6 @@ const links = [
   { href: '#contact', label: 'Contact' },
 ];
 
-const MENU_IMAGE = '/images/hero-japandi-clot-terrace.jpg';
 const general = contacts.find((c) => c.name === 'General enquiries') ?? contacts[0];
 
 // The section in view is the last one whose top has passed 40% of the screen.
@@ -82,7 +80,8 @@ export function Header() {
         <span aria-hidden="true" />
       </button>
       <div ref={menu} id="site-menu" className={open ? 'menu is-open' : 'menu'} aria-hidden={!open}>
-        <div className="menu-body">
+        <div className="menu-scrim" onClick={() => setOpen(false)} />
+        <div className="menu-panel">
           <nav aria-label="Main">
             <ul className="menu-links">
               {links.map((l, i) => (
@@ -106,9 +105,6 @@ export function Header() {
               Instagram
             </a>
           </div>
-        </div>
-        <div className="menu-media">
-          <Img src={MENU_IMAGE} alt="" />
         </div>
       </div>
     </header>
