@@ -114,13 +114,12 @@ export function Film() {
         <button
           ref={ctaRef}
           type="button"
-          className={still ? 'film-cta is-shown' : 'film-cta'}
+          className={still ? 'film-cta link is-shown' : 'film-cta link'}
           onClick={() => {
             loopRef.current?.pause();
             setPlaying(true);
           }}
         >
-          <span className="film-cta-icon" aria-hidden="true" />
           Watch the film
         </button>
       </div>

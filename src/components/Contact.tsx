@@ -9,7 +9,9 @@ export function Contact() {
           <li key={c.email}>
             <h3>{c.name}</h3>
             <p>{c.topic}</p>
-            <a href={`mailto:${c.email}`}>{c.email}</a>
+            <a className="link" href={`mailto:${c.email}`}>
+              {c.email}
+            </a>
           </li>
         ))}
       </ul>

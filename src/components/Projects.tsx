@@ -39,7 +39,7 @@ export function Projects() {
           <div className="gallery-head">
             <h3>{active.title}</h3>
             <p>{active.categories.join(' · ')}</p>
-            <button type="button" onClick={() => setActive(null)}>
+            <button className="link" type="button" onClick={() => setActive(null)}>
               Close
             </button>
           </div>

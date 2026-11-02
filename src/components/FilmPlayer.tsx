@@ -23,7 +23,7 @@ export function FilmPlayer({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="film-player" role="dialog" aria-modal="true" aria-label={film.label}>
-      <button ref={closeRef} type="button" className="film-player-close" onClick={onClose}>
+      <button ref={closeRef} type="button" className="film-player-close link" onClick={onClose}>
         Close
       </button>
       <video src={asset(film.full)} poster={asset(film.poster)} controls autoPlay playsInline />
