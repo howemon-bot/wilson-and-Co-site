@@ -4,7 +4,7 @@ import { withItalics } from '../italics';
 export function Services() {
   return (
     <section className="services" id="services" aria-labelledby="services-title">
-      <h2 id="services-title" className="services-label">
+      <h2 id="services-title" className="section-label">
         Services
       </h2>
       <ul>

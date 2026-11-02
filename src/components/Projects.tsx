@@ -12,8 +12,8 @@ export function Projects() {
 
   return (
     <section className="projects" id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title" className="visually-hidden">
-        Projects
+      <h2 id="projects-title" className="section-label projects-label">
+        Featured projects
       </h2>
       <ul className="project-row">
         {projects.map((p) => (

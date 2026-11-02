@@ -250,12 +250,20 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   column-gap: clamp(1rem, 1.4vw, 1.5rem);
   padding: clamp(5rem, 12vh, 8rem) 40px;
 }
-.services-label,
+/* Small section labels under a thin line ("Services", "Featured projects"). */
+.section-label {
+  align-self: start;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--ink);
+  font-size: var(--t-small);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.projects-label { margin: 0 40px clamp(1.75rem, 4vh, 2.5rem); }
 .services li {
   padding-top: 0.9rem;
   border-top: 1px solid var(--ink);
 }
-.services-label { align-self: start; font-size: var(--t-small); font-weight: 400; letter-spacing: 0.02em; }
 .services li {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -448,6 +456,7 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   .hero-text { grid-row: 2; padding: 2.75rem 20px 0; gap: 1.75rem; }
   .services { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; padding: 4.5rem 20px; }
   .services li { grid-template-columns: minmax(0, 1fr); row-gap: 1rem; padding-bottom: 2.75rem; }
+  .projects-label { margin-inline: 20px; }
   .project-row li { flex-basis: 88%; }
   .gallery li { flex-basis: 78vw; }
   .team ul,
