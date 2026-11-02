@@ -62,7 +62,7 @@ describe('App', () => {
   });
 
   it('lists projects oldest first, in the homepage order', () => {
-    const row = document.querySelector('.project-row') as HTMLElement;
+    const row = document.querySelector('.project-list') as HTMLElement;
     const titles = within(row).getAllByRole('heading', { level: 3 }).map((h) => h.textContent);
     expect(titles).toEqual(projects.map((p) => p.title));
     expect(titles[0]).toBe('Industrial Clapham');
@@ -80,6 +80,10 @@ describe('App', () => {
     );
     expect(coastal.images[0]).toContain('Solar_1.jpg');
     expect(coastal.images[3]).toContain('Solar_6.jpg');
+    await user.click(screen.getByRole('button', { name: 'Next' }));
+    expect(screen.getByRole('heading', { level: 2, name: 'Eixample Bathroom' })).toBeInTheDocument();
+    await user.keyboard('{Escape}');
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
   it('shows every testimonial and marks Spanish ones with lang="es"', () => {

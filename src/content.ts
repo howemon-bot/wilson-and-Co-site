@@ -87,6 +87,10 @@ export type Project = {
   slug: string;
   title: string;
   categories: string[];
+  /** Neighbourhood and city, shown on the project page. */
+  location?: string;
+  /** A few sentences for the project page. */
+  text?: string;
   image: string;
   /** Gallery in on-site order. Index 0 is the picture the project page shows first. */
   images: string[];
@@ -99,6 +103,7 @@ export const projects: Project[] = [
     slug: 'industrial-clapham',
     title: 'Industrial Clapham',
     categories: ['Automation', 'Electrical'],
+    location: 'Clapham, London',
     image: '/images/industrial-clapham.jpg',
     images: [1, 2, 3, 4, 5, 6].map((n) =>
       shot(`WilsonAndCo_Industrial_Clapham${n}${n >= 5 ? '-scaled' : ''}.jpg`),
@@ -108,6 +113,7 @@ export const projects: Project[] = [
     slug: 'clapham-south',
     title: 'Clapham South',
     categories: ['Automation', 'Electrical'],
+    location: 'Clapham South, London',
     image: '/images/clapham-south.jpg',
     images: [1, 2, 3, 7, 5, 4, 6, 8, 9].map((n) => shot(`WilsonAndCo_Clapham_South${n}.jpg`)),
   },
@@ -125,7 +131,8 @@ export const projects: Project[] = [
     slug: 'classical-beauty',
     title: 'Classical Beauty',
     categories: ['Electrical'],
-    image: '/images/classical-beauty.jpg',
+    location: 'Wandsworth, London',
+    image: '/images/hero-wandsworth.jpg',
     images: [1, 2, 3, 4, 5, 6, 7, 9, 8].map((n) => shot(`WilsonAndCo_ClassicalBeauty${n}.jpg`)),
   },
   {
@@ -139,6 +146,7 @@ export const projects: Project[] = [
     slug: 'eixample-bathroom',
     title: 'Eixample Bathroom',
     categories: ['Electrical', 'Interior design', 'Plumbing'],
+    location: 'Eixample, Barcelona',
     image: '/images/eixample-bathroom.jpg',
     images: [2, 3, 1, 6, 5, 4, 7, 8].map((n) => shot(`bathroom_wco_${n}-scaled.jpg`)),
   },
@@ -146,14 +154,20 @@ export const projects: Project[] = [
     slug: 'japandi-style-in-clot',
     title: 'Japandi Style in Clot',
     categories: ['Electrical', 'Interior design'],
-    image: '/images/japandi-clot.jpg',
-    images: [2, 4, 16, 3, 7, 5, 8, 10, 17, 13, 14].map((n) => shot(`clot_wilsonandco_${n}-scaled.jpg`)),
+    location: 'Clot, Barcelona',
+    image: '/images/hero-japandi-clot-living.jpg',
+    images: [
+      '/images/hero-japandi-clot-living.jpg',
+      '/images/hero-japandi-clot-terrace.jpg',
+      ...[2, 4, 16, 3, 7, 5, 8, 10, 17, 13, 14].map((n) => shot(`clot_wilsonandco_${n}-scaled.jpg`)),
+    ],
   },
   {
     slug: 'warm-minimalism-in-sant-antoni',
     title: 'Warm Minimalism in Sant Antoni',
     categories: ['Air Conditioning', 'Automation', 'Electrical', 'Interior design', 'Plumbing'],
-    image: '/images/warm-minimalism.jpg',
+    location: 'Sant Antoni, Barcelona',
+    image: '/images/hero-sant-antoni-kitchen.jpg',
     images: [8, 7, 4, 3, 2, 5, 10, 6, 9, 11, 12, 1, 13].map((n) => shot(`romo_wilsonco_${n}-scaled.jpg`)),
   },
 ];
