@@ -171,7 +171,7 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
    with cream around them. */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
   grid-template-rows: minmax(0, 1fr);
   height: 100vh;
   height: 100svh;
@@ -184,7 +184,7 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   justify-content: space-between;
   gap: 2.5rem;
   /* The title sits well clear of the logo; the paragraph ends level with the photo. */
-  padding: clamp(190px, 30vh, 290px) clamp(2rem, 4vw, 4.5rem) 0 0;
+  padding: clamp(190px, 30vh, 290px) 2.25rem 0 0;
 }
 .hero h1 {
   max-width: 18ch;
