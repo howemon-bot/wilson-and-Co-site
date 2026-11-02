@@ -106,7 +106,7 @@ export const allProjects: Project[] = [
     categories: ['Air Conditioning', 'Automation', 'Electrical', 'Interior design', 'Plumbing'],
     text: "A full renovation of a 1950s apartment in Sant Antoni. We reworked the layout, especially in the living area, to make it more open and better suited to the way people live today.\n\nThe original parquet floor was kept, restored and treated, so the home holds on to its history. Wood runs through the whole project, from made-to-measure joinery to the finishes, keeping it warm and consistent. Clean lines, soft tones and natural materials make it calm and easy to live in.",
     location: 'Sant Antoni, Barcelona',
-    image: '/images/hero-sant-antoni-kitchen.jpg',
+    image: '/images/warm-minimalism.jpg',
     images: [8, 7, 4, 3, 2, 5, 10, 6, 9, 11, 12, 1, 13].map((n) => shot(`romo_wilsonco_${n}-scaled.jpg`)),
   },
   {
