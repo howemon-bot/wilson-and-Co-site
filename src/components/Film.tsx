@@ -48,7 +48,7 @@ export function Film() {
       // shows once the film is behind it and fades out by the end.
       const rise = ease(clamp((p - 0.25) / 0.45));
       riseRef.current.setAttribute('y', String(size.h * (1 - rise)));
-      const on = clamp((p - 0.55) / 0.1);
+      const on = clamp((p - 0.42) / 0.1);
       const off = clamp((p - 0.78) / 0.14);
       markRef.current.style.opacity = String(on * (1 - off));
     };
