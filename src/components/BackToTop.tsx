@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+// A small cream circle with a thin arrow, so it reads on any background.
 export function BackToTop() {
   const [show, setShow] = useState(false);
 
@@ -10,13 +11,16 @@ export function BackToTop() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  if (!show) return null;
-
   return (
-    <a className="to-top" href="#top" aria-label="Back to top">
-      <svg viewBox="0 0 21 32" width="18" height="28" aria-hidden="true">
-        <path d="M17 6h1v26h-1L0 32V31l17-1z" fill="currentColor" />
-        <polygon points="17.5,6 14,6 15.75,3 17.5,0 19.25,3 21,6" fill="currentColor" />
+    <a
+      className={show ? 'to-top is-shown' : 'to-top'}
+      href="#top"
+      aria-label="Back to top"
+      aria-hidden={!show}
+      tabIndex={show ? undefined : -1}
+    >
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+        <path d="M8 13.5V2.5M3.5 7L8 2.5 12.5 7" fill="none" stroke="currentColor" strokeWidth="1" />
       </svg>
     </a>
   );

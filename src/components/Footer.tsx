@@ -15,7 +15,7 @@ export function Footer() {
         </a>
       </div>
       <div className="footer-base">
-        <p>© {new Date().getFullYear()} WILSONANDCO</p>
+        <p>© {new Date().getFullYear()} Wilson &amp; Co</p>
         <details id="privacy" className="privacy">
           <summary>Privacy policy</summary>
           <p>We use your name and email only to answer an enquiry. We don’t sell or share those details.</p>

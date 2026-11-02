@@ -605,24 +605,41 @@ html.is-project-open { overflow: hidden; }
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 0.8rem 2rem;
-  padding: 1rem 2.75rem 0 0; /* room for the back-to-top arrow */
+  padding: 1rem 3.5rem 0 0; /* room for the back-to-top button */
   border-top: 1px solid rgba(246, 241, 233, 0.3);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
 }
 .privacy summary { cursor: pointer; list-style: none; }
 .privacy summary::-webkit-details-marker { display: none; }
 .privacy summary:hover { opacity: 0.75; }
 .privacy p { max-width: 28rem; margin-top: 0.6rem; letter-spacing: 0.02em; opacity: 0.8; }
 
+/* Back to top: a cream circle with a thin arrow, readable over cream,
+   photos, the film and the teal footer alike. */
 .to-top {
   position: fixed;
   z-index: 40;
-  right: 1.35rem;
-  bottom: 1.1rem;
+  right: 24px;
+  bottom: 24px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(28, 28, 28, 0.12);
+  border-radius: 50%;
+  background: var(--paper);
   color: var(--ink);
   line-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.5s var(--ease), color 0.3s ease;
 }
+.to-top.is-shown { opacity: 1; pointer-events: auto; transform: none; }
+.to-top svg { transition: transform 0.45s var(--ease); }
+.to-top:hover { color: var(--teal); }
+.to-top:hover svg { transform: translateY(-3px); }
 
 @media (max-width: 800px) {
   .site-header { padding: 22px 20px; }
