@@ -72,7 +72,8 @@ export function Film() {
   const markW = Math.min(320, Math.max(150, size.w * 0.2));
   const k = markW / W_W;
   const x = (size.w - markW) / 2;
-  const y = (size.h - W_H * k) / 2;
+  // Centred; on phones a third of the way down, so it appears sooner after the hero.
+  const y = (size.w <= 800 ? size.h * 0.34 : size.h / 2) - (W_H * k) / 2;
   const w = `translate(${x} ${y}) scale(${k}) translate(-520 -689)`;
 
   return (
