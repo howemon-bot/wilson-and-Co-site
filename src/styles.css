@@ -597,10 +597,8 @@ html.is-project-open { overflow: hidden; }
   flex-direction: column;
   justify-content: flex-end;
   gap: clamp(3rem, 8vh, 5rem);
-  min-height: clamp(320px, 46vh, 460px);
   margin-top: clamp(2rem, 6vh, 4rem);
-  padding: clamp(2.5rem, 6vh, 4rem) 40px 28px;
-  border-radius: 20px 20px 0 0;
+  padding: clamp(3rem, 7vh, 4.5rem) 40px 28px;
   background: var(--teal);
   color: var(--paper);
 }
@@ -706,7 +704,7 @@ html.is-project-open { overflow: hidden; }
   .project-pager { padding-inline: 20px; }
   .team ul,
   .contact ul { grid-template-columns: 1fr; }
-  .site-footer { padding-inline: 20px; border-radius: 14px 14px 0 0; }
+  .site-footer { padding-inline: 20px; }
   .footer-main { row-gap: 0.75rem; }
   .footer-place { grid-column: 1 / -1; grid-row: 1; margin-bottom: 1rem; }
   .footer-email { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
