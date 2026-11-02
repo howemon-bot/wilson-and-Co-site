@@ -37,6 +37,7 @@ export function Team() {
       <h2 id="team-title" className="section-label">
         {team.heading}
       </h2>
+      <div className="team-body">
       <p className="team-intro">{team.intro}</p>
       <ul>
         {team.members.map((m) => (
@@ -62,6 +63,7 @@ export function Team() {
           </li>
         ))}
       </ul>
+      </div>
     </section>
   );
 }

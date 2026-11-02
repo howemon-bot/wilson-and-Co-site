@@ -561,14 +561,20 @@ html.is-project-open { overflow: hidden; }
 .quote-arrows button:first-child:hover { transform: translateX(-3px); }
 .quote-arrows button:last-child:hover { transform: translateX(3px); }
 
-.team { padding: 0 40px var(--gap-section); }
-.team .section-label { margin-bottom: clamp(1.75rem, 4vh, 2.5rem); }
+/* Team: the label on the left, the intro and portraits in the right columns. */
+.team {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
+  column-gap: clamp(1rem, 1.4vw, 1.5rem);
+  padding: 0 40px var(--gap-section);
+}
+.team-body { padding-top: 0.9rem; border-top: 1px solid var(--ink); }
 .team-intro { max-width: 44rem; font-size: var(--t-name); line-height: 1.4; }
 .team ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 2.8rem;
+  gap: clamp(1rem, 1.4vw, 1.5rem);
+  margin-top: clamp(2rem, 5vh, 3rem);
 }
 .portrait { aspect-ratio: 1.2 / 1; overflow: hidden; background: #ddd6cb; }
 .portrait img,
@@ -726,6 +732,7 @@ html.is-project-open { overflow: hidden; }
   .footer-email { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
   .footer-social { grid-column: 1 / -1; grid-row: 3; justify-self: start; }
   .team, .contact { padding-inline: 20px; }
+  .team { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; }
 }
 
 /* Opening sequence (first visit) */
