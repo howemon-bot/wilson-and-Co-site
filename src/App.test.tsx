@@ -49,10 +49,16 @@ describe('App', () => {
     expect(screen.getByRole('button', { name: 'Open menu' })).toHaveFocus();
   });
 
-  it('lists every service', () => {
+  it('lists every service, each opening its description with the +', async () => {
+    const user = userEvent.setup();
     for (const s of services) {
       expect(screen.getByRole('heading', { level: 3, name: s.title })).toBeInTheDocument();
     }
+    const first = screen.getByRole('button', { name: services[0].title });
+    expect(first).toHaveAttribute('aria-expanded', 'false');
+    await user.click(first);
+    expect(first).toHaveAttribute('aria-expanded', 'true');
+    expect(document.getElementById(first.getAttribute('aria-controls')!)).toHaveAttribute('aria-hidden', 'false');
   });
 
   it('lists projects oldest first, in the homepage order', () => {
