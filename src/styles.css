@@ -330,7 +330,7 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   column-gap: clamp(1rem, 1.4vw, 1.5rem);
   padding: 0 40px clamp(5rem, 12vh, 8rem);
 }
-.projects .projects-label { margin: 0; }
+.projects .projects-label { position: sticky; top: 104px; margin: 0; }
 .project-cards { margin: 0; padding: 0; list-style: none; }
 .project-card {
   position: sticky;
@@ -691,6 +691,7 @@ html.is-project-open { overflow: hidden; }
   .services p { padding-top: 1rem; }
   .plus-circle { top: 0.6rem; }
   .projects { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
+  .projects .projects-label { position: static; }
   .project-card { top: 84px; height: 72svh; min-height: 360px; }
   .project-card + .project-card { margin-top: 16px; }
   .card-meta { left: 14px; right: 14px; top: 12px; grid-template-columns: auto 1fr auto; }
