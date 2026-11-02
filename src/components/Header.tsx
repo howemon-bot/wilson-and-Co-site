@@ -8,7 +8,8 @@ const links = [
   { href: '#contact', label: 'Contact' },
 ];
 
-const general = contacts.find((c) => c.name === 'General enquiries') ?? contacts[0];
+// The two founders' emails, with what each one looks after.
+const people = contacts.filter((c) => c.name !== 'General enquiries');
 
 // The section in view is the last one whose top has passed 40% of the screen.
 function sectionInView() {
@@ -99,11 +100,18 @@ export function Header() {
             </ul>
           </nav>
           <div className="menu-foot">
-            <span>{company.city}</span>
-            <a href={`mailto:${general.email}`}>{general.email}</a>
-            <a href={company.instagram} target="_blank" rel="noreferrer">
-              Instagram
-            </a>
+            {people.map((c) => (
+              <p key={c.email}>
+                <span className="menu-topic">{c.topic}</span>
+                <a href={`mailto:${c.email}`}>{c.email}</a>
+              </p>
+            ))}
+            <p>
+              <span className="menu-topic">{company.city}</span>
+              <a href={company.instagram} target="_blank" rel="noreferrer">
+                Instagram
+              </a>
+            </p>
           </div>
         </div>
       </div>
