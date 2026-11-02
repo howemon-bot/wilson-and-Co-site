@@ -36,8 +36,9 @@ export function Testimonials() {
         Testimonials
       </h2>
       <div className="quotes-body">
+        <div className="quotes-stack">
         {testimonials.map((t, i) => (
-          <figure key={t.name} hidden={i !== index}>
+          <figure key={t.name} className={i === index ? 'is-active' : undefined} aria-hidden={i !== index}>
             <blockquote lang={t.lang}>
               <p>“{t.quote}”</p>
             </blockquote>
@@ -46,6 +47,7 @@ export function Testimonials() {
             </figcaption>
           </figure>
         ))}
+        </div>
         <div className="quote-nav">
           <span className="quote-count" aria-live="polite">
             {pad(index + 1)} / {pad(count)}

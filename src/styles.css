@@ -522,7 +522,17 @@ html.is-project-open { overflow: hidden; }
   padding: clamp(5rem, 12vh, 8rem) 40px 0;
 }
 .quotes-body { padding-top: 0.9rem; border-top: 1px solid var(--ink); }
-.quotes figure { max-width: 46rem; margin: 0; }
+.quotes-stack { display: grid; }
+/* All quotes share one space, sized to the longest, so nothing below jumps. */
+.quotes figure {
+  grid-area: 1 / 1;
+  max-width: 46rem;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0s linear 0.6s;
+}
+.quotes figure.is-active { opacity: 1; visibility: visible; transition: opacity 0.6s ease 0.15s, visibility 0s; }
 .quotes blockquote { margin: 0; }
 .quotes blockquote p { font-size: var(--t-name); line-height: 1.45; }
 .quotes figcaption { margin-top: 1.4rem; font-size: var(--t-small); letter-spacing: 0.02em; text-transform: none; color: #6b6b6b; }
