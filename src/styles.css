@@ -579,16 +579,18 @@ html.is-project-open { overflow: hidden; }
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: clamp(1rem, 2vw, 2rem);
-  row-gap: 1.6rem;
-  align-items: end;
+  row-gap: 0.5rem;
+  align-items: start;
 }
+/* Barcelona on the left, level with the top of the email; email above Instagram on the right. */
 .footer-place {
   grid-column: 1 / span 6;
+  grid-row: 1 / span 2;
   font-family: var(--font-display);
   font-size: var(--t-project);
   line-height: 1.15;
 }
-.footer-email { grid-column: 1 / span 6; grid-row: 2; }
+.footer-email { grid-column: 9 / span 4; grid-row: 1; justify-self: end; }
 .footer-social { grid-column: 9 / span 4; grid-row: 2; justify-self: end; }
 .footer-link {
   width: fit-content;
@@ -675,7 +677,9 @@ html.is-project-open { overflow: hidden; }
   .team ul,
   .contact ul { grid-template-columns: 1fr; }
   .site-footer { padding-inline: 20px; border-radius: 14px 14px 0 0; }
-  .footer-place, .footer-email { grid-column: 1 / -1; }
+  .footer-main { row-gap: 0.75rem; }
+  .footer-place { grid-column: 1 / -1; grid-row: 1; margin-bottom: 1rem; }
+  .footer-email { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
   .footer-social { grid-column: 1 / -1; grid-row: 3; justify-self: start; }
   .team, .contact { padding-inline: 20px; }
 }
