@@ -20,8 +20,8 @@ export default function App() {
         <Film />
         <Services />
         <Projects />
-        <Testimonials />
         <Team />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />

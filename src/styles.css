@@ -51,7 +51,7 @@ h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { font-weight: 400; letter-spacing: 0.015em; line-height: 1.15; }
 /* Display cut for everything at 20px and up. */
 h1, h2, h3, .display, .team-intro,
-.tags, .role, .quotes figcaption, .site-footer h2, .legal, .opening-words {
+.tags, .role, .site-footer h2, .legal, .opening-words {
   font-family: var(--font-display);
 }
 strong, b { font-family: var(--font-display); font-weight: 500; }
@@ -63,7 +63,6 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
 /* Small capitals: tags, roles, captions, footer headings. */
 .tags,
 .role,
-.quotes figcaption,
 .site-footer h2,
 .legal {
   font-size: var(--t-label);
@@ -515,37 +514,41 @@ html.is-project-open { overflow: hidden; }
 .project-pager small { font-size: var(--t-small); letter-spacing: 0.02em; }
 .project-pager button:hover { color: var(--teal); }
 
-.quotes { padding: 5.5rem 0 1.5rem; text-align: center; }
-.quotes figure { max-width: 46rem; margin: 0 auto; padding: 0 1.5rem; }
-.quotes blockquote p { font-size: clamp(1.125rem, 1.5vw, 1.3rem); line-height: 1.55; }
-.quotes figcaption {
-  margin-top: 1.8rem;
-}
-.quote-nav {
+/* Testimonials: the label on the left, the quote in the right column. */
+.quotes {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
+  column-gap: clamp(1rem, 1.4vw, 1.5rem);
+  padding: clamp(5rem, 12vh, 8rem) 40px 0;
+}
+.quotes-body { padding-top: 0.9rem; border-top: 1px solid var(--ink); }
+.quotes figure { max-width: 46rem; margin: 0; }
+.quotes blockquote { margin: 0; }
+.quotes blockquote p { font-size: var(--t-name); line-height: 1.45; }
+.quotes figcaption { margin-top: 1.4rem; font-size: var(--t-small); letter-spacing: 0.02em; text-transform: none; color: #6b6b6b; }
+.quote-nav {
+  display: flex;
   align-items: center;
-  margin-top: 3.2rem;
-  padding: 0 1.2rem 1rem;
+  justify-content: space-between;
+  max-width: 46rem;
+  margin-top: 2.5rem;
+  font-size: var(--t-small);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
 }
-.quote-nav > button {
+.quote-arrows { display: flex; gap: 1.5rem; }
+.quote-arrows button {
+  padding: 0.4rem 0;
+  border: 0;
   background: none;
-  border: 0;
-  font-size: 1.15rem;
+  color: inherit;
+  line-height: 0;
   cursor: pointer;
-  padding: 0.4rem;
+  transition: color 0.3s ease, transform 0.4s var(--ease);
 }
-.dashes { display: flex; justify-content: center; align-items: center; gap: 0.7rem; }
-.dashes button {
-  width: 28px;
-  height: 2px;
-  padding: 0;
-  border: 0;
-  background: #ddd6cb;
-  cursor: pointer;
-  transition: width 0.6s var(--ease), background-color 0.6s ease;
-}
-.dashes button[aria-selected="true"] { width: 46px; background: #4a4a4a; }
+.quote-arrows button:hover { color: var(--teal); }
+.quote-arrows button:first-child:hover { transform: translateX(-3px); }
+.quote-arrows button:last-child:hover { transform: translateX(3px); }
 
 .team { padding: clamp(5rem, 12vh, 8rem) 40px 0; }
 .team .section-label { margin-bottom: clamp(1.75rem, 4vh, 2.5rem); }
@@ -685,6 +688,7 @@ html.is-project-open { overflow: hidden; }
   .hero-media { grid-row: 1; height: 64svh; min-height: 340px; }
   .hero-text { grid-row: 2; padding: 2.75rem 20px 0; gap: 1.75rem; }
   .services { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; padding: 4.5rem 20px; }
+  .quotes { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
   .services li { grid-template-columns: minmax(0, 1fr); padding-bottom: 1.6rem; }
   .services p { padding-top: 1rem; }
   .plus-circle { top: 0.6rem; }
