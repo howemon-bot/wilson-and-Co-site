@@ -44,14 +44,14 @@ export const heroSlides: HeroSlide[] = [
     image: '/images/hero-japandi-clot-living.jpg',
     alt: 'The living room of the Japandi apartment in Clot: a terracotta sofa, a teak coffee table and a rattan chair under a skylight',
     caption: 'Japandi Living Room, Clot',
-    focus: '0% 62%', // keep the rattan chair; crop the sofa instead
+    focus: '35% 62%', // more of the right wall, the rattan chair still whole
     zoom: 1,
   },
   {
     image: '/images/hero-japandi-clot-terrace.jpg',
     alt: 'The terrace of the Japandi apartment in Clot: rattan chairs and a stone table under climbing plants, seen through a black-framed glass door',
     caption: 'Indoor Courtyard, Barcelona',
-    focus: '0% 62%', // keep the shelving on the left
+    focus: '18% 62%', // slightly right; the shelving on the left stays in
     zoom: 1,
   },
 ];
