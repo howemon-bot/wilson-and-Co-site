@@ -1,11 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Logo } from './Logo';
+import { Img } from './Img';
+import { company, contacts } from '../content';
 
 const links = [
   { href: '#projects', label: 'Projects' },
   { href: '#services', label: 'Services' },
   { href: '#contact', label: 'Contact' },
 ];
+
+const MENU_IMAGE = '/images/hero-japandi-clot-terrace.jpg';
+const general = contacts.find((c) => c.name === 'General enquiries') ?? contacts[0];
 
 // The section in view is the last one whose top has passed 40% of the screen.
 function sectionInView() {
@@ -21,6 +26,9 @@ export function Header() {
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState('');
+  const firstLink = useRef<HTMLAnchorElement>(null);
+  const button = useRef<HTMLButtonElement>(null);
+  const menu = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -32,35 +40,77 @@ export function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Closed, the menu can't be tabbed into.
+  useEffect(() => {
+    menu.current?.toggleAttribute('inert', !open);
+  }, [open]);
+
+  // While open: lock the page, focus the first link, Escape closes.
+  useEffect(() => {
+    if (!open) return;
+    document.documentElement.classList.add('is-menu-open');
+    firstLink.current?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        button.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.documentElement.classList.remove('is-menu-open');
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
   return (
     <header className={solid ? 'site-header is-solid' : 'site-header'}>
-      <a className="logo" href="#top">
+      <a className="logo" href="#top" onClick={() => setOpen(false)}>
         <Logo />
       </a>
       <button
+        ref={button}
         className="menu-btn"
         type="button"
+        aria-label={open ? 'Close menu' : 'Open menu'}
         aria-expanded={open}
-        aria-controls="site-nav"
+        aria-controls="site-menu"
         onClick={() => setOpen((v) => !v)}
       >
-        {open ? 'Close' : 'Menu'}
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
       </button>
-      <nav id="site-nav" aria-label="Main" className={open ? 'is-open' : undefined}>
-        <ul>
-          {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                aria-current={active === l.href ? 'true' : undefined}
-                onClick={() => setOpen(false)}
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div ref={menu} id="site-menu" className={open ? 'menu is-open' : 'menu'} aria-hidden={!open}>
+        <div className="menu-body">
+          <nav aria-label="Main">
+            <ul className="menu-links">
+              {links.map((l, i) => (
+                <li key={l.href}>
+                  <a
+                    ref={i === 0 ? firstLink : undefined}
+                    href={l.href}
+                    aria-current={active === l.href ? 'true' : undefined}
+                    onClick={() => setOpen(false)}
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="menu-foot">
+            <span>{company.city}</span>
+            <a href={`mailto:${general.email}`}>{general.email}</a>
+            <a href={company.instagram} target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+          </div>
+        </div>
+        <div className="menu-media">
+          <Img src={MENU_IMAGE} alt="" />
+        </div>
+      </div>
     </header>
   );
 }

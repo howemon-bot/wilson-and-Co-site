@@ -33,8 +33,12 @@ describe('App', () => {
     expect(within(header as HTMLElement).getByRole('img', { name: 'Wilson & Co.' })).toBeInTheDocument();
   });
 
-  it('has the homepage navigation', () => {
+  it('opens a full-screen menu with the homepage navigation, and closes on Escape', async () => {
+    const user = userEvent.setup();
+    expect(screen.queryByRole('navigation', { name: 'Main' })).not.toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Open menu' }));
     const nav = screen.getByRole('navigation', { name: 'Main' });
+    expect(within(nav).getByRole('link', { name: 'Projects' })).toHaveFocus();
     const expected: Record<string, string> = {
       Projects: '#projects',
       Services: '#services',
@@ -43,6 +47,9 @@ describe('App', () => {
     for (const [name, href] of Object.entries(expected)) {
       expect(within(nav).getByRole('link', { name })).toHaveAttribute('href', href);
     }
+    await user.keyboard('{Escape}');
+    expect(screen.queryByRole('navigation', { name: 'Main' })).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Open menu' })).toHaveFocus();
   });
 
   it('lists every service', () => {
