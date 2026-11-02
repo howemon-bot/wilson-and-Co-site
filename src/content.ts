@@ -253,7 +253,7 @@ export const team = {
 };
 
 export const contacts = [
-  { name: 'Rohan Wilson', topic: 'Projects', email: 'rohan@wilsonandco.es' },
-  { name: 'Monica Howe', topic: 'Innovation', email: 'monica@wilsonandco.es' },
+  { name: 'Monica Howe', topic: 'Interiors and innovation', email: 'monica@wilsonandco.es' },
+  { name: 'Rohan Wilson', topic: 'Construction and installations', email: 'rohan@wilsonandco.es' },
   { name: 'General enquiries', topic: 'Anything else', email: 'hola@wilsonandco.es' },
 ];
