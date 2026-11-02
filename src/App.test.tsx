@@ -61,12 +61,12 @@ describe('App', () => {
     expect(document.getElementById(first.getAttribute('aria-controls')!)).toHaveAttribute('aria-hidden', 'false');
   });
 
-  it('lists projects oldest first, in the homepage order', () => {
+  it('lists projects in the homepage order', () => {
     const row = document.querySelector('.project-list') as HTMLElement;
     const titles = within(row).getAllByRole('heading', { level: 3 }).map((h) => h.textContent);
     expect(titles).toEqual(projects.map((p) => p.title));
-    expect(titles[0]).toBe('Industrial Clapham');
-    expect(titles[titles.length - 1]).toBe('Warm Minimalism in Sant Antoni');
+    expect(titles[0]).toBe('Warm Minimalism in Sant Antoni');
+    expect(titles).not.toContain('Barnes'); // no photos yet
   });
 
   it('keeps each gallery in the order the live project page uses', async () => {
@@ -81,7 +81,7 @@ describe('App', () => {
     expect(coastal.images[0]).toContain('Solar_1.jpg');
     expect(coastal.images[3]).toContain('Solar_6.jpg');
     await user.click(within(screen.getByRole('dialog')).getByRole('button', { name: /^Next/ }));
-    expect(screen.getByRole('heading', { level: 2, name: 'Eixample Bathroom' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'Entertainment Heaven' })).toBeInTheDocument();
     await user.keyboard('{Escape}');
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });

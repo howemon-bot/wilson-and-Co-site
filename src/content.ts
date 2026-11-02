@@ -98,65 +98,16 @@ export type Project = {
 
 const shot = (file: string) => `/images/gallery/${file}`;
 
-export const projects: Project[] = [
+// Every project, in the order they appear on the site.
+export const allProjects: Project[] = [
   {
-    slug: 'industrial-clapham',
-    title: 'Industrial Clapham',
-    categories: ['Automation', 'Electrical'],
-    text: "The interior of this standard 2-bedroom dwelling in the heart of Clapham was completely stripped down. The planning and installation of all the automation and lighting features combine with the building design to produce a magnificent soft feel. A must-see in real life!!",
-    location: 'Clapham, London',
-    image: '/images/industrial-clapham.jpg',
-    images: [1, 2, 3, 4, 5, 6].map((n) =>
-      shot(`WilsonAndCo_Industrial_Clapham${n}${n >= 5 ? '-scaled' : ''}.jpg`),
-    ),
-  },
-  {
-    slug: 'clapham-south',
-    title: 'Clapham South',
-    categories: ['Automation', 'Electrical'],
-    text: "This project involved a completely new electrical installation on the ground floor and basement. The 3 floors above were temporarily wired to accommodate living arrangements and then subsequently wired into the new electrical consumer boards. The 2 ground floors were fitted with Rako home automation and designed to offer changeable mood-setting light functions for every moment of the day.",
-    location: 'Clapham South, London',
-    image: '/images/clapham-south.jpg',
-    images: [1, 2, 3, 7, 5, 4, 6, 8, 9].map((n) => shot(`WilsonAndCo_Clapham_South${n}.jpg`)),
-  },
-  {
-    slug: 'entertainment-heaven',
-    title: 'Entertainment Heaven',
-    categories: ['Automation', 'Electrical'],
-    location: "South East London",
-    text: "This refurbishment project of a 4-storey house in the south east of London involved full electrical design, installation and connectivity of the wifi and all things visual and audio. The work even included a beautifully illuminated tree house for the kids.",
-    image: '/images/entertainment-heaven.jpg',
-    images: [
-      ...[1, 2, 3, 4, 5, 6].map((n) => shot(`WilsonAndCo_Entertaining_Heaven${n}-scaled.jpg`)),
-      ...[7, 8, 9, 10, 11, 12].map((n) => shot(`WilsonAndCo_Entertaining_Heaven${n}.jpg`)),
-    ],
-  },
-  {
-    slug: 'classical-beauty',
-    title: 'Classical Beauty',
-    categories: ['Electrical'],
-    text: "This flat was transformed from a standard 3-bedroom house into a new 4-storey marvel complete with a modern high-end finish and a full-size basement, designed as an entertainment room and library. The client had emphasised the importance of the interior and exterior lighting and the need for everything to be seamlessly integrated.",
-    location: 'Wandsworth, London',
-    image: '/images/hero-wandsworth.jpg',
-    images: [1, 2, 3, 4, 5, 6, 7, 9, 8].map((n) => shot(`WilsonAndCo_ClassicalBeauty${n}.jpg`)),
-  },
-  {
-    slug: 'coastal-solar-panels',
-    title: 'Coastal Solar Panels',
-    categories: ['Electrical', 'Solar'],
-    location: "Castelldefels, Barcelona",
-    text: "A 6kW solar system was installed on a three-story house in Castelldefels. To optimize energy generation throughout the day, the panels were strategically placed on both sides of the peaked roof. The cabling was routed externally along the façade and connected to a three-phase inverter, which integrates seamlessly with the grid. The project also included full management of the paperwork and licensing process for the client.",
-    image: '/images/coastal-solar.jpg',
-    images: [1, 2, 3, 6, 5, 4].map((n) => shot(`Solar_${n}.jpg`)),
-  },
-  {
-    slug: 'eixample-bathroom',
-    title: 'Eixample Bathroom',
-    categories: ['Electrical', 'Interior design', 'Plumbing'],
-    text: "This small bathroom was transformed into a highly functional, design-led space, combining contemporary finishes with carefully restored traditional elements. A volta catalana ceiling was refurbished to enhance height and architectural character, while Nolla tiles were introduced to provide a durable, geometric flooring solution.\n\nThe brief emphasised efficient space planning, integrated storage, and the use of high-quality materials to ensure long-term performance. Every detail was designed to be seamlessly incorporated, resulting in a compact bathroom that balances practicality with a refined, high-end finish.",
-    location: 'Eixample, Barcelona',
-    image: '/images/eixample-bathroom.jpg',
-    images: [2, 3, 1, 6, 5, 4, 7, 8].map((n) => shot(`bathroom_wco_${n}-scaled.jpg`)),
+    slug: 'warm-minimalism-in-sant-antoni',
+    title: 'Warm Minimalism in Sant Antoni',
+    categories: ['Air Conditioning', 'Automation', 'Electrical', 'Interior design', 'Plumbing'],
+    text: "A full renovation of a 1950s apartment in Sant Antoni. We reworked the layout, especially in the living area, to make it more open and better suited to the way people live today.\n\nThe original parquet floor was kept, restored and treated, so the home holds on to its history. Wood runs through the whole project, from made-to-measure joinery to the finishes, keeping it warm and consistent. Clean lines, soft tones and natural materials make it calm and easy to live in.",
+    location: 'Sant Antoni, Barcelona',
+    image: '/images/hero-sant-antoni-kitchen.jpg',
+    images: [8, 7, 4, 3, 2, 5, 10, 6, 9, 11, 12, 1, 13].map((n) => shot(`romo_wilsonco_${n}-scaled.jpg`)),
   },
   {
     slug: 'japandi-style-in-clot',
@@ -172,15 +123,78 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'warm-minimalism-in-sant-antoni',
-    title: 'Warm Minimalism in Sant Antoni',
-    categories: ['Air Conditioning', 'Automation', 'Electrical', 'Interior design', 'Plumbing'],
-    text: "A full renovation of a 1950s apartment in Sant Antoni. We reworked the layout, especially in the living area, to make it more open and better suited to the way people live today.\n\nThe original parquet floor was kept, restored and treated, so the home holds on to its history. Wood runs through the whole project, from made-to-measure joinery to the finishes, keeping it warm and consistent. Clean lines, soft tones and natural materials make it calm and easy to live in.",
-    location: 'Sant Antoni, Barcelona',
-    image: '/images/hero-sant-antoni-kitchen.jpg',
-    images: [8, 7, 4, 3, 2, 5, 10, 6, 9, 11, 12, 1, 13].map((n) => shot(`romo_wilsonco_${n}-scaled.jpg`)),
+    slug: 'eixample-bathroom',
+    title: 'Eixample Bathroom',
+    categories: ['Electrical', 'Interior design', 'Plumbing'],
+    text: "A small bathroom, completely rethought. We restored the original volta catalana ceiling, which brings back height and character, and laid Nolla tiles for a durable, geometric floor.\n\nThe brief was about making the most of the space: careful planning, built-in storage and materials chosen to last. The result is a compact bathroom that is practical day to day and beautifully finished.",
+    location: 'Eixample, Barcelona',
+    image: '/images/eixample-bathroom.jpg',
+    images: [2, 3, 1, 6, 5, 4, 7, 8].map((n) => shot(`bathroom_wco_${n}-scaled.jpg`)),
+  },
+  {
+    slug: 'classical-beauty',
+    title: 'Classical Beauty',
+    categories: ['Electrical'],
+    text: "A three-bedroom house extended into a four-storey home, with a full basement designed as an entertainment room and library. Lighting was central to the brief, inside and out, and everything had to be integrated cleanly into the architecture.",
+    location: 'Wandsworth, London',
+    image: '/images/hero-wandsworth.jpg',
+    images: [1, 2, 3, 4, 5, 6, 7, 9, 8].map((n) => shot(`WilsonAndCo_ClassicalBeauty${n}.jpg`)),
+  },
+  {
+    slug: 'industrial-clapham',
+    title: 'Industrial Clapham',
+    categories: ['Automation', 'Electrical'],
+    text: "A two-bedroom house in the heart of Clapham, completely stripped back. We planned and installed all the automation and lighting to work with the architecture, giving the home a soft, warm feel.",
+    location: 'Clapham, London',
+    image: '/images/industrial-clapham.jpg',
+    images: [1, 2, 3, 4, 5, 6].map((n) =>
+      shot(`WilsonAndCo_Industrial_Clapham${n}${n >= 5 ? '-scaled' : ''}.jpg`),
+    ),
+  },
+  {
+    slug: 'coastal-solar-panels',
+    title: 'Coastal Solar Panels',
+    categories: ['Electrical', 'Solar'],
+    location: "Castelldefels, Barcelona",
+    text: "A 6kW solar system for a three-storey house in Castelldefels. We placed panels on both sides of the pitched roof to make the most of the sun throughout the day, ran the cabling neatly along the façade and connected it to a three-phase inverter. We also took care of all the paperwork and licensing for the client.",
+    image: '/images/coastal-solar.jpg',
+    images: [1, 2, 3, 6, 5, 4].map((n) => shot(`Solar_${n}.jpg`)),
+  },
+  {
+    slug: 'entertainment-heaven',
+    title: 'Entertainment Heaven',
+    categories: ['Automation', 'Electrical'],
+    location: "South East London",
+    text: "A refurbishment of a four-storey house in south-east London. We designed and installed the full electrical system, along with wifi throughout and integrated audio and visual. The project even included a lit tree house for the children.",
+    image: '/images/entertainment-heaven.jpg',
+    images: [
+      ...[1, 2, 3, 4, 5, 6].map((n) => shot(`WilsonAndCo_Entertaining_Heaven${n}-scaled.jpg`)),
+      ...[7, 8, 9, 10, 11, 12].map((n) => shot(`WilsonAndCo_Entertaining_Heaven${n}.jpg`)),
+    ],
+  },
+  {
+    slug: 'clapham-south',
+    title: 'Clapham South',
+    categories: ['Automation', 'Electrical'],
+    text: "A completely new electrical installation on the ground floor and basement. So the owners could keep living in the house, the three floors above were wired temporarily and later connected to the new consumer boards. Both lower floors have Rako home automation, with lighting scenes that change through the day.",
+    location: 'Clapham South, London',
+    image: '/images/clapham-south.jpg',
+    images: [1, 2, 3, 7, 5, 4, 6, 8, 9].map((n) => shot(`WilsonAndCo_Clapham_South${n}.jpg`)),
+  },
+  {
+    slug: 'barnes',
+    title: 'Barnes',
+    categories: ['Automation', 'Electrical'],
+    location: 'Barnes, London',
+    text: "A two-storey house extended into a four-storey home, with a full basement and loft. The basement became a cinema room with a complete audio and visual setup. Strip lighting in the ceiling bulkhead and indirect lighting on the vertical garden give the space the modern feel the client was looking for.",
+    // No photos yet.
+    image: '',
+    images: [],
   },
 ];
+
+// Projects without photos stay off the site until they have some.
+export const projects = allProjects.filter((p) => p.images.length > 0);
 
 export type Testimonial = { quote: string; name: string; place: string; lang: 'en' | 'es' };
 
