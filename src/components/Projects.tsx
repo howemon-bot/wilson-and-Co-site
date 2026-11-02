@@ -46,7 +46,11 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
             <li key={c}>{c}</li>
           ))}
         </ul>
-        <div className="project-text">{project.text && <p>{withItalics(project.text)}</p>}</div>
+        <div className="project-text">
+          {project.text?.split('\n\n').map((para) => (
+            <p key={para}>{withItalics(para)}</p>
+          ))}
+        </div>
         <dl className="project-facts">
           <div>
             <dt>Design</dt>

@@ -437,6 +437,7 @@ html.is-project-open { overflow: hidden; }
 }
 .project-tags li + li { margin-top: 0.15rem; }
 .project-text p { max-width: 34rem; font-size: var(--t-body); letter-spacing: 0.005em; }
+.project-text p + p { margin-top: 1em; }
 .project-facts { margin: 0; }
 .project-facts div {
   display: flex;
