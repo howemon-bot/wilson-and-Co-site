@@ -4,7 +4,6 @@ import { Film } from './components/Film';
 import { Services } from './components/Services';
 import { Projects } from './components/Projects';
 import { Testimonials } from './components/Testimonials';
-import { Ethos } from './components/Ethos';
 import { Team } from './components/Team';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -22,7 +21,6 @@ export default function App() {
         <Services />
         <Projects />
         <Testimonials />
-        <Ethos />
         <Team />
         <Contact />
       </main>

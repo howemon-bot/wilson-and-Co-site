@@ -59,8 +59,6 @@ export const heroSlides: HeroSlide[] = [
 export const film = {
   // Silent 17s web cut of the brand film (re-edit pending).
   src: '/videos/wilson-and-co-film.mp4',
-  // The full film with voiceover, behind the "Watch the film" button.
-  full: '/videos/wilson-and-co-film-full.mp4',
   poster: '/images/film-poster.jpg',
   label: 'Wilson & Co film',
 };
@@ -249,11 +247,6 @@ export const testimonials: Testimonial[] = [
     place: 'London',
   },
 ];
-
-export const ethos = {
-  heading: "Let's make something beautiful together.",
-  text: "We keep what's worth keeping and restore it where we can. When something new is needed, we choose local materials and makers, and things that can be repaired rather than replaced. Less waste, less transport, and a home that ages well.",
-};
 
 export const team = {
   heading: 'Team',

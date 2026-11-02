@@ -34,7 +34,9 @@ function Mail() {
 export function Team() {
   return (
     <section className="team" id="team" aria-labelledby="team-title">
-      <h2 id="team-title" className="display">{team.heading}</h2>
+      <h2 id="team-title" className="section-label">
+        {team.heading}
+      </h2>
       <p className="team-intro">{team.intro}</p>
       <ul>
         {team.members.map((m) => (
