@@ -251,7 +251,7 @@ export const testimonials: Testimonial[] = [
 export const team = {
   heading: 'Team',
   intro:
-    'Wilson & Co is a passion project founded by Rohan and Monica, driven by their commitment to creating spaces that are both functional and beautiful —while staying mindful of environmental responsibility.',
+    'Wilson & Co is a passion project founded by Rohan and Monica, driven by their commitment to creating spaces that are both functional and beautiful, built to last and made with local materials wherever we can.',
   members: [
     {
       name: 'Rohan Wilson',
