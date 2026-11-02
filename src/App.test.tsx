@@ -1,7 +1,7 @@
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
-import { company, contacts, hero, heroSlides, projects, services, team, testimonials } from './content';
+import { company, contacts, featuredProjects, hero, heroSlides, projects, services, team, testimonials } from './content';
 
 describe('App', () => {
   beforeEach(() => {
@@ -61,18 +61,21 @@ describe('App', () => {
     expect(document.getElementById(first.getAttribute('aria-controls')!)).toHaveAttribute('aria-hidden', 'false');
   });
 
-  it('lists projects in the homepage order', () => {
-    const row = document.querySelector('.project-list') as HTMLElement;
-    const titles = within(row).getAllByRole('heading', { level: 3 }).map((h) => h.textContent);
-    expect(titles).toEqual(projects.map((p) => p.title));
+  it('shows six featured projects on the home page, in order', () => {
+    const list = document.querySelector('.project-cards') as HTMLElement;
+    const titles = within(list).getAllByRole('heading', { level: 3 }).map((h) => h.textContent);
+    expect(titles).toEqual(featuredProjects.map((p) => p.title));
+    expect(titles).toHaveLength(6);
     expect(titles[0]).toBe('Warm Minimalism in Sant Antoni');
-    expect(titles).not.toContain('Barnes'); // no photos yet
+    expect(projects.map((p) => p.title)).not.toContain('Barnes'); // no photos yet
   });
 
   it('keeps each gallery in the order the live project page uses', async () => {
     const user = userEvent.setup();
     const coastal = projects.find((p) => p.slug === 'coastal-solar-panels')!;
-    await user.click(screen.getByRole('button', { name: new RegExp(coastal.title) }));
+    // Coastal Solar Panels isn't featured: reach it with Next from Industrial Clapham.
+    await user.click(screen.getByRole('button', { name: /^Industrial Clapham, open project/ }));
+    await user.click(within(screen.getByRole('dialog')).getByRole('button', { name: /^Next/ }));
     const gallery = document.getElementById('project-gallery')!;
     const frames = within(gallery).getAllByRole('img');
     expect(frames.map((img) => img.getAttribute('aria-label') || img.getAttribute('alt'))).toEqual(

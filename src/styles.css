@@ -322,9 +322,83 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
 }
 .services p { max-width: 34rem; padding-top: 0.35rem; }
 
-/* Projects: a staggered grid of photos, each with a quiet caption row.
-   The pattern repeats every four: small left, large right, medium, small right. */
-.project-list,
+/* Featured projects: the label on the left, as in Services; large cards on the
+   right that stack over each other as you scroll. */
+.projects {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
+  column-gap: clamp(1rem, 1.4vw, 1.5rem);
+  padding: 0 40px clamp(5rem, 12vh, 8rem);
+}
+.projects .projects-label { margin: 0; }
+.project-cards { margin: 0; padding: 0; list-style: none; }
+.project-card {
+  position: sticky;
+  top: 104px; /* just under the header */
+  height: calc(100vh - 128px);
+  height: calc(100svh - 128px);
+  min-height: 420px;
+  overflow: hidden;
+  background: #cfc6b8;
+  color: var(--paper);
+}
+.project-card + .project-card { margin-top: 24px; }
+.project-card img,
+.project-card .ph {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease);
+}
+.project-card:hover img { transform: scale(1.015); }
+/* Soft shade top and bottom so the cream text reads on light photos. */
+.project-card::before,
+.project-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.project-card::before { top: 0; height: 22%; background: linear-gradient(rgba(10, 16, 20, 0.28), transparent); }
+.project-card::after { bottom: 0; height: 40%; background: linear-gradient(transparent, rgba(10, 16, 20, 0.42)); }
+.card-meta {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 20px;
+  right: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr;
+  gap: 1rem;
+  font-size: var(--t-small);
+  letter-spacing: 0.02em;
+}
+.card-meta span:last-child { text-align: right; }
+.card-title {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  right: 20px;
+  bottom: 22px;
+}
+.card-title h3 { font-size: var(--t-statement); line-height: 1.05; }
+.card-title p { margin-top: 0.35rem; font-size: var(--t-small); letter-spacing: 0.02em; opacity: 0.85; }
+.card-open {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.card-open:focus-visible { outline-offset: -6px; outline-color: var(--paper); }
+
+/* Project page photos: a staggered pattern that repeats every four. */
 .project-photos {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -340,55 +414,10 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
 .tile-c { grid-column: 3 / span 6; margin-top: 2rem; }
 .tile-d { grid-column: 10 / span 3; margin-top: 10rem; }
 .tile-lead { grid-column: 3 / span 10; }
-.project-list li,
 .project-photos li { position: relative; }
-.project-list img, .project-list .ph,
 .project-photos img, .project-photos .ph { width: 100%; object-fit: cover; aspect-ratio: 3 / 2; }
 .tile-a img, .tile-a .ph { aspect-ratio: 4 / 3; }
 .tile-d img, .tile-d .ph { aspect-ratio: 4 / 5; }
-.project-caption {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-top: 0.65rem;
-  font-size: var(--t-small);
-  letter-spacing: 0.02em;
-  transition: color 0.35s ease;
-}
-.project-caption h3 { font-family: var(--font); font-size: inherit; letter-spacing: inherit; }
-.project-caption .more {
-  padding: 0;
-  border: 0;
-  background: none;
-  color: inherit;
-  font: inherit;
-  letter-spacing: inherit;
-  cursor: pointer;
-}
-.project-caption .more::before { content: ""; position: absolute; inset: 0; }
-.project-caption .more::after {
-  content: "+";
-  content: "+" / "";
-  display: inline-block;
-  margin-left: 0.4em;
-  transition: transform 0.5s var(--ease);
-}
-.project-list li:hover .project-caption,
-.project-list li:focus-within .project-caption { color: var(--teal); }
-.project-list li:hover .more::after { transform: rotate(90deg); }
-/* Home: pairs of one large (7 columns) and one small (5 columns) photo.
-   The small photo stretches to the large one's height, so each row is even. */
-.project-list { align-items: stretch; }
-.project-list li { display: flex; flex-direction: column; }
-.project-list .tile-big.is-left { grid-column: 1 / span 7; }
-.project-list .tile-big.is-right { grid-column: 6 / span 7; }
-.project-list .tile-small.is-left { grid-column: 1 / span 5; }
-.project-list .tile-small.is-right { grid-column: 8 / span 5; }
-.project-list .tile-big img, .project-list .tile-big .ph { aspect-ratio: 3 / 2; }
-.project-list .tile-small img, .project-list .tile-small .ph { flex: 1 1 0; min-height: 0; height: auto; aspect-ratio: auto; }
-.project-list img { transition: opacity 0.5s ease; }
-.project-list li:hover img { opacity: 0.92; }
 
 /* Project page: full screen over the site. */
 html.is-project-open { overflow: hidden; }
@@ -661,14 +690,14 @@ html.is-project-open { overflow: hidden; }
   .services li { grid-template-columns: minmax(0, 1fr); padding-bottom: 1.6rem; }
   .services p { padding-top: 1rem; }
   .plus-circle { top: 0.6rem; }
-  .projects-label { margin-inline: 20px; }
-  .project-list,
+  .projects { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
+  .project-card { top: 84px; height: 72svh; min-height: 360px; }
+  .project-card + .project-card { margin-top: 16px; }
+  .card-meta { left: 14px; right: 14px; top: 12px; grid-template-columns: auto 1fr auto; }
+  .card-meta span:nth-child(2) { display: none; }
+  .card-title { left: 14px; right: 14px; bottom: 16px; }
   .project-photos { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; padding-inline: 20px; }
   .tile-a, .tile-b, .tile-c, .tile-d, .tile-lead { grid-column: 1; margin-top: 0; }
-  .project-list li { grid-row: auto !important; }
-  .project-list .tile-big.is-left, .project-list .tile-big.is-right,
-  .project-list .tile-small.is-left, .project-list .tile-small.is-right { grid-column: 1; }
-  .project-list .tile-small img, .project-list .tile-small .ph { flex: none; aspect-ratio: 3 / 2; }
   .tile-a img, .tile-a .ph, .tile-d img, .tile-d .ph { aspect-ratio: 3 / 2; }
   .project-head { padding: 22px 20px 0; }
   .project-meta { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }

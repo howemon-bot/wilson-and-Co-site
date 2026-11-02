@@ -194,6 +194,19 @@ export const allProjects: Project[] = [
 // Projects without photos stay off the site until they have some.
 export const projects = allProjects.filter((p) => p.images.length > 0);
 
+// The six on the home page, in order. Swap Entertainment Heaven for Barnes once Barnes has photos.
+const FEATURED = [
+  'warm-minimalism-in-sant-antoni',
+  'japandi-style-in-clot',
+  'eixample-bathroom',
+  'classical-beauty',
+  'industrial-clapham',
+  'entertainment-heaven',
+];
+export const featuredProjects = FEATURED.map((slug) => projects.find((p) => p.slug === slug)).filter(
+  (p): p is Project => Boolean(p),
+);
+
 export type Testimonial = { quote: string; name: string; place: string; lang: 'en' | 'es' };
 
 export const testimonials: Testimonial[] = [

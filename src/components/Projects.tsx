@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { projects, type Project } from '../content';
+import { featuredProjects, projects, type Project } from '../content';
 import { Img } from './Img';
 import { withItalics } from '../italics';
 
@@ -7,15 +7,10 @@ import { withItalics } from '../italics';
 // small left, large right, medium centre-left, small right.
 const PATTERN = ['tile-a', 'tile-b', 'tile-c', 'tile-d'];
 
-// Home: projects in pairs, one large and one small photo at the same height.
-// The earlier project in each pair (the stronger one) gets the large photo,
-// and the sides swap every row.
-function homeTile(i: number) {
-  const row = Math.floor(i / 2);
-  const big = i % 2 === 0;
-  const left = row % 2 === 0 ? big : !big;
-  return { className: `${big ? 'tile-big' : 'tile-small'} ${left ? 'is-left' : 'is-right'}`, row: row + 1 };
-}
+// Home card details: the neighbourhood and the main kind of work.
+const place = (p: Project) => (p.location ?? '').split(',')[0];
+const kind = (p: Project) =>
+  p.categories.includes('Interior design') ? 'Interior design' : p.categories.slice(0, 2).join(', ');
 
 function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: () => void; onGo: (p: Project) => void }) {
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -110,17 +105,23 @@ export function Projects() {
       <h2 id="projects-title" className="section-label projects-label">
         Featured projects
       </h2>
-      <ul className="project-list">
-        {projects.map((p, i) => (
-          <li key={p.slug} className={homeTile(i).className} style={{ gridRow: homeTile(i).row }}>
+      {/* Large cards that stack over each other as you scroll. */}
+      <ul className="project-cards">
+        {featuredProjects.map((p, i) => (
+          <li key={p.slug} className="project-card">
             <Img src={p.image} alt="" />
-            <div className="project-caption">
-              <h3>{p.title}</h3>
-              {/* Its click area stretches over the whole tile. */}
-              <button type="button" className="more" onClick={() => setActive(p)} aria-label={`${p.title}, more`}>
-                More
-              </button>
+            <div className="card-meta" aria-hidden="true">
+              <span>{String(i + 1).padStart(2, '0')}</span>
+              <span>{p.title}</span>
+              <span>{place(p)}</span>
+              <span>{kind(p)}</span>
             </div>
+            <div className="card-title">
+              <h3>{p.title}</h3>
+              {p.location && <p>{p.location}</p>}
+            </div>
+            {/* Its click area covers the whole card. */}
+            <button type="button" className="card-open" onClick={() => setActive(p)} aria-label={`${p.title}, open project`} />
           </li>
         ))}
       </ul>
