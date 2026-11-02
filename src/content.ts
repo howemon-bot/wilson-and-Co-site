@@ -70,9 +70,9 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const film = {
-  src: '/videos/WilsonandCo_Video_1080_HR.mp4',
-  // Stand-in until the film and its poster are added to public/videos and public/images.
-  poster: '/images/hero-japandi-clot-living.jpg',
+  // Silent 17s web cut of the brand film (re-edit pending).
+  src: '/videos/wilson-and-co-film.mp4',
+  poster: '/images/film-poster.jpg',
   label: 'Wilson & Co film',
 };
 
