@@ -19,6 +19,7 @@
   --t-name: clamp(1.25rem, 1.7vw, 1.5rem);     /* 20 → 24px */
   --t-body: clamp(1.0625rem, 1.25vw, 1.125rem); /* 17 → 18px */
   --t-small: 0.9375rem;                        /* 15px, side paragraphs */
+  --gap-section: clamp(6.5rem, 17vh, 10rem);      /* the one space between sections */
   --t-label: 0.8125rem;                        /* 13px */
 }
 
@@ -247,7 +248,7 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
   column-gap: clamp(1rem, 1.4vw, 1.5rem);
-  padding: clamp(5rem, 12vh, 8rem) 40px;
+  padding: var(--gap-section) 40px;
 }
 /* Small section labels under a thin line ("Services", "Featured projects"). */
 .section-label {
@@ -327,7 +328,7 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
   column-gap: clamp(1rem, 1.4vw, 1.5rem);
-  padding: 0 40px clamp(5rem, 12vh, 8rem);
+  padding: 0 40px var(--gap-section);
 }
 .projects .projects-label { position: sticky; top: 104px; margin: 0; }
 .project-cards { margin: 0; padding: 0; list-style: none; }
@@ -519,7 +520,7 @@ html.is-project-open { overflow: hidden; }
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
   column-gap: clamp(1rem, 1.4vw, 1.5rem);
-  padding: clamp(5rem, 12vh, 8rem) 40px 0;
+  padding: 0 40px var(--gap-section);
 }
 .quotes-body { padding-top: 0.9rem; border-top: 1px solid var(--ink); }
 .quotes-stack { display: grid; }
@@ -560,7 +561,7 @@ html.is-project-open { overflow: hidden; }
 .quote-arrows button:first-child:hover { transform: translateX(-3px); }
 .quote-arrows button:last-child:hover { transform: translateX(3px); }
 
-.team { padding: clamp(5rem, 12vh, 8rem) 40px 0; }
+.team { padding: 0 40px var(--gap-section); }
 .team .section-label { margin-bottom: clamp(1.75rem, 4vh, 2.5rem); }
 .team-intro { max-width: 44rem; font-size: var(--t-name); line-height: 1.4; }
 .team ul {
@@ -580,7 +581,7 @@ html.is-project-open { overflow: hidden; }
 .socials a { display: inline-flex; color: var(--ink); }
 
 /* Contact: one big address, then the three emails small. */
-.contact { padding: clamp(5rem, 12vh, 8rem) 40px clamp(4rem, 10vh, 6rem); }
+.contact { padding: 0 40px clamp(4rem, 10vh, 6rem); }
 .contact-big {
   display: block;
   width: fit-content;
@@ -697,7 +698,8 @@ html.is-project-open { overflow: hidden; }
   }
   .hero-media { grid-row: 1; height: 64svh; min-height: 340px; }
   .hero-text { grid-row: 2; padding: 2.75rem 20px 0; gap: 1.75rem; }
-  .services { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; padding: 4.5rem 20px; }
+  :root { --gap-section: 5.5rem; }
+  .services { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; padding: var(--gap-section) 20px; }
   .quotes { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
   .services li { grid-template-columns: minmax(0, 1fr); padding-bottom: 1.6rem; }
   .services p { padding-top: 1rem; }
