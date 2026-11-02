@@ -1,14 +1,10 @@
 import { company, contacts } from '../content';
-import { Logo } from './Logo';
 
 const general = contacts.find((c) => c.name === 'General enquiries') ?? contacts[contacts.length - 1];
 
 export function Footer() {
   return (
     <footer className="site-footer">
-      <a className="footer-mark" href="#top" aria-label="Wilson & Co, back to top">
-        <Logo />
-      </a>
       <div className="footer-main">
         <p className="footer-place">Barcelona, Spain</p>
         <a className="footer-link footer-email" href={`mailto:${general.email}`}>

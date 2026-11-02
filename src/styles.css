@@ -562,18 +562,19 @@ html.is-project-open { overflow: hidden; }
 .contact li { padding-top: 0.9rem; border-top: 1px solid var(--line); }
 .contact li p { margin-bottom: 0.2rem; color: #6b6b6b; }
 
-/* Footer: a teal block in cream, the wordmark across the top. */
+/* Footer: a calm teal block in cream; the content sits at the bottom. */
 .site-footer {
   display: flex;
   flex-direction: column;
-  gap: clamp(4rem, 12vh, 8rem);
+  justify-content: flex-end;
+  gap: clamp(3rem, 8vh, 5rem);
+  min-height: clamp(320px, 46vh, 460px);
   margin-top: clamp(2rem, 6vh, 4rem);
   padding: clamp(2.5rem, 6vh, 4rem) 40px 28px;
   border-radius: 20px 20px 0 0;
   background: var(--teal);
   color: var(--paper);
 }
-.footer-mark { display: block; color: var(--paper); line-height: 0; }
 .footer-main {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
