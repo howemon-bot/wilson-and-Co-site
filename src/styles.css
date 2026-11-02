@@ -705,6 +705,7 @@ html.is-project-open { overflow: hidden; }
   .hero-media { grid-row: 1; height: 64svh; min-height: 340px; }
   .hero-text { grid-row: 2; padding: 2.75rem 20px 0; gap: 1.75rem; }
   :root { --gap-section: 5.5rem; }
+  .film { height: 170vh; } /* a shorter, quicker hand-over on phones */
   .services { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; padding: var(--gap-section) 20px; }
   .quotes { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
   .services li { grid-template-columns: minmax(0, 1fr); padding-bottom: 1.6rem; }
