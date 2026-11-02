@@ -44,14 +44,15 @@ export function Film() {
       const box = el.getBoundingClientRect();
       const run = box.height - window.innerHeight;
       const p = run > 0 ? clamp(-box.top / run) : 1;
-      // The W window holds, then the film rises; the white W shows once the
-      // film is behind it and fades out by the end. Phones skip the hold.
+      // Desktop: the W window holds, the film rises, a white W shows over it
+      // and fades out. Phones: the film rises straight away and simply covers
+      // the W, with no white W on top.
       const phone = size.w <= 800;
-      const start = phone ? 0.04 : 0.25;
-      const span = phone ? 0.5 : 0.45;
+      const start = phone ? 0 : 0.25;
+      const span = phone ? 0.38 : 0.45;
       const rise = ease(clamp((p - start) / span));
       riseRef.current.setAttribute('y', String(size.h * (1 - rise)));
-      const on = clamp((p - (start + span * 0.4)) / 0.1);
+      const on = phone ? 0 : clamp((p - (start + span * 0.4)) / 0.1);
       const off = clamp((p - (start + span + 0.08)) / 0.14);
       markRef.current.style.opacity = String(on * (1 - off));
     };
