@@ -71,7 +71,8 @@ export const heroSlides: HeroSlide[] = [
 
 export const film = {
   src: '/videos/WilsonandCo_Video_1080_HR.mp4',
-  poster: '/images/Video_WilsonAndCo_Poster.png',
+  // Stand-in until the film and its poster are added to public/videos and public/images.
+  poster: '/images/hero-japandi-clot-living.jpg',
   label: 'Wilson & Co film',
 };
 
