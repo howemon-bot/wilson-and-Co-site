@@ -655,11 +655,11 @@ html.is-project-open { overflow: hidden; }
   .project-tags, .project-text, .project-facts { grid-column: 1; }
   .project-pager { padding-inline: 20px; }
   .team ul,
-  .contact ul,
+  .contact ul { grid-template-columns: 1fr; }
   .site-footer { padding-inline: 20px; border-radius: 14px 14px 0 0; }
   .footer-place, .footer-email { grid-column: 1 / -1; }
   .footer-social { grid-column: 1 / -1; grid-row: 3; justify-self: start; }
-  .team, .contact { padding-inline: 1.2rem; }
+  .team, .contact { padding-inline: 20px; }
 }
 
 /* Opening sequence (first visit) */
