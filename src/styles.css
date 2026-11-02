@@ -5,7 +5,9 @@
   --teal: #005d72;
   --muted: #adadad;
   --header: 72px;
-  --font: "brandon-grotesque", "Futura", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  /* Neue Haas Grotesk: Text for reading sizes, Display for 20px and up. */
+  --font: "neue-haas-grotesk-text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "neue-haas-grotesk-display", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --ease: cubic-bezier(0.76, 0, 0.24, 1);
 
   /* Type scale. One weight (Regular) everywhere; size makes the hierarchy.
@@ -34,7 +36,7 @@ body {
   font-family: var(--font);
   font-size: var(--t-body);
   font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -45,12 +47,17 @@ button, input { font: inherit; color: inherit; }
 a { color: inherit; }
 ul { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3, p { margin: 0; }
-h1, h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.15; }
-strong, b { font-weight: 500; }
+h1, h2, h3 { font-weight: 400; letter-spacing: -0.005em; line-height: 1.15; }
+/* Display cut for everything at 20px and up. */
+h1, h2, h3, .display, .hero-caption, .vtitle, .ethos a, .team-intro,
+.kicker, .tags, .role, .quotes figcaption, .site-footer h2, .legal, .opening-words {
+  font-family: var(--font-display);
+}
+strong, b { font-family: var(--font-display); font-weight: 500; }
 .display {
   font-size: var(--t-display);
   line-height: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 /* Small capitals: tags, roles, captions, footer headings. */
 .kicker,
@@ -420,7 +427,7 @@ strong, b { font-weight: 500; }
   margin: 0 auto 2.4rem;
   font-size: var(--t-hero);
   line-height: 0.98;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.025em;
 }
 .ethos p { max-width: 44rem; margin: 0 auto 2.4rem; }
 .ethos a { font-size: var(--t-name); text-underline-offset: 6px; }
