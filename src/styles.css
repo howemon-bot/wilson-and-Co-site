@@ -772,6 +772,8 @@ html.is-menu-open { overflow: hidden; }
 @media (max-width: 800px) {
   .menu-btn { width: 44px; height: 44px; }
   .menu-panel { width: 100%; padding: 120px 20px 32px; }
+  .is-menu-open .site-header .logo { color: var(--paper); }
+  .is-menu-open .site-header.is-solid { background: transparent; box-shadow: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .menu-panel, .menu-links a { transition: none; }
