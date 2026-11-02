@@ -604,7 +604,7 @@ html.is-project-open { overflow: hidden; }
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 0.8rem 2rem;
-  padding-top: 1rem;
+  padding: 1rem 2.75rem 0 0; /* room for the back-to-top arrow */
   border-top: 1px solid rgba(246, 241, 233, 0.3);
   font-size: 0.75rem;
   letter-spacing: 0.12em;
