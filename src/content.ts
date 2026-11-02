@@ -48,13 +48,6 @@ export const heroSlides: HeroSlide[] = [
     zoom: 1,
   },
   {
-    image: '/images/hero-sant-antoni-kitchen.jpg',
-    alt: 'The open kitchen in Sant Antoni: grey handleless cabinets, a lit terracotta tile splashback and an oak island with finger-jointed corners under two copper pendants',
-    caption: 'Open Kitchen, Sant Antoni',
-    focus: '70% 60%',
-    zoom: 1,
-  },
-  {
     image: '/images/hero-japandi-clot-terrace.jpg',
     alt: 'The terrace of the Japandi apartment in Clot: rattan chairs and a stone table under climbing plants, seen through a black-framed glass door',
     caption: 'Indoor Courtyard, Barcelona',

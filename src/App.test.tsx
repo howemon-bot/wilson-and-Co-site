@@ -18,14 +18,11 @@ describe('App', () => {
     expect(italics).toEqual(['Barcelona', 'local materials', 'really matters']);
   });
 
-  it('has hero slides with a counter that moves to the next one', async () => {
-    const user = userEvent.setup();
-    expect(document.querySelectorAll('.hero .slide')).toHaveLength(heroSlides.length);
-    const counter = screen.getByRole('button', { name: new RegExp(`Slide 1 of ${heroSlides.length}`) });
-    expect(counter).toHaveTextContent(`1 / ${heroSlides.length}`);
-    await user.click(counter);
-    expect(counter).toHaveTextContent(`2 / ${heroSlides.length}`);
-    expect(screen.getByRole('link', { name: new RegExp(heroSlides[1].caption) })).toHaveAttribute('href', '#projects');
+  it('has hero slides that start on the first photograph', () => {
+    const slides = document.querySelectorAll('.hero .slide');
+    expect(slides).toHaveLength(heroSlides.length);
+    expect(slides[0]).toHaveClass('is-active');
+    expect(slides[1]).toHaveAttribute('aria-hidden', 'true');
   });
 
   it('shows the wordmark as the header logo', () => {

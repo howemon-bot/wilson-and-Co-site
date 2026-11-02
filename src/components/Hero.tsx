@@ -42,19 +42,6 @@ export function Hero() {
           </div>
         ))}
       </div>
-      <div className="hero-foot">
-        <a className="hero-caption" href="#projects" aria-live="polite">
-          {heroSlides[current].caption} <span aria-hidden="true">→</span>
-        </a>
-        <button
-          className="hero-count"
-          type="button"
-          aria-label={`Slide ${current + 1} of ${count}. Show the next slide`}
-          onClick={() => setCurrent((i) => (i + 1) % count)}
-        >
-          {current + 1} / {count}
-        </button>
-      </div>
     </section>
   );
 }
