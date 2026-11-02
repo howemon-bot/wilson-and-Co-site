@@ -335,6 +335,7 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   row-gap: clamp(3rem, 8vh, 6rem);
   margin: 0;
   padding: 0 40px clamp(5rem, 12vh, 8rem);
+  list-style: none;
 }
 .tile-a { grid-column: 1 / span 4; }
 .tile-b { grid-column: 6 / span 7; }
