@@ -1,6 +1,5 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { Intro } from './components/Intro';
 import { Film } from './components/Film';
 import { Services } from './components/Services';
 import { Projects } from './components/Projects';
@@ -11,6 +10,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { BackToTop } from './components/BackToTop';
 import { Opening } from './components/Opening';
+import { CursorDot } from './components/CursorDot';
 
 export default function App() {
   return (
@@ -18,7 +18,6 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <Intro />
         <Film />
         <Services />
         <Projects />
@@ -30,6 +29,7 @@ export default function App() {
       <Footer />
       <BackToTop />
       <Opening />
+      <CursorDot />
     </>
   );
 }

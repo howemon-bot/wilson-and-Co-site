@@ -15,9 +15,9 @@ export const company = {
 };
 
 export const hero = {
-  kicker: 'Renovation & installation studio',
-  heading:
-    'Wilson & Co is a design-led studio for interiors, renovations and installations in Barcelona and the surrounding areas. We work with local materials wherever we can and take care of every detail, so you can focus on what really matters.',
+  heading: 'A design-led studio for interiors, renovations and installations.',
+  // *word* is set in italics.
+  text: 'Working across *Barcelona* and the surrounding areas, we choose *local materials* and makers and take care of every detail, so you can focus on what *really matters*.',
 };
 
 export type HeroSlide = {
@@ -28,12 +28,10 @@ export type HeroSlide = {
   focus: string;
   /** Starting zoom. Above 1 crops in on the focus point. */
   zoom: number;
-  /** 'light' photos switch the logo and menu over them to black. */
-  tone: 'dark' | 'light';
 };
 
 // Slides that move on their own, in this order. Add retouched project
-// photographs here; 'light' ones switch the header to black.
+// photographs here.
 export const heroSlides: HeroSlide[] = [
   {
     image: '/images/hero-wandsworth.jpg',
@@ -41,7 +39,6 @@ export const heroSlides: HeroSlide[] = [
     caption: 'Garden Extension, Wandsworth',
     focus: '50% 60%',
     zoom: 1,
-    tone: 'dark',
   },
   {
     image: '/images/hero-japandi-clot-living.jpg',
@@ -49,7 +46,6 @@ export const heroSlides: HeroSlide[] = [
     caption: 'Japandi Living Room, Clot',
     focus: '55% 62%',
     zoom: 1,
-    tone: 'light',
   },
   {
     image: '/images/hero-sant-antoni-kitchen.jpg',
@@ -57,7 +53,6 @@ export const heroSlides: HeroSlide[] = [
     caption: 'Open Kitchen, Sant Antoni',
     focus: '70% 60%',
     zoom: 1,
-    tone: 'light',
   },
   {
     image: '/images/hero-japandi-clot-terrace.jpg',
@@ -65,7 +60,6 @@ export const heroSlides: HeroSlide[] = [
     caption: 'Indoor Courtyard, Barcelona',
     focus: '50% 62%',
     zoom: 1,
-    tone: 'light',
   },
 ];
 

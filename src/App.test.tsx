@@ -13,6 +13,11 @@ describe('App', () => {
     expect(screen.getByRole('heading', { level: 1, name: hero.heading })).toBeInTheDocument();
   });
 
+  it('sets the starred words of the hero text in italics', () => {
+    const italics = [...document.querySelectorAll('.hero-text em')].map((e) => e.textContent);
+    expect(italics).toEqual(['Barcelona', 'local materials', 'really matters']);
+  });
+
   it('has hero slides with a counter that moves to the next one', async () => {
     const user = userEvent.setup();
     expect(document.querySelectorAll('.hero .slide')).toHaveLength(heroSlides.length);
