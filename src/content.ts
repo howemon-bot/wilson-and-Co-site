@@ -17,7 +17,7 @@ export const company = {
 export const hero = {
   heading: 'A design-led studio for interiors, renovations and installations.',
   // *word* is set in italics.
-  text: 'Working across *Barcelona* and the surrounding areas, we choose *local materials* and makers and take care of every detail, so you can focus on what *really matters*.',
+  text: 'Working across *Barcelona* and the surrounding areas, we choose *local materials* and skilled makers, taking care of every detail so you can focus on what *really matters*.',
 };
 
 export type HeroSlide = {
