@@ -3,9 +3,19 @@ import { projects, type Project } from '../content';
 import { Img } from './Img';
 import { withItalics } from '../italics';
 
-// Photos sit in a staggered pattern that repeats every four:
+// Project page photos sit in a staggered pattern that repeats every four:
 // small left, large right, medium centre-left, small right.
 const PATTERN = ['tile-a', 'tile-b', 'tile-c', 'tile-d'];
+
+// Home: projects in pairs, one large and one small photo at the same height.
+// The earlier project in each pair (the stronger one) gets the large photo,
+// and the sides swap every row.
+function homeTile(i: number) {
+  const row = Math.floor(i / 2);
+  const big = i % 2 === 0;
+  const left = row % 2 === 0 ? big : !big;
+  return { className: `${big ? 'tile-big' : 'tile-small'} ${left ? 'is-left' : 'is-right'}`, row: row + 1 };
+}
 
 function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: () => void; onGo: (p: Project) => void }) {
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -102,7 +112,7 @@ export function Projects() {
       </h2>
       <ul className="project-list">
         {projects.map((p, i) => (
-          <li key={p.slug} className={PATTERN[i % PATTERN.length]}>
+          <li key={p.slug} className={homeTile(i).className} style={{ gridRow: homeTile(i).row }}>
             <Img src={p.image} alt="" />
             <div className="project-caption">
               <h3>{p.title}</h3>
