@@ -562,30 +562,57 @@ html.is-project-open { overflow: hidden; }
 .contact li { padding-top: 0.9rem; border-top: 1px solid var(--line); }
 .contact li p { margin-bottom: 0.2rem; color: #6b6b6b; }
 
-.site-footer { background: #fff; padding: 4.2rem 8vw 2.5rem; }
-.footer-top {
+/* Footer: a teal block in cream, the wordmark across the top. */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 12vh, 8rem);
+  margin-top: clamp(2rem, 6vh, 4rem);
+  padding: clamp(2.5rem, 6vh, 4rem) 40px 28px;
+  border-radius: 20px 20px 0 0;
+  background: var(--teal);
+  color: var(--paper);
+}
+.footer-mark { display: block; color: var(--paper); line-height: 0; }
+.footer-main {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(1rem, 2vw, 2rem);
+  row-gap: 1.6rem;
+  align-items: end;
 }
-.site-footer .logo {
-  display: block;
-  width: 190px;
-  color: var(--teal);
-  line-height: 0;
+.footer-place {
+  grid-column: 1 / span 6;
+  font-family: var(--font-display);
+  font-size: var(--t-project);
+  line-height: 1.15;
 }
-.site-footer h2 { margin-bottom: 1rem; }
-.site-footer li + li { margin-top: 0.35rem; }
-.site-footer a { text-decoration: none; }
-.site-footer a:hover { color: var(--teal); }
-.legal {
-  margin-top: 4.5rem;
-  color: var(--muted);
+.footer-email { grid-column: 1 / span 6; grid-row: 2; }
+.footer-social { grid-column: 9 / span 4; grid-row: 2; justify-self: end; }
+.footer-link {
+  width: fit-content;
+  font-size: var(--t-small);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: opacity 0.35s ease;
 }
-.privacy { max-width: 36rem; margin-top: 2.2rem; }
-.privacy h2 { margin-bottom: 0.5rem; }
-.privacy p { color: #444; }
+.footer-link span { display: inline-block; margin-left: 0.25em; transition: transform 0.4s var(--ease); }
+.footer-link:hover span { transform: translate(2px, -2px); }
+.footer-link:hover { opacity: 0.75; }
+.footer-base {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.8rem 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(246, 241, 233, 0.3);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+.privacy summary { cursor: pointer; list-style: none; }
+.privacy summary::-webkit-details-marker { display: none; }
+.privacy summary:hover { opacity: 0.75; }
+.privacy p { max-width: 28rem; margin-top: 0.6rem; letter-spacing: 0.02em; opacity: 0.8; }
 
 .to-top {
   position: fixed;
@@ -629,8 +656,9 @@ html.is-project-open { overflow: hidden; }
   .project-pager { padding-inline: 20px; }
   .team ul,
   .contact ul,
-  .footer-top { grid-template-columns: 1fr; }
-  .site-footer { padding-inline: 1.4rem; }
+  .site-footer { padding-inline: 20px; border-radius: 14px 14px 0 0; }
+  .footer-place, .footer-email { grid-column: 1 / -1; }
+  .footer-social { grid-column: 1 / -1; grid-row: 3; justify-self: start; }
   .team, .contact { padding-inline: 1.2rem; }
 }
 

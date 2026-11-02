@@ -1,38 +1,30 @@
-import { company } from '../content';
+import { company, contacts } from '../content';
 import { Logo } from './Logo';
+
+const general = contacts.find((c) => c.name === 'General enquiries') ?? contacts[contacts.length - 1];
 
 export function Footer() {
   return (
     <footer className="site-footer">
-      <div className="footer-top">
-        <a className="logo" href="#top">
-          <Logo />
+      <a className="footer-mark" href="#top" aria-label="Wilson & Co, back to top">
+        <Logo />
+      </a>
+      <div className="footer-main">
+        <p className="footer-place">Barcelona, Spain</p>
+        <a className="footer-link footer-email" href={`mailto:${general.email}`}>
+          {general.email} <span aria-hidden="true">↗</span>
         </a>
-        <div>
-          <h2>Social</h2>
-          <ul>
-            <li>
-              <a href={company.instagram}>Instagram</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h2>Info</h2>
-          <ul>
-            <li>
-              <a href="#privacy">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#contact">Contact us</a>
-            </li>
-          </ul>
-        </div>
+        <a className="footer-link footer-social" href={company.instagram} target="_blank" rel="noreferrer">
+          Instagram <span aria-hidden="true">↗</span>
+        </a>
       </div>
-      <p className="legal">© {new Date().getFullYear()} wilsonandco</p>
-      <section id="privacy" className="privacy">
-        <h2>Privacy Policy</h2>
-        <p>We use your name and email only to answer an enquiry. We don’t sell or share those details.</p>
-      </section>
+      <div className="footer-base">
+        <p>© {new Date().getFullYear()} WILSONANDCO</p>
+        <details id="privacy" className="privacy">
+          <summary>Privacy policy</summary>
+          <p>We use your name and email only to answer an enquiry. We don’t sell or share those details.</p>
+        </details>
+      </div>
     </footer>
   );
 }
