@@ -93,7 +93,7 @@ export function Header() {
                     aria-current={active === l.href ? 'true' : undefined}
                     onClick={() => setOpen(false)}
                   >
-                    {l.label}
+                    <span>{l.label}</span>
                   </a>
                 </li>
               ))}

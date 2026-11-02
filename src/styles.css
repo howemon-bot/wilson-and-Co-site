@@ -822,8 +822,10 @@ html.is-menu-open { overflow: hidden; }
 .menu.is-open .menu-links li:nth-child(1) a { transition-delay: 0.25s; }
 .menu.is-open .menu-links li:nth-child(2) a { transition-delay: 0.32s; }
 .menu.is-open .menu-links li:nth-child(3) a { transition-delay: 0.39s; }
-.menu-links a:hover,
-.menu-links a[aria-current] { font-style: italic; }
+/* On hover the word slides a little to the right. */
+.menu-links a span { display: inline-block; transition: transform 0.5s var(--ease); }
+.menu-links a:hover span,
+.menu-links a:focus-visible span { transform: translateX(0.3em); }
 .menu-foot {
   display: grid;
   gap: 1.1rem;
