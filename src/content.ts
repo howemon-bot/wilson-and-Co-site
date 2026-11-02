@@ -72,6 +72,8 @@ export const heroSlides: HeroSlide[] = [
 export const film = {
   // Silent 17s web cut of the brand film (re-edit pending).
   src: '/videos/wilson-and-co-film.mp4',
+  // The full film with voiceover, behind the "Watch the film" button.
+  full: '/videos/wilson-and-co-film-full.mp4',
   poster: '/images/film-poster.jpg',
   label: 'Wilson & Co film',
 };

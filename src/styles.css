@@ -629,3 +629,70 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   transition-duration: 0.6s;
   transition-delay: 0s !important;
 }
+
+/* "Watch the film" and its full-screen player. */
+.film-cta {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(2rem, 7vh, 4rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8em;
+  padding: 0.95em 1.6em;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  background: rgba(20, 24, 27, 0.18);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0.6rem);
+  transition: opacity 0.6s ease, transform 0.6s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.film-cta.is-shown { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
+.film-cta:hover { background: #fff; color: var(--ink); }
+.film-cta-icon {
+  width: 0;
+  height: 0;
+  border-left: 0.62em solid currentColor;
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+}
+
+html.is-playing { overflow: hidden; }
+.film-player {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  background: #0d0f10;
+  animation: film-in 0.5s ease;
+}
+.film-player video { width: 100%; height: 100%; object-fit: contain; }
+.film-player-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  z-index: 1;
+  padding: 0.5em 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  cursor: pointer;
+}
+@keyframes film-in { from { opacity: 0; } to { opacity: 1; } }

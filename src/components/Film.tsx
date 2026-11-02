@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { FilmPlayer } from './FilmPlayer';
 import { film } from '../content';
 import { Img } from './Img';
 import { asset } from '../asset';
@@ -26,6 +27,9 @@ export function Film() {
   const sectionRef = useRef<HTMLElement>(null);
   const riseRef = useRef<SVGRectElement>(null);
   const markRef = useRef<SVGGElement>(null);
+  const ctaRef = useRef<HTMLButtonElement>(null);
+  const loopRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     const measure = () => setSize({ w: window.innerWidth, h: window.innerHeight });
@@ -40,7 +44,7 @@ export function Film() {
     const update = () => {
       frame = 0;
       const el = sectionRef.current;
-      if (!el || !riseRef.current || !markRef.current) return;
+      if (!el || !riseRef.current || !markRef.current || !ctaRef.current) return;
       const box = el.getBoundingClientRect();
       const run = box.height - window.innerHeight;
       const p = run > 0 ? clamp(-box.top / run) : 1;
@@ -51,6 +55,7 @@ export function Film() {
       const on = clamp((p - 0.42) / 0.1);
       const off = clamp((p - 0.78) / 0.14);
       markRef.current.style.opacity = String(on * (1 - off));
+      ctaRef.current.classList.toggle('is-shown', p > 0.84);
     };
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(update);
@@ -80,6 +85,7 @@ export function Film() {
             <Img src={film.poster} alt="" />
           ) : (
             <video
+              ref={loopRef}
               src={asset(film.src)}
               poster={asset(film.poster)}
               autoPlay
@@ -105,7 +111,27 @@ export function Film() {
             </g>
           </svg>
         )}
+        <button
+          ref={ctaRef}
+          type="button"
+          className={still ? 'film-cta is-shown' : 'film-cta'}
+          onClick={() => {
+            loopRef.current?.pause();
+            setPlaying(true);
+          }}
+        >
+          <span className="film-cta-icon" aria-hidden="true" />
+          Watch the film
+        </button>
       </div>
+      {playing && (
+        <FilmPlayer
+          onClose={() => {
+            setPlaying(false);
+            Promise.resolve(loopRef.current?.play()).catch(() => {});
+          }}
+        />
+      )}
     </section>
   );
 }

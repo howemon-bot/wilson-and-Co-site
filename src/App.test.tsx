@@ -1,7 +1,7 @@
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
-import { company, contacts, hero, heroSlides, projects, services, team, testimonials } from './content';
+import { company, contacts, film, hero, heroSlides, projects, services, team, testimonials } from './content';
 
 describe('App', () => {
   beforeEach(() => {
@@ -85,6 +85,16 @@ describe('App', () => {
     for (const c of contacts) {
       expect(screen.getByRole('link', { name: c.email })).toHaveAttribute('href', `mailto:${c.email}`);
     }
+  });
+
+  it('plays the full film with sound from "Watch the film", and closes on Escape', async () => {
+    const user = userEvent.setup();
+    await user.click(screen.getByRole('button', { name: 'Watch the film' }));
+    const player = screen.getByRole('dialog', { name: film.label });
+    expect(player.querySelector('video')).toHaveAttribute('src', film.full);
+    expect(screen.getByRole('button', { name: 'Close' })).toHaveFocus();
+    await user.keyboard('{Escape}');
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
   it('links to WhatsApp and Instagram', () => {
