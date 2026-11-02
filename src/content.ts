@@ -51,8 +51,8 @@ export const heroSlides: HeroSlide[] = [
     image: '/images/hero-japandi-clot-terrace.jpg',
     alt: 'The terrace of the Japandi apartment in Clot: rattan chairs and a stone table under climbing plants, seen through a black-framed glass door',
     caption: 'Indoor Courtyard, Barcelona',
-    focus: '18% 62%', // slightly right; the shelving on the left stays in
-    zoom: 1,
+    focus: '18% 100%', // slightly right; anchored low so the table shows more than the top
+    zoom: 1.12,
   },
 ];
 
