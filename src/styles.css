@@ -443,7 +443,7 @@ html.is-project-open { overflow: hidden; }
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: clamp(1rem, 2vw, 2rem);
-  padding: clamp(3rem, 7vh, 5rem) 40px clamp(3rem, 7vh, 4.5rem);
+  padding: clamp(5rem, 13vh, 8.5rem) 40px clamp(3rem, 7vh, 4.5rem);
   font-size: var(--t-small);
   letter-spacing: 0.02em;
 }
@@ -530,6 +530,7 @@ html.is-project-open { overflow: hidden; }
 .portrait { aspect-ratio: 1.2 / 1; overflow: hidden; background: #ddd6cb; }
 .portrait img,
 .portrait .ph { width: 100%; height: 100%; object-fit: cover; }
+.portrait img { object-position: 50% 25%; }
 .portrait .ph { background: #cfc6b8; color: #4e483f; }
 .team h3 { margin-top: 1rem; font-size: var(--t-name); }
 .role { margin: 0.2rem 0 0.6rem; color: var(--teal); }
