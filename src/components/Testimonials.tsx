@@ -39,8 +39,10 @@ export function Testimonials() {
         <div className="quotes-stack">
         {testimonials.map((t, i) => (
           <figure key={t.name} className={i === index ? 'is-active' : undefined} aria-hidden={i !== index}>
+            <p className="quote-highlight" lang={t.lang} aria-hidden="true">
+              “{t.highlight}”
+            </p>
             <blockquote lang={t.lang}>
-              <p className="quote-highlight" aria-hidden="true">“{t.highlight}”</p>
               <p>“{t.quote}”</p>
             </blockquote>
             <figcaption>

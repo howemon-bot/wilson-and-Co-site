@@ -523,9 +523,17 @@ html.is-project-open { overflow: hidden; }
   padding: 0 40px var(--gap-section);
 }
 .quotes-body { padding-top: 0.9rem; border-top: 1px solid var(--ink); }
-/* Quote and arrows end where Rohan's portrait ends in Team: half the column, less half the gap. */
-.quotes-stack,
-.quote-nav { max-width: calc((100% - clamp(1rem, 1.4vw, 1.5rem)) / 2); }
+/* Each quote in two halves like the Team portraits: the full quote on the left
+   (ending where Rohan's portrait ends), a highlight set large on the right. */
+.quotes figure {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(1rem, 1.4vw, 1.5rem);
+}
+.quotes blockquote { grid-column: 1; grid-row: 1; }
+.quotes figcaption { grid-column: 1; grid-row: 2; }
+.quotes .quote-highlight { grid-column: 2; grid-row: 1 / span 2; }
 .quotes-stack { display: grid; }
 /* All quotes share one space, sized to the longest, so nothing below jumps. */
 .quotes figure {
@@ -537,7 +545,7 @@ html.is-project-open { overflow: hidden; }
 }
 .quotes figure.is-active { opacity: 1; visibility: visible; transition: opacity 0.6s ease 0.15s, visibility 0s; }
 .quotes blockquote { margin: 0; }
-.quotes .quote-highlight { margin-bottom: 1.4rem; font-size: var(--t-name); line-height: 1.4; } /* same as the Team intro */
+.quotes .quote-highlight { margin-top: -0.2em; font-size: var(--t-statement); line-height: 1.15; letter-spacing: 0.005em; }
 .quotes blockquote p { font-family: var(--font); font-size: var(--t-body); line-height: 1.55; } /* same as the hero paragraph */
 .quotes figcaption { margin-top: 1.4rem; font-size: var(--t-small); letter-spacing: 0.02em; text-transform: none; color: #6b6b6b; }
 .quote-nav {
@@ -725,7 +733,10 @@ html.is-project-open { overflow: hidden; }
   .film { height: 145vh; } /* a shorter, quicker hand-over on phones */
   .services { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; padding: var(--gap-section) 20px; }
   .quotes { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
-  .quotes-stack, .quote-nav { max-width: none; }
+  .quotes figure { grid-template-columns: minmax(0, 1fr); row-gap: 1.4rem; }
+  .quotes .quote-highlight { grid-column: 1; grid-row: 1; margin-top: 0; }
+  .quotes blockquote { grid-row: 2; }
+  .quotes figcaption { grid-row: 3; }
   .services li { grid-template-columns: minmax(0, 1fr); padding-bottom: 1.6rem; }
   .services p { padding-top: 1rem; }
   .plus-circle { top: 0.6rem; }
