@@ -75,7 +75,7 @@ export function HouseDrawing({ active }: { active: HouseGroup | null }) {
   return (
     <div
       ref={ref}
-      className={`house${svg ? ' is-ready' : ''}${drawn ? ' is-drawn' : ''}${done ? ' is-done' : ''}`}
+      className={`drawing house${svg ? ' is-ready' : ''}${drawn ? ' is-drawn' : ''}${done ? ' is-done' : ''}`}
       data-active={active ?? undefined}
       dangerouslySetInnerHTML={{ __html: svg }}
     />

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { services } from '../content';
 import { withItalics } from '../italics';
 import { HouseDrawing, type HouseGroup } from './HouseDrawing';
+import { ServiceVignette } from './ServiceVignette';
 
 const GROUP: Record<string, HouseGroup> = {
   Interiors: 'interiors',
@@ -44,6 +45,7 @@ export function Services() {
               <div className="service-body" id={id} aria-hidden={!isOpen}>
                 <div>
                   <p>{withItalics(s.text)}</p>
+                  {GROUP[s.title] && <ServiceVignette group={GROUP[s.title]} open={isOpen} />}
                 </div>
               </div>
             </li>
