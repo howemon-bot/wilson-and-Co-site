@@ -5,30 +5,35 @@ import { withItalics } from '../italics';
 import { PagerArrow } from './Icons';
 import { imageSizes } from '../imageSizes';
 
-// Project page photos: one calm structure. Most sit two to a row at the same
-// height (no cropping, so a portrait simply takes a narrower share); featured
-// photos get a row of their own, a little larger.
-type Photo = { src: string; n: number; ratio: number };
-type Row = { kind: 'feature' | 'pair' | 'single'; photos: Photo[] };
-const ratioOf = (src: string) => {
+// Project page photos: one calm structure on two equal columns. Landscapes pair
+// with landscapes and portraits with portraits (in the order they come), so the
+// two photos in a row are always the same size. Featured photos get a row of
+// their own, a little larger.
+type Photo = { src: string; n: number; portrait: boolean };
+type Row = { kind: 'feature' | 'pair' | 'single'; portrait: boolean; photos: Photo[] };
+const isPortrait = (src: string) => {
   const s = imageSizes[src];
-  return s ? s[0] / s[1] : 1.5;
+  return s ? s[1] > s[0] : false;
 };
 function galleryRows(images: string[], featured: number[] = [1]): Row[] {
   const rows: Row[] = [];
-  let pending: Photo | null = null;
+  const waiting: Record<'land' | 'port', { photo: Photo; row: number } | null> = { land: null, port: null };
   images.forEach((src, i) => {
-    const p = { src, n: i + 1, ratio: ratioOf(src) };
+    const p = { src, n: i + 1, portrait: isPortrait(src) };
     if (featured.includes(p.n)) {
-      if (pending) rows.push({ kind: 'single', photos: [pending] });
-      pending = null;
-      rows.push({ kind: 'feature', photos: [p] });
-    } else if (pending) {
-      rows.push({ kind: 'pair', photos: [pending, p] });
-      pending = null;
-    } else pending = p;
+      rows.push({ kind: 'feature', portrait: p.portrait, photos: [p] });
+      return;
+    }
+    const key = p.portrait ? 'port' : 'land';
+    const w = waiting[key];
+    if (w) {
+      rows[w.row] = { kind: 'pair', portrait: p.portrait, photos: [w.photo, p] };
+      waiting[key] = null;
+    } else {
+      waiting[key] = { photo: p, row: rows.length };
+      rows.push({ kind: 'single', portrait: p.portrait, photos: [p] });
+    }
   });
-  if (pending) rows.push({ kind: 'single', photos: [pending] });
   return rows;
 }
 
@@ -102,10 +107,10 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
         {rows.map((row) => (
           <div
             key={row.photos[0].src}
-            className={`photo-row is-${row.kind}${row.photos[0].ratio < 1 ? ' is-portrait' : ''}`}
+            className={`photo-row is-${row.kind}${row.portrait ? ' is-portrait' : ''}`}
           >
             {row.photos.map((p) => (
-              <figure key={p.src} style={{ flexGrow: p.ratio, aspectRatio: String(p.ratio) }}>
+              <figure key={p.src}>
                 <Img src={p.src} alt={`${project.title}, picture ${p.n}`} />
               </figure>
             ))}
