@@ -154,7 +154,7 @@ export const allProjects: Project[] = [
   {
     slug: 'classical-beauty',
     title: 'Classical Beauty',
-    categories: ['Electrical'],
+    categories: ['Electrical', 'Automation'],
     text: "A three-bedroom house extended into a four-storey home, with a full basement designed as an entertainment room and library. Lighting was central to the brief, inside and out, and everything had to be integrated cleanly into the architecture.",
     location: 'Wandsworth, London',
     image: '/images/hero-wandsworth.jpg',
