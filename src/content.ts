@@ -148,16 +148,6 @@ export const allProjects: Project[] = [
     images: ['01_garden-at-dusk', '02_rear-extension', '03_lightwell-glazing', '04_terrace-steps', '05_library', '06_green-kitchen', '07_kitchen-island'].map((n) => shot(`classical-${n}.jpg`)),
   },
   {
-    slug: 'industrial-clapham',
-    title: 'Industrial Clapham',
-    categories: ['Automation', 'Electrical'],
-    text: "A two-bedroom house in the heart of Clapham, completely stripped back. We planned and installed all the automation and lighting to work with the architecture, giving the home a soft, warm feel.",
-    location: 'Clapham, London',
-    image: '/images/industrial-clapham.jpg',
-    // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
-    images: ['01_landing', '02_kitchen-and-garden', '03_kitchen-and-glass-bridge', '04_shower-room', '05_cloakroom'].map((n) => shot(`industrial-${n}.jpg`)),
-  },
-  {
     slug: 'coastal-solar-panels',
     title: 'Coastal Solar Panels',
     categories: ['Electrical', 'Solar'],
@@ -212,7 +202,6 @@ const FEATURED = [
   'japandi-style-in-clot',
   'eixample-bathroom',
   'classical-beauty',
-  'industrial-clapham',
   'entertainment-heaven',
 ];
 export const featuredProjects = FEATURED.map((slug) => projects.find((p) => p.slug === slug)).filter(

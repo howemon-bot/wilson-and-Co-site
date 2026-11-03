@@ -61,11 +61,11 @@ describe('App', () => {
     expect(document.getElementById(first.getAttribute('aria-controls')!)).toHaveAttribute('aria-hidden', 'false');
   });
 
-  it('shows six featured projects on the home page, in order', () => {
+  it('shows five featured projects on the home page, in order', () => {
     const list = document.querySelector('.project-cards') as HTMLElement;
     const titles = within(list).getAllByRole('heading', { level: 3 }).map((h) => h.textContent);
     expect(titles).toEqual(featuredProjects.map((p) => p.title));
-    expect(titles).toHaveLength(6);
+    expect(titles).toHaveLength(5);
     expect(titles[0]).toBe('Warm Minimalism in Sant Antoni');
     expect(projects.map((p) => p.title)).not.toContain('Barnes'); // no photos yet
   });
@@ -73,8 +73,8 @@ describe('App', () => {
   it('keeps each gallery in the order the live project page uses', async () => {
     const user = userEvent.setup();
     const coastal = projects.find((p) => p.slug === 'coastal-solar-panels')!;
-    // Coastal Solar Panels isn't featured: reach it with Next from Industrial Clapham.
-    await user.click(screen.getByRole('button', { name: /^Industrial Clapham, open project/ }));
+    // Coastal Solar Panels isn't featured: reach it with Next from Classical Beauty.
+    await user.click(screen.getByRole('button', { name: /^Classical Beauty, open project/ }));
     await user.click(within(screen.getByRole('dialog')).getByRole('button', { name: /^Next/ }));
     const gallery = document.getElementById('project-gallery')!;
     const frames = within(gallery).getAllByRole('img');

@@ -180,26 +180,6 @@ export const imageSizes: Record<string, [number, number]> = {
 1800,
 1446
 ],
-"/images/gallery/industrial-01_landing.jpg": [
-1800,
-1014
-],
-"/images/gallery/industrial-02_kitchen-and-garden.jpg": [
-1746,
-1013
-],
-"/images/gallery/industrial-03_kitchen-and-glass-bridge.jpg": [
-1800,
-1013
-],
-"/images/gallery/industrial-04_shower-room.jpg": [
-1013,
-1800
-],
-"/images/gallery/industrial-05_cloakroom.jpg": [
-1013,
-1800
-],
 "/images/gallery/sant-antoni-01_kitchen-and-dining.jpg": [
 1800,
 1094
@@ -263,10 +243,6 @@ export const imageSizes: Record<string, [number, number]> = {
 "/images/hero-wandsworth.jpg": [
 1500,
 1418
-],
-"/images/industrial-clapham.jpg": [
-1800,
-1702
 ],
 "/images/monica-howe.jpg": [
 1080,
