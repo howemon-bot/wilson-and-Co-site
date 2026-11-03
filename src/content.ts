@@ -136,6 +136,8 @@ export const allProjects: Project[] = [
     image: '/images/eixample-bathroom.jpg',
     // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
     images: ['01_vaulted-bathroom', '02_vanity-and-window', '03_shower-wall', '04_shower-shelves', '05_basin', '06_tap-detail', '07_floor-tiles'].map((n) => shot(`eixample-${n}.jpg`)),
+  },
+  {
     slug: 'classical-beauty',
     title: 'Classical Beauty',
     categories: ['Electrical'],
@@ -144,6 +146,8 @@ export const allProjects: Project[] = [
     image: '/images/hero-wandsworth.jpg',
     // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
     images: ['01_garden-at-dusk', '02_rear-extension', '03_lightwell-glazing', '04_terrace-steps', '05_library', '06_green-kitchen', '07_kitchen-island'].map((n) => shot(`classical-${n}.jpg`)),
+  },
+  {
     slug: 'industrial-clapham',
     title: 'Industrial Clapham',
     categories: ['Automation', 'Electrical'],
@@ -152,6 +156,8 @@ export const allProjects: Project[] = [
     image: '/images/industrial-clapham.jpg',
     // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
     images: ['01_landing', '02_kitchen-and-garden', '03_kitchen-and-glass-bridge', '04_shower-room', '05_cloakroom'].map((n) => shot(`industrial-${n}.jpg`)),
+  },
+  {
     slug: 'coastal-solar-panels',
     title: 'Coastal Solar Panels',
     categories: ['Electrical', 'Solar'],
@@ -160,6 +166,8 @@ export const allProjects: Project[] = [
     image: '/images/coastal-solar.jpg',
     // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
     images: ['01_roof-and-sea-view', '02_panels-towards-the-sea', '03_installing', '04_panels-and-skylights'].map((n) => shot(`solar-${n}.jpg`)),
+  },
+  {
     slug: 'entertainment-heaven',
     title: 'Entertainment Heaven',
     categories: ['Automation', 'Electrical'],
@@ -168,6 +176,8 @@ export const allProjects: Project[] = [
     image: '/images/entertainment-heaven.jpg',
     // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
     images: ['01_garden-facade', '02_bar', '03_bar-at-night', '04_kitchen-island', '05_kitchen-under-the-roof', '06_dining-room', '07_bathroom', '08_bath-and-niches', '09_hot-tub-terrace'].map((n) => shot(`heaven-${n}.jpg`)),
+  },
+  {
     slug: 'clapham-south',
     title: 'Clapham South',
     categories: ['Automation', 'Electrical'],
@@ -176,6 +186,8 @@ export const allProjects: Project[] = [
     image: '/images/clapham-south.jpg',
     // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
     images: ['01_kitchen-and-dining', '02_dining-room', '03_rear-extension', '04_garden-seating', '05_joinery-and-steel-door', '06_library'].map((n) => shot(`claphamsouth-${n}.jpg`)),
+  },
+  {
     slug: 'barnes',
     title: 'Barnes',
     categories: ['Automation', 'Electrical'],
