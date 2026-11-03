@@ -733,7 +733,7 @@ html.is-project-open { overflow: hidden; }
   .film { height: 145vh; } /* a shorter, quicker hand-over on phones */
   .services { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; padding: var(--gap-section) 20px; }
   .quotes { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
-  .quotes figure { grid-template-columns: minmax(0, 1fr); row-gap: 1.4rem; }
+  .quotes figure { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto 1fr; row-gap: 1.4rem; }
   .quotes .quote-highlight { grid-column: 1; grid-row: 1; margin-top: 0; }
   .quotes blockquote { grid-row: 2; }
   .quotes figcaption { grid-row: 3; }
