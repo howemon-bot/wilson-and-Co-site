@@ -252,10 +252,6 @@ export const imageSizes: Record<string, [number, number]> = {
 2000,
 1289
 ],
-"/images/gallery/sarria-10_quartz-detail.jpg": [
-2000,
-1333
-],
 "/images/gallery/solar-01_roof-and-sea-view.jpg": [
 1600,
 1197

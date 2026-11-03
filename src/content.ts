@@ -148,7 +148,7 @@ export const allProjects: Project[] = [
     images: [
       '01_kitchen', '02_hob-and-oven-column', '03_sink-and-window', '04_sink-and-breakfast-nook',
       '05_glazed-dresser-and-arch', '06_reeded-glass', '07_drawers-and-tiles', '08_brass-handle',
-      '09_floor-tiles', '10_quartz-detail',
+      '09_floor-tiles',
     ].map((n) => shot(`sarria-${n}.jpg`)),
   },
   {
