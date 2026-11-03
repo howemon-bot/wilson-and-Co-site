@@ -663,8 +663,8 @@ html.is-project-open { overflow: hidden; }
   text-decoration: none;
   transition: opacity 0.35s ease;
 }
-.footer-link span { display: inline-block; margin-left: 0.25em; transition: transform 0.4s var(--ease); }
-.footer-link:hover span { transform: translate(2px, -2px); }
+.footer-link .out-arrow { display: inline-block; width: 0.75em; height: 0.75em; margin-left: 0.45em; transition: transform 0.4s var(--ease); }
+.footer-link:hover .out-arrow { transform: translate(2px, -2px); }
 .footer-link:hover { opacity: 0.75; }
 .footer-base {
   display: flex;

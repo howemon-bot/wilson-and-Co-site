@@ -1,5 +1,14 @@
 import { company, contacts } from '../content';
 
+// A thin drawn arrow: the ↗ character turns into an emoji on iPhones.
+function OutArrow() {
+  return (
+    <svg className="out-arrow" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true">
+      <path d="M1.5 10.5 10.5 1.5M3.5 1.5h7v7" fill="none" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}
+
 const general = contacts.find((c) => c.name === 'General enquiries') ?? contacts[contacts.length - 1];
 
 export function Footer() {
@@ -8,10 +17,10 @@ export function Footer() {
       <div className="footer-main">
         <p className="footer-place">Barcelona, Spain</p>
         <a className="footer-link footer-email" href={`mailto:${general.email}`}>
-          {general.email} <span aria-hidden="true">↗</span>
+          {general.email} <OutArrow />
         </a>
         <a className="footer-link footer-social" href={company.instagram} target="_blank" rel="noreferrer">
-          Instagram <span aria-hidden="true">↗</span>
+          Instagram <OutArrow />
         </a>
       </div>
       <div className="footer-base">
