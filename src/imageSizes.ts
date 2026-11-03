@@ -20,38 +20,6 @@ export const imageSizes: Record<string, [number, number]> = {
 1920,
 1080
 ],
-"/images/gallery/anna-01_kitchen.jpg": [
-1200,
-1800
-],
-"/images/gallery/anna-02_window-and-breakfast-nook.jpg": [
-1800,
-1200
-],
-"/images/gallery/anna-03_glazed-dresser.jpg": [
-1200,
-1800
-],
-"/images/gallery/anna-04_kitchen-from-the-side.jpg": [
-1200,
-1800
-],
-"/images/gallery/anna-05_oven-column.jpg": [
-1200,
-1800
-],
-"/images/gallery/anna-06_hob-and-extractor.jpg": [
-1200,
-1800
-],
-"/images/gallery/anna-07_sink.jpg": [
-1800,
-1200
-],
-"/images/gallery/anna-08_floor-tiles.jpg": [
-1800,
-1200
-],
 "/images/gallery/claphamsouth-01_kitchen-and-dining.jpg": [
 1800,
 1350
@@ -247,6 +215,46 @@ export const imageSizes: Record<string, [number, number]> = {
 "/images/gallery/sant-antoni-09_kids-room.jpg": [
 1248,
 1800
+],
+"/images/gallery/sarria-01_kitchen.jpg": [
+1322,
+2000
+],
+"/images/gallery/sarria-02_hob-and-oven-column.jpg": [
+1333,
+2000
+],
+"/images/gallery/sarria-03_sink-and-window.jpg": [
+2000,
+1352
+],
+"/images/gallery/sarria-04_sink-and-breakfast-nook.jpg": [
+2000,
+1333
+],
+"/images/gallery/sarria-05_glazed-dresser-and-arch.jpg": [
+1396,
+2000
+],
+"/images/gallery/sarria-06_reeded-glass.jpg": [
+1500,
+2000
+],
+"/images/gallery/sarria-07_drawers-and-tiles.jpg": [
+1500,
+2000
+],
+"/images/gallery/sarria-08_brass-handle.jpg": [
+1333,
+2000
+],
+"/images/gallery/sarria-09_floor-tiles.jpg": [
+2000,
+1289
+],
+"/images/gallery/sarria-10_quartz-detail.jpg": [
+2000,
+1333
 ],
 "/images/gallery/solar-01_roof-and-sea-view.jpg": [
 1600,

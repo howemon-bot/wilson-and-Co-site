@@ -143,11 +143,13 @@ export const allProjects: Project[] = [
     categories: ['Interior design'],
     text: "A full renovation of the kitchen area in a home in Sarrià. We redesigned the space around the way the family cooks and gathers, with a breakfast corner by the window and storage planned for everyday life.\n\nWhite quartz runs from the worktops up the walls, soft grey shaker cabinets keep it calm, and a glazed dresser with reeded glass and warm under-cabinet light brings depth. The patterned floor tiles and *rose walls* give the room its character.",
     location: 'Sarrià, Barcelona',
-    image: '/images/gallery/anna-01_kitchen.jpg',
+    image: '/images/gallery/sarria-01_kitchen.jpg',
+    // Monica's own edits, used as supplied.
     images: [
-      '01_kitchen', '02_window-and-breakfast-nook', '03_glazed-dresser', '04_kitchen-from-the-side',
-      '05_oven-column', '06_hob-and-extractor', '07_sink', '08_floor-tiles',
-    ].map((n) => shot(`anna-${n}.jpg`)),
+      '01_kitchen', '02_hob-and-oven-column', '03_sink-and-window', '04_sink-and-breakfast-nook',
+      '05_glazed-dresser-and-arch', '06_reeded-glass', '07_drawers-and-tiles', '08_brass-handle',
+      '09_floor-tiles', '10_quartz-detail',
+    ].map((n) => shot(`sarria-${n}.jpg`)),
   },
   {
     slug: 'classical-beauty',
