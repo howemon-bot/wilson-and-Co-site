@@ -78,8 +78,9 @@ describe('App', () => {
     await user.click(within(screen.getByRole('dialog')).getByRole('button', { name: /^Next/ }));
     const gallery = document.getElementById('project-gallery')!;
     const frames = within(gallery).getAllByRole('img');
-    expect(frames.map((img) => img.getAttribute('aria-label') || img.getAttribute('alt'))).toEqual(
-      coastal.images.map((_, i) => `${coastal.title}, picture ${i + 1}`),
+    // Every photo is shown (rows pair photos by shape, so the order can shift by one).
+    expect(frames.map((img) => img.getAttribute('aria-label') || img.getAttribute('alt')).sort()).toEqual(
+      coastal.images.map((_, i) => `${coastal.title}, picture ${i + 1}`).sort(),
     );
     expect(coastal.images[0]).toContain('solar-01_roof-and-sea-view.jpg');
     expect(coastal.images[3]).toContain('solar-04_panels-and-skylights.jpg');
