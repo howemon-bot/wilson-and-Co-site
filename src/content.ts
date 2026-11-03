@@ -102,7 +102,7 @@ const shot = (file: string) => `/images/gallery/${file}`;
 export const allProjects: Project[] = [
   {
     slug: 'warm-minimalism-in-sant-antoni',
-    title: 'Warm Minimalism in Sant Antoni',
+    title: 'Warm Minimalism',
     categories: ['Air Conditioning', 'Automation', 'Electrical', 'Interior design', 'Plumbing'],
     text: "A full renovation of a 1950s apartment in Sant Antoni. We reworked the layout, especially in the living area, to make it more open and better suited to the way people live today.\n\nThe original parquet floor was kept, restored and treated, so the home holds on to its history. Wood runs through the whole project, from made-to-measure joinery to the finishes, keeping it warm and consistent. Clean lines, soft tones and natural materials make it calm and easy to live in.",
     location: 'Sant Antoni, Barcelona',
@@ -115,7 +115,7 @@ export const allProjects: Project[] = [
   },
   {
     slug: 'japandi-style-in-clot',
-    title: 'Japandi Style in Clot',
+    title: 'Japandi Calm',
     categories: ['Electrical', 'Interior design'],
     text: "A three-storey house in El Clot, redesigned with a Japandi-inspired interior: the simplicity of Scandinavian design with the warmth of Japanese craft. Natural materials, clean lines and soft, muted tones run through every room.\n\nThe rooftop terrace now works as part of the living space, bringing in light and a sense of calm. A complete electrical upgrade sits quietly behind it all, so the home feels modern without losing its simplicity.",
     location: 'Clot, Barcelona',

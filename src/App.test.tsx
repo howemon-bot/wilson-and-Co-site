@@ -66,7 +66,7 @@ describe('App', () => {
     const titles = within(list).getAllByRole('heading', { level: 3 }).map((h) => h.textContent);
     expect(titles).toEqual(featuredProjects.map((p) => p.title));
     expect(titles).toHaveLength(6);
-    expect(titles[0]).toBe('Warm Minimalism in Sant Antoni');
+    expect(titles[0]).toBe('Warm Minimalism');
     expect(projects.map((p) => p.title)).not.toContain('Barnes'); // no photos yet
   });
 
