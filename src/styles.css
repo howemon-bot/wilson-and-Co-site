@@ -52,7 +52,8 @@ h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { font-weight: 400; letter-spacing: 0.015em; line-height: 1.15; }
 /* Display cut for everything at 20px and up. */
 h1, h2, h3, .display, .team-intro, .quote-highlight,
-.tags, .role, .site-footer h2, .legal, .opening-words, .quotes figcaption, .contact li p, .menu-topic {
+.tags, .role, .site-footer h2, .legal, .opening-words, .quotes figcaption, .contact li p, .menu-topic,
+.project-tags li, .project-facts dt, .project-facts dd {
   font-family: var(--font-display);
 }
 strong, b { font-family: var(--font-display); font-weight: 500; }
@@ -68,6 +69,9 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
 .quotes figcaption,
 .contact li p,
 .menu-topic,
+.project-tags li,
+.project-facts dt,
+.project-facts dd,
 .site-footer h2,
 .legal {
   font-size: var(--t-label);
@@ -481,7 +485,7 @@ html.is-project-open { overflow: hidden; }
   letter-spacing: 0.02em;
 }
 .project-tags { grid-column: 1 / span 2; }
-.project-tags li + li { margin-top: 0.15rem; }
+.project-tags li + li { margin-top: 0.3rem; }
 .project-text { grid-column: 3 / span 6; }
 .project-facts { grid-column: 10 / span 3; }
 .project-text p { max-width: 36rem; font-size: var(--t-small); line-height: 1.6; letter-spacing: 0.01em; }
