@@ -523,17 +523,17 @@ html.is-project-open { overflow: hidden; }
   padding: 0 40px var(--gap-section);
 }
 .quotes-body { padding-top: 0.9rem; border-top: 1px solid var(--ink); }
-/* Each quote in two halves like the Team portraits: the full quote on the left
-   (ending where Rohan's portrait ends), a highlight set large on the right. */
+/* The full quote on the left (four tenths), the highlight set large from halfway
+   (four tenths), with a tenth of air after each. */
 .quotes figure {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 4fr) minmax(0, 1fr) minmax(0, 4fr) minmax(0, 1fr);
   grid-template-rows: auto 1fr;
   column-gap: clamp(1rem, 1.4vw, 1.5rem);
 }
 .quotes blockquote { grid-column: 1; grid-row: 1; }
 .quotes figcaption { grid-column: 1; grid-row: 2; }
-.quotes .quote-highlight { grid-column: 2; grid-row: 1 / span 2; }
+.quotes .quote-highlight { grid-column: 3; grid-row: 1 / span 2; }
 .quotes-stack { display: grid; }
 /* All quotes share one space, sized to the longest, so nothing below jumps. */
 .quotes figure {
