@@ -790,6 +790,11 @@ html.is-project-open { overflow: hidden; }
   /* Instead, each service opens with its own close-up. */
   .vignette { display: block; width: 85%; margin: 1.75rem 0 0.5rem; }
   .vignette svg { overflow: hidden; }
+  /* Soft edges, like a detail cut from a sketch. */
+  .vignette {
+    -webkit-mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 62%, transparent 100%);
+    mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 62%, transparent 100%);
+  }
   .services p { padding-top: 1rem; }
   .plus-circle { top: 0.6rem; }
   .projects { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
