@@ -783,8 +783,8 @@ html.is-project-open { overflow: hidden; }
   .services li { grid-template-columns: minmax(0, 1fr); padding-bottom: 1.6rem; }
   .services-body { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; }
   .services-body ul { grid-template-rows: none; }
-  /* Small enough that the drawing and the three services fit on one screen. */
-  .house { order: -1; width: min(60%, calc(40svh * 0.693)); justify-self: center; }
+  /* Phones: no drawing. It never comes into view, so it's never downloaded. */
+  .house { display: none; }
   .services p { padding-top: 1rem; }
   .plus-circle { top: 0.6rem; }
   .projects { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
