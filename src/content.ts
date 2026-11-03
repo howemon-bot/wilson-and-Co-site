@@ -216,6 +216,7 @@ const FEATURED = [
   'japandi-style-in-clot',
   'eixample-bathroom',
   'classical-beauty',
+  'sarria-kitchen',
   'entertainment-heaven',
 ];
 export const featuredProjects = FEATURED.map((slug) => projects.find((p) => p.slug === slug)).filter(

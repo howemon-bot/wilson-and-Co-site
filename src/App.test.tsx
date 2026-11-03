@@ -61,19 +61,19 @@ describe('App', () => {
     expect(document.getElementById(first.getAttribute('aria-controls')!)).toHaveAttribute('aria-hidden', 'false');
   });
 
-  it('shows five featured projects on the home page, in order', () => {
+  it('shows six featured projects on the home page, in order', () => {
     const list = document.querySelector('.project-cards') as HTMLElement;
     const titles = within(list).getAllByRole('heading', { level: 3 }).map((h) => h.textContent);
     expect(titles).toEqual(featuredProjects.map((p) => p.title));
-    expect(titles).toHaveLength(5);
+    expect(titles).toHaveLength(6);
     expect(titles[0]).toBe('Warm Minimalism in Sant Antoni');
     expect(projects.map((p) => p.title)).not.toContain('Barnes'); // no photos yet
   });
 
   it('keeps each gallery in the order the live project page uses', async () => {
     const user = userEvent.setup();
-    const coastal = projects.find((p) => p.slug === 'coastal-solar-panels')!;
-    // Coastal Solar Panels isn't featured: reach it with Next from Classical Beauty.
+    const coastal = featuredProjects.find((p) => p.slug === 'sarria-kitchen')!;
+    // Next moves through the home page projects only: Classical Beauty → Sarrià Kitchen.
     await user.click(screen.getByRole('button', { name: /^Classical Beauty, open project/ }));
     await user.click(within(screen.getByRole('dialog')).getByRole('button', { name: /^Next/ }));
     const gallery = document.getElementById('project-gallery')!;
@@ -82,8 +82,7 @@ describe('App', () => {
     expect(frames.map((img) => img.getAttribute('aria-label') || img.getAttribute('alt')).sort()).toEqual(
       coastal.images.map((_, i) => `${coastal.title}, picture ${i + 1}`).sort(),
     );
-    expect(coastal.images[0]).toContain('solar-01_roof-and-sea-view.jpg');
-    expect(coastal.images[3]).toContain('solar-04_panels-and-skylights.jpg');
+    expect(coastal.images[0]).toContain('sarria-01_kitchen.jpg');
     await user.click(within(screen.getByRole('dialog')).getByRole('button', { name: /^Next/ }));
     expect(screen.getByRole('heading', { level: 2, name: 'Entertainment Heaven' })).toBeInTheDocument();
     await user.keyboard('{Escape}');

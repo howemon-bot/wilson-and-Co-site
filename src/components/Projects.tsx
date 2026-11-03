@@ -45,9 +45,11 @@ const kind = (p: Project) =>
 function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: () => void; onGo: (p: Project) => void }) {
   const closeRef = useRef<HTMLButtonElement>(null);
   const pageRef = useRef<HTMLDivElement>(null);
-  const i = projects.findIndex((p) => p.slug === project.slug);
-  const prev = projects[(i - 1 + projects.length) % projects.length];
-  const next = projects[(i + 1) % projects.length];
+  // Previous / Next move through the projects shown on the home page only.
+  const list = featuredProjects;
+  const i = list.findIndex((p) => p.slug === project.slug);
+  const prev = list[(i - 1 + list.length) % list.length];
+  const next = list[(i + 1) % list.length];
   const rows = galleryRows(project.images, project.featured);
 
   useEffect(() => {
