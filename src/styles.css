@@ -340,7 +340,7 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
    it and opening one doesn't change the section's height. */
 .services-body ul { display: grid; grid-template-rows: repeat(3, 1fr); }
 .services-body li { grid-template-columns: minmax(0, 1fr); align-content: start; }
-.house { width: min(80%, calc(60vh * 0.693)); justify-self: end; aspect-ratio: 1083 / 1563; } /* a detail, not a hero */
+.house { width: min(80%, calc(60vh * 0.693)); justify-self: center; aspect-ratio: 1083 / 1563; } /* a detail, not a hero */
 .house svg { display: block; width: 100%; height: auto; overflow: visible; }
 .house path { transition: opacity 0.6s ease; }
 /* Drawn in like a pen: lines first, top to bottom, then the fills. */
