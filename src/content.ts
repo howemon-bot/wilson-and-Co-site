@@ -139,7 +139,7 @@ export const allProjects: Project[] = [
   },
   {
     slug: 'sarria-kitchen',
-    title: 'Sarrià Kitchen',
+    title: 'Rose & Quartz',
     categories: ['Interior design'],
     text: "A full renovation of the kitchen area in a home in Sarrià. We redesigned the space around the way the family cooks and gathers, with a breakfast corner by the window and storage planned for everyday life.\n\nWhite quartz runs from the worktops up the walls, soft grey shaker cabinets keep it calm, and a glazed dresser with reeded glass and warm under-cabinet light brings depth. The patterned floor tiles and *rose walls* give the room its character.",
     location: 'Sarrià, Barcelona',
