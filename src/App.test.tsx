@@ -73,7 +73,7 @@ describe('App', () => {
   it('keeps each gallery in the order the live project page uses', async () => {
     const user = userEvent.setup();
     const coastal = featuredProjects.find((p) => p.slug === 'sarria-kitchen')!;
-    // Next moves through the home page projects only: Classical Beauty → Sarrià Kitchen.
+    // Next moves through the home page projects only: Classical Beauty → Rose & Quartz.
     await user.click(screen.getByRole('button', { name: /^Classical Beauty, open project/ }));
     await user.click(within(screen.getByRole('dialog')).getByRole('button', { name: /^Next/ }));
     const gallery = document.getElementById('project-gallery')!;
