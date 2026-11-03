@@ -52,7 +52,7 @@ h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { font-weight: 400; letter-spacing: 0.015em; line-height: 1.15; }
 /* Display cut for everything at 20px and up. */
 h1, h2, h3, .display, .team-intro, .quote-highlight,
-.tags, .role, .site-footer h2, .legal, .opening-words, .quotes figcaption {
+.tags, .role, .site-footer h2, .legal, .opening-words, .quotes figcaption, .contact li p, .menu-topic {
   font-family: var(--font-display);
 }
 strong, b { font-family: var(--font-display); font-weight: 500; }
@@ -61,10 +61,13 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   line-height: 1;
   letter-spacing: 0.005em;
 }
-/* Small capitals: tags, roles, captions, footer headings, testimonial names. */
+/* Small capitals: tags, roles, captions, footer headings, testimonial names,
+   contact and menu topics. */
 .tags,
 .role,
 .quotes figcaption,
+.contact li p,
+.menu-topic,
 .site-footer h2,
 .legal {
   font-size: var(--t-label);
@@ -638,7 +641,7 @@ html.is-project-open { overflow: hidden; }
   font-size: var(--t-small);
 }
 .contact li { padding-top: 0.9rem; border-top: 1px solid var(--line); }
-.contact li p { margin-bottom: 0.2rem; color: #6b6b6b; }
+.contact li p { margin-bottom: 0.35rem; color: #6b6b6b; }
 .contact-arrow { display: none; }
 
 /* Footer: a calm teal block in cream; the content sits at the bottom. */
@@ -978,7 +981,7 @@ html.is-menu-open { overflow: hidden; }
   gap: 1.1rem;
   font-size: var(--t-small);
 }
-.menu-foot p { display: grid; gap: 0.1rem; }
+.menu-foot p { display: grid; gap: 0.3rem; }
 .menu-topic { opacity: 0.7; }
 .menu-foot a { display: inline-flex; align-items: center; gap: 0.5em; width: fit-content; text-decoration: none; }
 .menu-foot .icon { width: 1em; height: 1em; flex: none; }
