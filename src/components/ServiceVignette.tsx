@@ -5,7 +5,7 @@ import installationsUrl from '../assets/vignette-installations.svg?url';
 import type { HouseGroup } from './HouseDrawing';
 
 // Phones: a close-up from the house drawing for each service, drawn in when
-// the service opens (the bathroom, the staircase, the roof with solar panels).
+// the service opens (the bathroom, the staircase, the fuse box and wiring).
 const URLS: Record<HouseGroup, string> = {
   interiors: interiorsUrl,
   renovations: renovationsUrl,
