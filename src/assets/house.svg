@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="52.9 44.5 1083.1 1562.7" class="house-svg" role="img" aria-label="A house in cross-section: interiors, renovations and installations">
-<defs><filter id="house-ink" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="1" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter>
+<defs>
 <pattern id="house-P0" patternUnits="userSpaceOnUse" x="0" y="0" width="19.1871" height="19.1871" patternTransform="matrix(0.739932 0 0 0.739932 -578.181 3686.57)">
 <path d="m21.5 4.8c0-1.3-1-2.3-2.3-2.3-1.3 0-2.3 1-2.3 2.3 0 1.3 1 2.3 2.3 2.3 1.3 0 2.3-1 2.3-2.3" fill="#006381"/>
 <path d="m11.9 0c0-1.3-1-2.3-2.3-2.3-1.3 0-2.3 1-2.3 2.3 0 1.3 1 2.3 2.3 2.3 1.3 0 2.3-1 2.3-2.3" fill="#006381"/>
@@ -55,7 +55,7 @@
 <path d="m11.9 19.2c0-1.3-1-2.3-2.3-2.3-1.3 0-2.3 1-2.3 2.3 0 1.3 1 2.3 2.3 2.3 1.3 0 2.3-1 2.3-2.3" fill="#006381"/>
 </pattern>
 </defs>
-<g filter="url(#house-ink)"><g transform="matrix(1 0 0 -1 0 1683.72)">
+<g transform="matrix(1 0 0 -1 0 1683.72)">
 <path d="m330.2 898.2 51.1-10.5 73.1 18.7-49.7 12.1z" fill="#e9eff2" data-k="fill" style="--d:1.75s" data-g="interiors"/>
 <path d="m330.2 898.2 51.1-10.5 73.1 18.7-49.7 12.1-74.5-20.3" fill="none" stroke="#006381" stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round" data-k="line" pathLength="1" style="--d:0.90s" data-g="interiors"/>
 <path d="m351.4 898.9 30.5-6.3 52.2 13.5-29.6 7.2z" fill="#e9eff2" data-k="fill" style="--d:1.85s" data-g="interiors"/>
@@ -842,4 +842,4 @@
 <path d="m659.1 597.5c-1.6-.6-3.2-1-4.8-1.1-.4 0-.7-.3-.7-.6 0-.3 .3-.7 .7-.6 1.7 .1 3.4 .5 5.1 1.1 .3 .1 .5 .4 .4 .8 0 .3-.4 .5-.7 .4" fill="#006381" data-k="fill" style="--d:2.19s" data-g="interiors"/>
 <path d="m655.1 596.4-2-.3c-.1 0-.2-.1-.3-.2-.1-.2-.2-.3-.2-.4 .1-.3 .2-.6 .5-.6 .2-.1 .3-.1 .5-.2 .1 0-.1 .1 0 0 0 0 .1 0 .1 0 .1-.1 .1-.1 .2-.1 .2 .3 .3 .7 .5 1.1-.3 .1-.7 .1-1 .2-.1-.4-.1-.8-.2-1.3 .2 0 .4 0 .6 0 .1 0 .1 0 .2 0 .1-.1-.2 0 0 0 .1-.1 .2-.1 .3-.1 .1 0 .3 0 .5-.1 .1 0 .2 0 .3 0 0 0 .1 0 .1 0 .3-.1 0-.1-.1 .2l-.1 .3c0 0 0 0 0 0 0 .1 0 .2 .1 .3 0 0 0 0 0 .1 .1 0 .2 .1 .3 .1 0 0 0 0 0 0l.3 0 0 0c.1-.1 .2-.2 .4-.3 0 0 0 0 0 .1-.1 .1-.2 .2-.4 .2-.2 .1-.4 .1-.5 0-.1-.1-.2-.2-.3-.4 0-.1 0-.3 .1-.5 .1-.1 .2-.2 .4-.3 .2 0 .4 0 .5 .1 .3 .2 .4 .6 .2 .9-.2 .4-.6 .4-1 .4-.6 .1-1.2 .2-1.9 .3-.1 0-.3-.1-.4-.2-.1-.1-.2-.2-.2-.3 0-.3 .2-.7 .5-.7 .3-.1 .6-.2 1-.2 .3-.1 .6 0 .7 .4 .1 .2 0 .6-.3 .7-.3 .2-.7 .4-1.1 .5l0-1.2 2.1 .3c.1 0 .3 .1 .3 .3 .1 .1 .1 .3 .1 .4-.1 .2-.1 .3-.3 .4-.2 .1-.3 .1-.5 .1" fill="#006381" data-k="fill" style="--d:2.24s" data-g="interiors"/>
 <path d="m113.1 1181.1 19.5-6.8 0-277 216.8-44 0-403.2-20.3-4.8 0 395.3-217.7 40.6z" fill="#006381" data-k="fill" style="--d:1.94s" data-g="renovations"/>
-</g></g></svg>
+</g></svg>
