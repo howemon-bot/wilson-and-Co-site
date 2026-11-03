@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { asset } from '../asset';
+// Imported as a URL so the file name changes with each version (no stale cache).
+import houseUrl from '../assets/house.svg?url';
 
 // Monica's house drawing, from the Illustrator file. It draws itself in the
 // first time it comes into view (lines first, like a pen, then the fills),
@@ -25,7 +26,7 @@ export function HouseDrawing({ active }: { active: HouseGroup | null }) {
     if (!el) return;
     let cancelled = false;
     const load = () =>
-      fetch(asset('/illustrations/house.svg'))
+      fetch(houseUrl)
         .then((r) => (r.ok ? r.text() : ''))
         .then((t) => !cancelled && setSvg(t))
         .catch(() => {});
