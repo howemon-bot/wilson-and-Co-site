@@ -220,101 +220,85 @@ export const imageSizes: Record<string, [number, number]> = {
 1350,
 1800
 ],
-"/images/gallery/clot_wilsonandco_10-scaled.jpg": [
+"/images/gallery/clot-01_living-room.jpg": [
 1800,
-1201
+1375
 ],
-"/images/gallery/clot_wilsonandco_13-scaled.jpg": [
+"/images/gallery/clot-02_patio-through-steel-window.jpg": [
+1800,
+1209
+],
+"/images/gallery/clot-03_patio.jpg": [
+1086,
+1800
+],
+"/images/gallery/clot-04_bar-room.jpg": [
+1340,
+1800
+],
+"/images/gallery/clot-05_green-tile-bar.jpg": [
+1800,
+1204
+],
+"/images/gallery/clot-06_green-tile-detail.jpg": [
+1800,
+1213
+],
+"/images/gallery/clot-07_open-plan-ground-floor.jpg": [
+1800,
+1228
+],
+"/images/gallery/clot-08_sideboard-and-mirror.jpg": [
 1800,
 1200
 ],
-"/images/gallery/clot_wilsonandco_14-scaled.jpg": [
-1204,
+"/images/gallery/clot-09_terrace-dining.jpg": [
+1800,
+1270
+],
+"/images/gallery/clot-10_terrace-lounge.jpg": [
+1800,
+1236
+],
+"/images/gallery/clot-11_facade.jpg": [
+1224,
 1800
 ],
-"/images/gallery/clot_wilsonandco_16-scaled.jpg": [
+"/images/gallery/sant-antoni-01_kitchen-and-dining.jpg": [
 1800,
-1201
+1099
 ],
-"/images/gallery/clot_wilsonandco_17-scaled.jpg": [
+"/images/gallery/sant-antoni-02_galley-kitchen.jpg": [
 1800,
-1201
+1244
 ],
-"/images/gallery/clot_wilsonandco_2-scaled.jpg": [
+"/images/gallery/sant-antoni-03_curved-wall-and-shelves.jpg": [
 1800,
-1201
+1235
 ],
-"/images/gallery/clot_wilsonandco_3-scaled.jpg": [
-1800,
-1200
-],
-"/images/gallery/clot_wilsonandco_4-scaled.jpg": [
-1800,
-1197
-],
-"/images/gallery/clot_wilsonandco_5-scaled.jpg": [
-1800,
-1200
-],
-"/images/gallery/clot_wilsonandco_7-scaled.jpg": [
-1165,
+"/images/gallery/sant-antoni-04_corridor.jpg": [
+1206,
 1800
 ],
-"/images/gallery/clot_wilsonandco_8-scaled.jpg": [
+"/images/gallery/sant-antoni-05_bathroom.jpg": [
 1800,
-1200
+1290
 ],
-"/images/gallery/romo_wilsonco_1-scaled.jpg": [
-1186,
+"/images/gallery/sant-antoni-06_shower-detail.jpg": [
+1135,
 1800
 ],
-"/images/gallery/romo_wilsonco_10-scaled.jpg": [
-1201,
+"/images/gallery/sant-antoni-07_green-bathroom.jpg": [
+1323,
 1800
 ],
-"/images/gallery/romo_wilsonco_11-scaled.jpg": [
-1181,
+"/images/gallery/sant-antoni-08_bar-niche.jpg": [
+1062,
 1800
 ],
-"/images/gallery/romo_wilsonco_12-scaled.jpg": [
-1201,
+"/images/gallery/sant-antoni-09_kids-room.jpg": [
+1195,
 1800
-],
-"/images/gallery/romo_wilsonco_13-scaled.jpg": [
-1800,
-1201
-],
-"/images/gallery/romo_wilsonco_2-scaled.jpg": [
-1800,
-1201
-],
-"/images/gallery/romo_wilsonco_3-scaled.jpg": [
-1201,
-1800
-],
-"/images/gallery/romo_wilsonco_4-scaled.jpg": [
-1800,
-1201
-],
-"/images/gallery/romo_wilsonco_5-scaled.jpg": [
-1800,
-1201
-],
-"/images/gallery/romo_wilsonco_6-scaled.jpg": [
-1201,
-1800
-],
-"/images/gallery/romo_wilsonco_7-scaled.jpg": [
-1800,
-1237
-],
-"/images/gallery/romo_wilsonco_8-scaled.jpg": [
-1800,
-1189
-],
-"/images/gallery/romo_wilsonco_9-scaled.jpg": [
-1800,
-1201
 ],
 "/images/hero-japandi-clot-living.jpg": [
 2000,

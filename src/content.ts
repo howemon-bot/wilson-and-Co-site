@@ -107,7 +107,11 @@ export const allProjects: Project[] = [
     text: "A full renovation of a 1950s apartment in Sant Antoni. We reworked the layout, especially in the living area, to make it more open and better suited to the way people live today.\n\nThe original parquet floor was kept, restored and treated, so the home holds on to its history. Wood runs through the whole project, from made-to-measure joinery to the finishes, keeping it warm and consistent. Clean lines, soft tones and natural materials make it calm and easy to live in.",
     location: 'Sant Antoni, Barcelona',
     image: '/images/warm-minimalism.jpg',
-    images: [8, 7, 4, 3, 2, 5, 10, 6, 9, 11, 12, 1, 13].map((n) => shot(`romo_wilsonco_${n}-scaled.jpg`)),
+    // Retouched set (straightened, one white); see Drive: Wilson/WEB_site_2026.
+    images: [
+      '01_kitchen-and-dining', '02_galley-kitchen', '03_curved-wall-and-shelves', '04_corridor', '05_bathroom',
+      '06_shower-detail', '07_green-bathroom', '08_bar-niche', '09_kids-room',
+    ].map((n) => shot(`sant-antoni-${n}.jpg`)),
   },
   {
     slug: 'japandi-style-in-clot',
@@ -116,11 +120,12 @@ export const allProjects: Project[] = [
     text: "A three-storey house in El Clot, redesigned with a Japandi-inspired interior: the simplicity of Scandinavian design with the warmth of Japanese craft. Natural materials, clean lines and soft, muted tones run through every room.\n\nThe rooftop terrace now works as part of the living space, bringing in light and a sense of calm. A complete electrical upgrade sits quietly behind it all, so the home feels modern without losing its simplicity.",
     location: 'Clot, Barcelona',
     image: '/images/hero-japandi-clot-living.jpg',
+    // Retouched set (straightened, one white); see Drive: Reve&Rory/WEB_site_2026.
     images: [
-      '/images/hero-japandi-clot-living.jpg',
-      '/images/hero-japandi-clot-terrace.jpg',
-      ...[2, 4, 16, 3, 7, 5, 8, 10, 17, 13, 14].map((n) => shot(`clot_wilsonandco_${n}-scaled.jpg`)),
-    ],
+      '01_living-room', '02_patio-through-steel-window', '03_patio', '04_bar-room', '05_green-tile-bar',
+      '06_green-tile-detail', '07_open-plan-ground-floor', '08_sideboard-and-mirror', '09_terrace-dining',
+      '10_terrace-lounge', '11_facade',
+    ].map((n) => shot(`clot-${n}.jpg`)),
   },
   {
     slug: 'eixample-bathroom',
