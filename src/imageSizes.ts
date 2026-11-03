@@ -25,8 +25,8 @@ export const imageSizes: Record<string, [number, number]> = {
 1350
 ],
 "/images/gallery/claphamsouth-02_dining-room.jpg": [
-1775,
-1344
+1800,
+1350
 ],
 "/images/gallery/claphamsouth-03_rear-extension.jpg": [
 1800,
@@ -37,68 +37,68 @@ export const imageSizes: Record<string, [number, number]> = {
 1350
 ],
 "/images/gallery/claphamsouth-05_joinery-and-steel-door.jpg": [
-1737,
-1345
+1800,
+1350
 ],
 "/images/gallery/claphamsouth-06_library.jpg": [
-1749,
-1344
+1800,
+1350
 ],
 "/images/gallery/classical-01_garden-at-dusk.jpg": [
 1800,
 1200
 ],
 "/images/gallery/classical-02_rear-extension.jpg": [
-1791,
-1196
+1800,
+1202
 ],
 "/images/gallery/classical-03_lightwell-glazing.jpg": [
-1186,
-1794
+1199,
+1800
 ],
 "/images/gallery/classical-04_terrace-steps.jpg": [
-1788,
-1194
+1800,
+1200
 ],
 "/images/gallery/classical-05_library.jpg": [
-1790,
-1194
+1800,
+1200
 ],
 "/images/gallery/classical-06_green-kitchen.jpg": [
-1791,
-1194
+1800,
+1200
 ],
 "/images/gallery/classical-07_kitchen-island.jpg": [
-1791,
-1194
+1800,
+1201
 ],
 "/images/gallery/clot-01_living-room.jpg": [
 1800,
-1375
+1200
 ],
 "/images/gallery/clot-02_patio-through-steel-window.jpg": [
 1800,
-1209
+1196
 ],
 "/images/gallery/clot-03_patio.jpg": [
-1086,
+1200,
 1800
 ],
 "/images/gallery/clot-04_bar-room.jpg": [
-1340,
+1354,
 1800
 ],
 "/images/gallery/clot-05_green-tile-bar.jpg": [
 1800,
-1204
+1200
 ],
 "/images/gallery/clot-06_green-tile-detail.jpg": [
 1800,
-1213
+1200
 ],
 "/images/gallery/clot-07_open-plan-ground-floor.jpg": [
 1800,
-1228
+1200
 ],
 "/images/gallery/clot-08_sideboard-and-mirror.jpg": [
 1800,
@@ -106,39 +106,39 @@ export const imageSizes: Record<string, [number, number]> = {
 ],
 "/images/gallery/clot-09_terrace-dining.jpg": [
 1800,
-1270
+1200
 ],
 "/images/gallery/clot-10_terrace-lounge.jpg": [
 1800,
-1236
+1200
 ],
 "/images/gallery/clot-11_facade.jpg": [
-1224,
+1368,
 1800
 ],
 "/images/gallery/eixample-01_vaulted-bathroom.jpg": [
-1328,
-1794
+1350,
+1800
 ],
 "/images/gallery/eixample-02_vanity-and-window.jpg": [
 1350,
 1800
 ],
 "/images/gallery/eixample-03_shower-wall.jpg": [
-1753,
-1344
+1800,
+1350
 ],
 "/images/gallery/eixample-04_shower-shelves.jpg": [
 1350,
 1800
 ],
 "/images/gallery/eixample-05_basin.jpg": [
-1176,
-1795
+1265,
+1800
 ],
 "/images/gallery/eixample-06_tap-detail.jpg": [
-1752,
-1344
+1800,
+1350
 ],
 "/images/gallery/eixample-07_floor-tiles.jpg": [
 1350,
@@ -149,32 +149,32 @@ export const imageSizes: Record<string, [number, number]> = {
 1446
 ],
 "/images/gallery/heaven-02_bar.jpg": [
-1741,
-1345
+1800,
+1350
 ],
 "/images/gallery/heaven-03_bar-at-night.jpg": [
-1735,
-1348
+1800,
+1350
 ],
 "/images/gallery/heaven-04_kitchen-island.jpg": [
-1194,
+1200,
 1800
 ],
 "/images/gallery/heaven-05_kitchen-under-the-roof.jpg": [
-1312,
-1794
+1350,
+1800
 ],
 "/images/gallery/heaven-06_dining-room.jpg": [
-1186,
-1797
+1200,
+1800
 ],
 "/images/gallery/heaven-07_bathroom.jpg": [
 1350,
 1800
 ],
 "/images/gallery/heaven-08_bath-and-niches.jpg": [
-1288,
-1795
+1350,
+1800
 ],
 "/images/gallery/heaven-09_hot-tub-terrace.jpg": [
 1800,
@@ -185,8 +185,8 @@ export const imageSizes: Record<string, [number, number]> = {
 1014
 ],
 "/images/gallery/industrial-02_kitchen-and-garden.jpg": [
-1669,
-1008
+1746,
+1013
 ],
 "/images/gallery/industrial-03_kitchen-and-glass-bridge.jpg": [
 1800,
@@ -202,11 +202,11 @@ export const imageSizes: Record<string, [number, number]> = {
 ],
 "/images/gallery/sant-antoni-01_kitchen-and-dining.jpg": [
 1800,
-1099
+1094
 ],
 "/images/gallery/sant-antoni-02_galley-kitchen.jpg": [
 1800,
-1244
+1237
 ],
 "/images/gallery/sant-antoni-03_curved-wall-and-shelves.jpg": [
 1800,
@@ -218,7 +218,7 @@ export const imageSizes: Record<string, [number, number]> = {
 ],
 "/images/gallery/sant-antoni-05_bathroom.jpg": [
 1800,
-1225
+1200
 ],
 "/images/gallery/sant-antoni-06_shower-detail.jpg": [
 1200,
