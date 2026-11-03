@@ -103,7 +103,7 @@ export const allProjects: Project[] = [
   {
     slug: 'warm-minimalism-in-sant-antoni',
     title: 'Warm Minimalism',
-    categories: ['Air Conditioning', 'Automation', 'Electrical', 'Interior design', 'Plumbing'],
+    categories: ['Interior design', 'Full renovation', 'Electrical', 'Plumbing', 'Air conditioning', 'Automation'],
     text: "A full renovation of a 1950s apartment in Sant Antoni. We reworked the layout, especially in the living area, to make it more open and better suited to the way people live today.\n\nThe original parquet floor was kept, restored and treated, so the home holds on to its history. Wood runs through the whole project, from made-to-measure joinery to the finishes, keeping it warm and consistent. Clean lines, soft tones and natural materials make it calm and easy to live in.",
     location: 'Sant Antoni, Barcelona',
     image: '/images/warm-minimalism.jpg',
@@ -116,7 +116,7 @@ export const allProjects: Project[] = [
   {
     slug: 'japandi-style-in-clot',
     title: 'Japandi Calm',
-    categories: ['Electrical', 'Interior design'],
+    categories: ['Interior design', 'Electrical'],
     text: "A three-storey house in El Clot, redesigned with a Japandi-inspired interior: the simplicity of Scandinavian design with the warmth of Japanese craft. Natural materials, clean lines and soft, muted tones run through every room.\n\nThe rooftop terrace now works as part of the living space, bringing in light and a sense of calm. A complete electrical upgrade sits quietly behind it all, so the home feels modern without losing its simplicity.",
     location: 'Clot, Barcelona',
     image: '/images/hero-japandi-clot-living.jpg',
@@ -130,7 +130,7 @@ export const allProjects: Project[] = [
   {
     slug: 'eixample-bathroom',
     title: 'Volta & Nolla',
-    categories: ['Electrical', 'Interior design', 'Plumbing'],
+    categories: ['Interior design', 'Full renovation', 'Electrical', 'Plumbing'],
     text: "A small bathroom, completely rethought. We restored the original volta catalana ceiling, which brings back height and character, and laid Nolla tiles for a durable, geometric floor.\n\nThe brief was about making the most of the space: careful planning, built-in storage and materials chosen to last. The result is a compact bathroom that is practical day to day and beautifully finished.",
     location: 'Eixample, Barcelona',
     image: '/images/eixample-bathroom.jpg',
@@ -140,7 +140,7 @@ export const allProjects: Project[] = [
   {
     slug: 'sarria-kitchen',
     title: 'Rose & Quartz',
-    categories: ['Interior design', 'Full renovation', 'Tiling', 'Walls', 'Painting', 'Electrical', 'Plumbing', 'Air Conditioning'],
+    categories: ['Interior design', 'Full renovation', 'Electrical', 'Plumbing', 'Air conditioning'],
     text: "A full renovation of the kitchen area in a home in Sarrià. We redesigned the space around the way the family cooks and gathers, with a breakfast corner by the window and storage planned for everyday life.\n\nWhite quartz runs from the worktops up the walls, soft grey shaker cabinets keep it calm, and a glazed dresser with reeded glass and warm under-cabinet light brings depth. The patterned floor tiles and *rose walls* give the room its character.",
     location: 'Sarrià, Barcelona',
     image: '/images/gallery/sarria-04_sink-and-breakfast-nook.jpg', // home page card
@@ -174,7 +174,7 @@ export const allProjects: Project[] = [
   {
     slug: 'entertainment-heaven',
     title: 'Entertainment Heaven',
-    categories: ['Automation', 'Electrical'],
+    categories: ['Electrical', 'Automation'],
     location: "South East London",
     text: "A refurbishment of a four-storey house in south-east London. We designed and installed the full electrical system, along with wifi throughout and integrated audio and visual. The project even included a lit tree house for the children.",
     image: '/images/entertainment-heaven.jpg',
@@ -184,7 +184,7 @@ export const allProjects: Project[] = [
   {
     slug: 'clapham-south',
     title: 'Clapham South',
-    categories: ['Automation', 'Electrical'],
+    categories: ['Electrical', 'Automation'],
     text: "A completely new electrical installation on the ground floor and basement. So the owners could keep living in the house, the three floors above were wired temporarily and later connected to the new consumer boards. Both lower floors have Rako home automation, with lighting scenes that change through the day.",
     location: 'Clapham South, London',
     image: '/images/clapham-south.jpg',
@@ -194,7 +194,7 @@ export const allProjects: Project[] = [
   {
     slug: 'barnes',
     title: 'Barnes',
-    categories: ['Automation', 'Electrical'],
+    categories: ['Electrical', 'Automation'],
     location: 'Barnes, London',
     text: "A two-storey house extended into a four-storey home, with a full basement and loft. The basement became a cinema room with a complete audio and visual setup. Strip lighting in the ceiling bulkhead and indirect lighting on the vertical garden give the space the modern feel the client was looking for.",
     // No photos yet.
