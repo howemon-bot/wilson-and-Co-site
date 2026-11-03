@@ -223,7 +223,7 @@ export const testimonials: Testimonial[] = [
     lang: 'en',
     quote:
       'Monica and Rohan took the stress out of refurbishing our home and delivered a fantastic result! From start to finish, they guided us through both the aesthetic and technical aspects. They quickly resolved every issue we encountered, either themselves or through their excellent network of professionals. The price was very competitive, and they actually saved us money by helping identify problems early on. I’d recommend them to anyone in a heartbeat!',
-    highlight: 'Monica and Rohan took the stress out of refurbishing our home and delivered a fantastic result!',
+    highlight: 'I’d recommend them to anyone in a heartbeat!',
     name: 'Rory Campbell',
     place: 'Barcelona',
   },
@@ -263,7 +263,7 @@ export const testimonials: Testimonial[] = [
     lang: 'en',
     quote:
       'I would highly recommend Rohan Wilson for any electrical job, big or small. We had a full kitchen refurb done and Rohan advised on and implemented all wiring, underfloor heating and lighting. He is extremely professional, courteous and helpful. Cost was always competitive.',
-    highlight: 'I would highly recommend Rohan Wilson for any electrical job, big or small.',
+    highlight: 'He is extremely professional, courteous and helpful.',
     name: 'Roseanne Taylor',
     place: 'London',
   },
