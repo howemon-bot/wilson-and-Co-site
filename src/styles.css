@@ -442,22 +442,20 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
 .project-photos {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  align-items: start;
   column-gap: clamp(1rem, 2vw, 2rem);
-  row-gap: clamp(3rem, 8vh, 6rem);
-  margin: 0;
+  row-gap: clamp(1rem, 2vw, 2rem); /* the same gap between photos both ways */
   padding: 0 40px clamp(5rem, 12vh, 8rem);
-  list-style: none;
 }
-.tile-a { grid-column: 1 / span 4; }
-.tile-b { grid-column: 6 / span 7; }
-.tile-c { grid-column: 3 / span 6; margin-top: 2rem; }
-.tile-d { grid-column: 10 / span 3; margin-top: 10rem; }
-.tile-lead { grid-column: 3 / span 10; }
-.project-photos li { position: relative; }
-.project-photos img, .project-photos .ph { width: 100%; object-fit: cover; aspect-ratio: 3 / 2; }
-.tile-a img, .tile-a .ph { aspect-ratio: 4 / 3; }
-.tile-d img, .tile-d .ph { aspect-ratio: 4 / 5; }
+/* Pairs: full width, both photos the same height. */
+.photo-row { display: flex; gap: clamp(1rem, 2vw, 2rem); grid-column: 1 / -1; }
+.photo-row figure { flex-basis: 0; margin: 0; min-width: 0; }
+.photo-row img, .photo-row .ph { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Featured: a row of its own, a little larger than a paired photo. */
+.photo-row.is-feature { grid-column: 2 / span 10; margin-block: clamp(1rem, 3vw, 2.5rem); }
+.photo-row.is-feature.is-portrait { grid-column: 4 / span 6; }
+/* A photo left over at the end: the size of one in a pair, centred. */
+.photo-row.is-single { grid-column: 4 / span 6; }
+.photo-row.is-single.is-portrait { grid-column: 5 / span 4; }
 
 /* Project page: full screen over the site. */
 html.is-project-open { overflow: hidden; }
@@ -802,9 +800,11 @@ html.is-project-open { overflow: hidden; }
   .card-meta { left: 14px; right: 14px; top: 12px; grid-template-columns: auto 1fr auto; }
   .card-meta span:nth-child(2) { display: none; }
   .card-title { left: 14px; right: 14px; bottom: 16px; }
-  .project-photos { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; padding-inline: 20px; }
-  .tile-a, .tile-b, .tile-c, .tile-d, .tile-lead { grid-column: 1; margin-top: 0; }
-  .tile-a img, .tile-a .ph, .tile-d img, .tile-d .ph { aspect-ratio: 3 / 2; }
+  .project-photos { grid-template-columns: minmax(0, 1fr); row-gap: 16px; padding-inline: 20px; }
+  .photo-row, .photo-row.is-feature, .photo-row.is-single, .photo-row.is-feature.is-portrait, .photo-row.is-single.is-portrait {
+    grid-column: 1; flex-direction: column; gap: 16px; margin-block: 0;
+  }
+  .photo-row figure { flex: none !important; width: 100%; }
   .project-head { padding: 22px 20px 0; }
   .project-meta { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
   .project-tags, .project-text, .project-facts { grid-column: 1; }

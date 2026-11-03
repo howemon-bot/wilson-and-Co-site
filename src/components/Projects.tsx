@@ -3,10 +3,34 @@ import { featuredProjects, projects, type Project } from '../content';
 import { Img } from './Img';
 import { withItalics } from '../italics';
 import { PagerArrow } from './Icons';
+import { imageSizes } from '../imageSizes';
 
-// Project page photos sit in a staggered pattern that repeats every four:
-// small left, large right, medium centre-left, small right.
-const PATTERN = ['tile-a', 'tile-b', 'tile-c', 'tile-d'];
+// Project page photos: one calm structure. Most sit two to a row at the same
+// height (no cropping, so a portrait simply takes a narrower share); featured
+// photos get a row of their own, a little larger.
+type Photo = { src: string; n: number; ratio: number };
+type Row = { kind: 'feature' | 'pair' | 'single'; photos: Photo[] };
+const ratioOf = (src: string) => {
+  const s = imageSizes[src];
+  return s ? s[0] / s[1] : 1.5;
+};
+function galleryRows(images: string[], featured: number[] = [1]): Row[] {
+  const rows: Row[] = [];
+  let pending: Photo | null = null;
+  images.forEach((src, i) => {
+    const p = { src, n: i + 1, ratio: ratioOf(src) };
+    if (featured.includes(p.n)) {
+      if (pending) rows.push({ kind: 'single', photos: [pending] });
+      pending = null;
+      rows.push({ kind: 'feature', photos: [p] });
+    } else if (pending) {
+      rows.push({ kind: 'pair', photos: [pending, p] });
+      pending = null;
+    } else pending = p;
+  });
+  if (pending) rows.push({ kind: 'single', photos: [pending] });
+  return rows;
+}
 
 // Home card details: the neighbourhood and the main kind of work.
 const place = (p: Project) => (p.location ?? '').split(',')[0];
@@ -19,7 +43,7 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
   const i = projects.findIndex((p) => p.slug === project.slug);
   const prev = projects[(i - 1 + projects.length) % projects.length];
   const next = projects[(i + 1) % projects.length];
-  const [first, ...rest] = project.images;
+  const rows = galleryRows(project.images, project.featured);
 
   useEffect(() => {
     pageRef.current?.scrollTo?.({ top: 0 });
@@ -74,16 +98,20 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
           </div>
         </dl>
       </div>
-      <ol className="project-photos" id="project-gallery">
-        <li className="tile-lead">
-          <Img src={first} alt={`${project.title}, picture 1`} />
-        </li>
-        {rest.map((src, n) => (
-          <li key={src} className={PATTERN[n % PATTERN.length]}>
-            <Img src={src} alt={`${project.title}, picture ${n + 2}`} />
-          </li>
+      <div className="project-photos" id="project-gallery">
+        {rows.map((row) => (
+          <div
+            key={row.photos[0].src}
+            className={`photo-row is-${row.kind}${row.photos[0].ratio < 1 ? ' is-portrait' : ''}`}
+          >
+            {row.photos.map((p) => (
+              <figure key={p.src} style={{ flexGrow: p.ratio, aspectRatio: String(p.ratio) }}>
+                <Img src={p.src} alt={`${project.title}, picture ${p.n}`} />
+              </figure>
+            ))}
+          </div>
         ))}
-      </ol>
+      </div>
       <nav className="project-pager" aria-label="More projects">
         <button type="button" onClick={() => onGo(prev)}>
           <PagerArrow dir="left" />

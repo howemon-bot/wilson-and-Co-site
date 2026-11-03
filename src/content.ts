@@ -85,6 +85,8 @@ export type Project = {
   slug: string;
   title: string;
   categories: string[];
+  /** Picture numbers (1 = first) shown larger, on a row of their own. Default: [1]. */
+  featured?: number[];
   /** Neighbourhood and city, shown on the project page. */
   location?: string;
   /** A few sentences for the project page, from the current site. Blank lines split paragraphs. */
