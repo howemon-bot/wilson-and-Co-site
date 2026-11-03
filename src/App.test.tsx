@@ -96,6 +96,13 @@ describe('App', () => {
     expect(document.querySelectorAll('.quotes blockquote[lang="es"]')).toHaveLength(spanish);
   });
 
+  it('takes each testimonial highlight word for word from its quote', () => {
+    for (const t of testimonials) {
+      expect(t.quote).toContain(t.highlight);
+    }
+    expect(document.querySelectorAll('.quotes .quote-highlight')).toHaveLength(testimonials.length);
+  });
+
   it('introduces both co-founders, Rohan first', () => {
     const section = screen.getByRole('region', { name: team.heading });
     const names = within(section).getAllByRole('heading', { level: 3 }).map((h) => h.textContent);

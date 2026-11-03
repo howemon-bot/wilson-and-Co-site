@@ -40,6 +40,7 @@ export function Testimonials() {
         {testimonials.map((t, i) => (
           <figure key={t.name} className={i === index ? 'is-active' : undefined} aria-hidden={i !== index}>
             <blockquote lang={t.lang}>
+              <p className="quote-highlight" aria-hidden="true">“{t.highlight}”</p>
               <p>“{t.quote}”</p>
             </blockquote>
             <figcaption>
@@ -49,6 +50,8 @@ export function Testimonials() {
         ))}
         </div>
         <div className="quote-nav">
+          {/* A hairline that fills in teal while the quote waits to move on. */}
+          <span key={index} className="quote-timer" aria-hidden="true" />
           <span className="quote-count" aria-live="polite">
             {pad(index + 1)} / {pad(count)}
           </span>

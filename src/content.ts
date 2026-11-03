@@ -207,13 +207,15 @@ export const featuredProjects = FEATURED.map((slug) => projects.find((p) => p.sl
   (p): p is Project => Boolean(p),
 );
 
-export type Testimonial = { quote: string; name: string; place: string; lang: 'en' | 'es' };
+// highlight: one sentence copied word for word from the quote, shown large above it.
+export type Testimonial = { quote: string; highlight: string; name: string; place: string; lang: 'en' | 'es' };
 
 export const testimonials: Testimonial[] = [
   {
     lang: 'es',
     quote:
       'No nos creemos la suerte que hemos tenido de encontrar a Mónica y a Rohan. Nuestra casa ha sido un antes y un después desde que los contratamos. Su profesionalidad, su ojo para el diseño y la calidad de su trabajo se aprecian en cada rincón en el que han intervenido. Han transformado un espacio frío, con luces de hospital, en un hogar luminoso, acogedor y lleno de encanto.',
+    highlight: 'Nuestra casa ha sido un antes y un después desde que los contratamos.',
     name: 'Rebeca Calvo',
     place: 'Barcelona',
   },
@@ -221,6 +223,7 @@ export const testimonials: Testimonial[] = [
     lang: 'en',
     quote:
       'Monica and Rohan took the stress out of refurbishing our home and delivered a fantastic result! From start to finish, they guided us through both the aesthetic and technical aspects. They quickly resolved every issue we encountered, either themselves or through their excellent network of professionals. The price was very competitive, and they actually saved us money by helping identify problems early on. I’d recommend them to anyone in a heartbeat!',
+    highlight: 'Monica and Rohan took the stress out of refurbishing our home and delivered a fantastic result!',
     name: 'Rory Campbell',
     place: 'Barcelona',
   },
@@ -228,6 +231,7 @@ export const testimonials: Testimonial[] = [
     lang: 'en',
     quote:
       'Our experience with Rohan at Wilson & Co was very positive. He quickly resolved major electrical issues in our older home, coordinated well with other contractors, and handled our many changes professionally. He also installed a powerful, efficient solar system and took care of all the paperwork. In under two years, it’s already cut our bill significantly. Rohan met every challenge—our home is now fossil fuel free and safely wired. Him being a native English speaker was a big plus.',
+    highlight: 'Rohan met every challenge—our home is now fossil fuel free and safely wired.',
     name: 'Ron H',
     place: 'Sant Feliu de Guixols',
   },
@@ -235,6 +239,7 @@ export const testimonials: Testimonial[] = [
     lang: 'es',
     quote:
       'La empresa Wilson Electrics (ahora Wilson & Co) realizó la instalación de los puntos de recarga para vehículos en el parking de nuestra finca. Hicieron un trabajo impecable, sin causar las molestias habituales de este tipo de instalaciones. Rohan Wilson lo hizo todo muy fácil, limpio y silencioso. No tenemos ninguna duda de que volveríamos a confiar en él.',
+    highlight: 'Rohan Wilson lo hizo todo muy fácil, limpio y silencioso.',
     name: 'Ramón',
     place: 'Barcelona',
   },
@@ -242,6 +247,7 @@ export const testimonials: Testimonial[] = [
     lang: 'en',
     quote:
       'I have used Wilson and Co on several occasions for electrical work and home automation in our home in Barcelona, and I couldn’t be happier with the results. Rohan Wilson is professional, efficient, and understood the smart home system to perfection. From upgrading my wiring to setting up automated devices for lighting, curtains and climate control, everything was done seamlessly. Highly recommend for anyone looking for reliable electrical services in Barcelona!',
+    highlight: 'I couldn’t be happier with the results.',
     name: 'Simon Cariss',
     place: 'Barcelona',
   },
@@ -249,6 +255,7 @@ export const testimonials: Testimonial[] = [
     lang: 'en',
     quote:
       'Rohan and his team installed a total of 6kW solar panels on my house roof plus the 3-phase electrical installation that goes with it. The work was done quick, flawless and the treat with him was hassle-free, friendly and to the point. I would recommend working with him at Wilson & Co.',
+    highlight: 'The work was done quick, flawless and the treat with him was hassle-free, friendly and to the point.',
     name: 'Martin Tromp',
     place: 'Castelldefels',
   },
@@ -256,6 +263,7 @@ export const testimonials: Testimonial[] = [
     lang: 'en',
     quote:
       'I would highly recommend Rohan Wilson for any electrical job, big or small. We had a full kitchen refurb done and Rohan advised on and implemented all wiring, underfloor heating and lighting. He is extremely professional, courteous and helpful. Cost was always competitive.',
+    highlight: 'I would highly recommend Rohan Wilson for any electrical job, big or small.',
     name: 'Roseanne Taylor',
     place: 'London',
   },

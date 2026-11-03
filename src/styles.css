@@ -51,7 +51,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { font-weight: 400; letter-spacing: 0.015em; line-height: 1.15; }
 /* Display cut for everything at 20px and up. */
-h1, h2, h3, .display, .team-intro,
+h1, h2, h3, .display, .team-intro, .quote-highlight,
 .tags, .role, .site-footer h2, .legal, .opening-words {
   font-family: var(--font-display);
 }
@@ -537,17 +537,33 @@ html.is-project-open { overflow: hidden; }
 }
 .quotes figure.is-active { opacity: 1; visibility: visible; transition: opacity 0.6s ease 0.15s, visibility 0s; }
 .quotes blockquote { margin: 0; }
+.quotes .quote-highlight { margin-bottom: 1.4rem; font-size: var(--t-name); line-height: 1.4; } /* same as the Team intro */
 .quotes blockquote p { font-family: var(--font); font-size: var(--t-body); line-height: 1.55; } /* same as the hero paragraph */
 .quotes figcaption { margin-top: 1.4rem; font-size: var(--t-small); letter-spacing: 0.02em; text-transform: none; color: #6b6b6b; }
 .quote-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   margin-top: 2.5rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
   font-size: var(--t-small);
   letter-spacing: 0.02em;
   font-variant-numeric: tabular-nums;
 }
+.quote-timer {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--teal);
+  transform-origin: left;
+  animation: quote-timer 9s linear forwards;
+}
+@keyframes quote-timer { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) { .quote-timer { display: none; } }
 .quote-arrows { display: flex; gap: 1.5rem; }
 .quote-arrows button {
   padding: 0.4rem 0;
