@@ -746,7 +746,7 @@ html.is-project-open { overflow: hidden; }
   inset: 0;
   z-index: 100;
   cursor: pointer;
-  --mark-w: min(80vw, 1000px);
+  --mark-w: min(62vw, 460px);
 }
 .opening-paper {
   position: absolute;
@@ -755,8 +755,7 @@ html.is-project-open { overflow: hidden; }
   clip-path: inset(0 0 0 0);
   transition: clip-path 1.3s var(--ease);
 }
-.opening.is-reveal .opening-paper,
-.opening.is-settle .opening-paper { clip-path: inset(0 0 100% 0); }
+.opening.is-reveal .opening-paper { clip-path: inset(0 0 100% 0); }
 
 .opening-stage { position: absolute; inset: 0; }
 .opening-mark {
