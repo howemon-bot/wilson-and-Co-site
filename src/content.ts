@@ -192,7 +192,11 @@ export const allProjects: Project[] = [
 ];
 
 // Projects without photos stay off the site until they have some.
-export const projects = allProjects.filter((p) => p.images.length > 0);
+// Interior design always leads the list of work done.
+const interiorsFirst = (c: string[]) => [...c.filter((x) => x === 'Interior design'), ...c.filter((x) => x !== 'Interior design')];
+export const projects = allProjects
+  .filter((p) => p.images.length > 0)
+  .map((p) => ({ ...p, categories: interiorsFirst(p.categories) }));
 
 // The six on the home page, in order. Swap Entertainment Heaven for Barnes once Barnes has photos.
 const FEATURED = [

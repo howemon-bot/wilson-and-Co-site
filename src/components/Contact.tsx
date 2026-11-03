@@ -1,4 +1,5 @@
 import { contacts } from '../content';
+import { OutArrow } from './Icons';
 
 const general = contacts.find((c) => c.name === 'General enquiries') ?? contacts[contacts.length - 1];
 
@@ -19,6 +20,7 @@ export function Contact() {
             <p>{c.name === 'General enquiries' ? c.name : c.topic}</p>
             <a className="link" href={`mailto:${c.email}`}>
               {c.email}
+              <OutArrow className="out-arrow contact-arrow" />
             </a>
           </li>
         ))}

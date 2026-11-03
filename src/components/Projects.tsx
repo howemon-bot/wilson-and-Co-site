@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { featuredProjects, projects, type Project } from '../content';
 import { Img } from './Img';
 import { withItalics } from '../italics';
+import { PagerArrow } from './Icons';
 
 // Project page photos sit in a staggered pattern that repeats every four:
 // small left, large right, medium centre-left, small right.
@@ -85,12 +86,12 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
       </ol>
       <nav className="project-pager" aria-label="More projects">
         <button type="button" onClick={() => onGo(prev)}>
+          <PagerArrow dir="left" />
           <span>Previous</span>
-          <small>{prev.title}</small>
         </button>
         <button type="button" onClick={() => onGo(next)}>
           <span>Next</span>
-          <small>{next.title}</small>
+          <PagerArrow dir="right" />
         </button>
       </nav>
     </div>

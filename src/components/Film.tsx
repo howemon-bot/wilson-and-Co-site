@@ -11,6 +11,8 @@ const W_H = 625;
 
 const clamp = (v: number) => Math.min(1, Math.max(0, v));
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+// A softer curve for phones, so the film eases in rather than snapping.
+const soft = (t: number) => t * t * (3 - 2 * t);
 
 function reducedMotion() {
   return typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -37,6 +39,7 @@ export function Film() {
   useEffect(() => {
     if (still) return;
     let frame = 0;
+    let shown = -1; // phones: the rise glides after the scroll instead of jumping
     const update = () => {
       frame = 0;
       const el = sectionRef.current;
@@ -49,8 +52,14 @@ export function Film() {
       // the W, with no white W on top.
       const phone = size.w <= 800;
       const start = phone ? 0 : 0.25;
-      const span = phone ? 0.38 : 0.45;
-      const rise = ease(clamp((p - start) / span));
+      const span = phone ? 0.62 : 0.45;
+      let rise = (phone ? soft : ease)(clamp((p - start) / span));
+      if (phone) {
+        shown = shown < 0 ? rise : shown + (rise - shown) * 0.12;
+        if (Math.abs(rise - shown) > 0.001) frame = requestAnimationFrame(update);
+        else shown = rise;
+        rise = shown;
+      }
       riseRef.current.setAttribute('y', String(size.h * (1 - rise)));
       const on = phone ? 0 : clamp((p - (start + span * 0.4)) / 0.1);
       const off = clamp((p - (start + span + 0.08)) / 0.14);

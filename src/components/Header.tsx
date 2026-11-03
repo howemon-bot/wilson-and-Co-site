@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Logo } from './Logo';
 import { company, contacts } from '../content';
+import { InstagramIcon, MailIcon } from './Icons';
 
 const links = [
   { href: '#projects', label: 'Projects' },
@@ -103,12 +104,16 @@ export function Header() {
             {people.map((c) => (
               <p key={c.email}>
                 <span className="menu-topic">{c.topic}</span>
-                <a href={`mailto:${c.email}`}>{c.email}</a>
+                <a href={`mailto:${c.email}`}>
+                  <MailIcon />
+                  {c.email}
+                </a>
               </p>
             ))}
             <p>
               <span className="menu-topic">{company.city}</span>
               <a href={company.instagram} target="_blank" rel="noreferrer">
+                <InstagramIcon />
                 Instagram
               </a>
             </p>

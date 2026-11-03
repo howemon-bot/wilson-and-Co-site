@@ -500,8 +500,9 @@ html.is-project-open { overflow: hidden; }
   padding: 0 40px 48px;
 }
 .project-pager button {
-  display: grid;
-  gap: 0.3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
   padding: 0;
   border: 0;
   background: none;
@@ -512,9 +513,11 @@ html.is-project-open { overflow: hidden; }
   transition: color 0.35s ease;
 }
 .project-pager button:last-child { text-align: right; }
-.project-pager span { font-family: var(--font-display); font-size: var(--t-statement); line-height: 1.1; }
-.project-pager small { font-size: var(--t-small); letter-spacing: 0.02em; }
+.project-pager span { font-family: var(--font-display); font-size: var(--t-project); line-height: 1.1; }
 .project-pager button:hover { color: var(--teal); }
+.pager-arrow { flex: none; transition: transform 0.4s var(--ease); }
+.project-pager button:first-child:hover .pager-arrow { transform: translateX(-3px); }
+.project-pager button:last-child:hover .pager-arrow { transform: translateX(3px); }
 
 /* Testimonials: the label on the left, the quote in the right column. */
 .quotes {
@@ -636,6 +639,7 @@ html.is-project-open { overflow: hidden; }
 }
 .contact li { padding-top: 0.9rem; border-top: 1px solid var(--line); }
 .contact li p { margin-bottom: 0.2rem; color: #6b6b6b; }
+.contact-arrow { display: none; }
 
 /* Footer: a calm teal block in cream; the content sits at the bottom. */
 .site-footer {
@@ -672,6 +676,7 @@ html.is-project-open { overflow: hidden; }
   text-decoration: none;
   transition: opacity 0.35s ease;
 }
+.footer-link .icon { display: inline-block; width: 1em; height: 1em; margin-right: 0.5em; vertical-align: -0.15em; }
 .footer-link .out-arrow { display: inline-block; width: 0.75em; height: 0.75em; margin-left: 0.45em; transition: transform 0.4s var(--ease); }
 .footer-link:hover .out-arrow { transform: translate(2px, -2px); }
 .footer-link:hover { opacity: 0.75; }
@@ -731,7 +736,7 @@ html.is-project-open { overflow: hidden; }
   .hero-media { grid-row: 1; height: 64svh; min-height: 340px; }
   .hero-text { grid-row: 2; padding: 2.75rem 20px 0; gap: 1.75rem; }
   :root { --gap-section: 5.5rem; }
-  .film { height: 145vh; } /* a shorter, quicker hand-over on phones */
+  .film { height: 165vh; } /* a short hand-over on phones; the film rises over about a third of a screen */
   .services { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; padding: var(--gap-section) 20px; }
   .quotes { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
   .quotes figure { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto 1fr; row-gap: 1.4rem; }
@@ -763,6 +768,15 @@ html.is-project-open { overflow: hidden; }
   .footer-email { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
   .footer-social { grid-column: 1 / -1; grid-row: 3; justify-self: start; }
   .team, .contact { padding-inline: 20px; }
+  /* Phones: the label's line is enough; no second line under it. */
+  .team-body, .quotes-body { padding-top: 0; border-top: 0; }
+  /* hola@wilsonandco.es as wide as the screen. */
+  .contact-big { font-size: calc((100vw - 40px) / 6.25); }
+  .contact { padding-bottom: 3rem; }
+  /* Emails: an arrow shows they open, instead of the hover arrow. */
+  .contact .link::before { display: none; }
+  .contact-arrow { display: inline-block; align-self: center; width: 0.75em; height: 0.75em; margin-left: 0.45em; }
+  .project-meta { padding-top: 3.25rem; }
   .team { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; }
 }
 
@@ -966,7 +980,8 @@ html.is-menu-open { overflow: hidden; }
 }
 .menu-foot p { display: grid; gap: 0.1rem; }
 .menu-topic { opacity: 0.7; }
-.menu-foot a { text-decoration: none; }
+.menu-foot a { display: inline-flex; align-items: center; gap: 0.5em; width: fit-content; text-decoration: none; }
+.menu-foot .icon { width: 1em; height: 1em; flex: none; }
 .menu-foot a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 @media (max-width: 800px) {
