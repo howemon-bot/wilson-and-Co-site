@@ -81,8 +81,8 @@ describe('App', () => {
     expect(frames.map((img) => img.getAttribute('aria-label') || img.getAttribute('alt'))).toEqual(
       coastal.images.map((_, i) => `${coastal.title}, picture ${i + 1}`),
     );
-    expect(coastal.images[0]).toContain('Solar_1.jpg');
-    expect(coastal.images[3]).toContain('Solar_6.jpg');
+    expect(coastal.images[0]).toContain('solar-01_roof-and-sea-view.jpg');
+    expect(coastal.images[3]).toContain('solar-04_panels-and-skylights.jpg');
     await user.click(within(screen.getByRole('dialog')).getByRole('button', { name: /^Next/ }));
     expect(screen.getByRole('heading', { level: 2, name: 'Entertainment Heaven' })).toBeInTheDocument();
     await user.keyboard('{Escape}');

@@ -20,205 +20,57 @@ export const imageSizes: Record<string, [number, number]> = {
 1920,
 1080
 ],
-"/images/gallery/Solar_1.jpg": [
-1600,
-1197
-],
-"/images/gallery/Solar_2.jpg": [
-1600,
-1197
-],
-"/images/gallery/Solar_3.jpg": [
-1197,
-1600
-],
-"/images/gallery/Solar_4.jpg": [
-1197,
-1600
-],
-"/images/gallery/Solar_5.jpg": [
-1197,
-1600
-],
-"/images/gallery/Solar_6.jpg": [
-1197,
-1600
-],
-"/images/gallery/WilsonAndCo_Clapham_South1.jpg": [
+"/images/gallery/claphamsouth-01_kitchen-and-dining.jpg": [
 1800,
 1350
 ],
-"/images/gallery/WilsonAndCo_Clapham_South2.jpg": [
+"/images/gallery/claphamsouth-02_dining-room.jpg": [
+1775,
+1344
+],
+"/images/gallery/claphamsouth-03_rear-extension.jpg": [
 1800,
 1350
 ],
-"/images/gallery/WilsonAndCo_Clapham_South3.jpg": [
+"/images/gallery/claphamsouth-04_garden-seating.jpg": [
 1800,
 1350
 ],
-"/images/gallery/WilsonAndCo_Clapham_South4.jpg": [
-1800,
-1350
+"/images/gallery/claphamsouth-05_joinery-and-steel-door.jpg": [
+1737,
+1345
 ],
-"/images/gallery/WilsonAndCo_Clapham_South5.jpg": [
-1800,
-1350
+"/images/gallery/claphamsouth-06_library.jpg": [
+1749,
+1344
 ],
-"/images/gallery/WilsonAndCo_Clapham_South6.jpg": [
-1800,
-1350
-],
-"/images/gallery/WilsonAndCo_Clapham_South7.jpg": [
-1800,
-1350
-],
-"/images/gallery/WilsonAndCo_Clapham_South8.jpg": [
-1800,
-1350
-],
-"/images/gallery/WilsonAndCo_Clapham_South9.jpg": [
-1800,
-1350
-],
-"/images/gallery/WilsonAndCo_ClassicalBeauty1.jpg": [
+"/images/gallery/classical-01_garden-at-dusk.jpg": [
 1800,
 1200
 ],
-"/images/gallery/WilsonAndCo_ClassicalBeauty2.jpg": [
-1800,
-1200
+"/images/gallery/classical-02_rear-extension.jpg": [
+1791,
+1196
 ],
-"/images/gallery/WilsonAndCo_ClassicalBeauty3.jpg": [
-1800,
-1202
+"/images/gallery/classical-03_lightwell-glazing.jpg": [
+1186,
+1794
 ],
-"/images/gallery/WilsonAndCo_ClassicalBeauty4.jpg": [
-1199,
-1800
+"/images/gallery/classical-04_terrace-steps.jpg": [
+1788,
+1194
 ],
-"/images/gallery/WilsonAndCo_ClassicalBeauty5.jpg": [
-1800,
-1200
+"/images/gallery/classical-05_library.jpg": [
+1790,
+1194
 ],
-"/images/gallery/WilsonAndCo_ClassicalBeauty6.jpg": [
-1800,
-1200
+"/images/gallery/classical-06_green-kitchen.jpg": [
+1791,
+1194
 ],
-"/images/gallery/WilsonAndCo_ClassicalBeauty7.jpg": [
-1800,
-1200
-],
-"/images/gallery/WilsonAndCo_ClassicalBeauty8.jpg": [
-1800,
-1200
-],
-"/images/gallery/WilsonAndCo_ClassicalBeauty9.jpg": [
-1800,
-1201
-],
-"/images/gallery/WilsonAndCo_Entertaining_Heaven1-scaled.jpg": [
-1800,
-1353
-],
-"/images/gallery/WilsonAndCo_Entertaining_Heaven10.jpg": [
-1350,
-1800
-],
-"/images/gallery/WilsonAndCo_Entertaining_Heaven11.jpg": [
-1800,
-1446
-],
-"/images/gallery/WilsonAndCo_Entertaining_Heaven12.jpg": [
-1800,
-1446
-],
-"/images/gallery/WilsonAndCo_Entertaining_Heaven2-scaled.jpg": [
-1800,
-1350
-],
-"/images/gallery/WilsonAndCo_Entertaining_Heaven3-scaled.jpg": [
-1200,
-1800
-],
-"/images/gallery/WilsonAndCo_Entertaining_Heaven4-scaled.jpg": [
-1200,
-1800
-],
-"/images/gallery/WilsonAndCo_Entertaining_Heaven5-scaled.jpg": [
-1350,
-1800
-],
-"/images/gallery/WilsonAndCo_Entertaining_Heaven6-scaled.jpg": [
-1350,
-1800
-],
-"/images/gallery/WilsonAndCo_Entertaining_Heaven7.jpg": [
-1800,
-1350
-],
-"/images/gallery/WilsonAndCo_Entertaining_Heaven8.jpg": [
-1800,
-1350
-],
-"/images/gallery/WilsonAndCo_Entertaining_Heaven9.jpg": [
-1350,
-1800
-],
-"/images/gallery/WilsonAndCo_Industrial_Clapham1.jpg": [
-1800,
-1014
-],
-"/images/gallery/WilsonAndCo_Industrial_Clapham2.jpg": [
-1800,
-1350
-],
-"/images/gallery/WilsonAndCo_Industrial_Clapham3.jpg": [
-1800,
-1013
-],
-"/images/gallery/WilsonAndCo_Industrial_Clapham4.jpg": [
-1800,
-1013
-],
-"/images/gallery/WilsonAndCo_Industrial_Clapham5-scaled.jpg": [
-1013,
-1800
-],
-"/images/gallery/WilsonAndCo_Industrial_Clapham6-scaled.jpg": [
-1013,
-1800
-],
-"/images/gallery/bathroom_wco_1-scaled.jpg": [
-1201,
-1800
-],
-"/images/gallery/bathroom_wco_2-scaled.jpg": [
-1350,
-1800
-],
-"/images/gallery/bathroom_wco_3-scaled.jpg": [
-1350,
-1800
-],
-"/images/gallery/bathroom_wco_4-scaled.jpg": [
-1800,
-1350
-],
-"/images/gallery/bathroom_wco_5-scaled.jpg": [
-1350,
-1800
-],
-"/images/gallery/bathroom_wco_6-scaled.jpg": [
-1800,
-1350
-],
-"/images/gallery/bathroom_wco_7-scaled.jpg": [
-1265,
-1800
-],
-"/images/gallery/bathroom_wco_8-scaled.jpg": [
-1350,
-1800
+"/images/gallery/classical-07_kitchen-island.jpg": [
+1791,
+1194
 ],
 "/images/gallery/clot-01_living-room.jpg": [
 1800,
@@ -264,6 +116,90 @@ export const imageSizes: Record<string, [number, number]> = {
 1224,
 1800
 ],
+"/images/gallery/eixample-01_vaulted-bathroom.jpg": [
+1328,
+1794
+],
+"/images/gallery/eixample-02_vanity-and-window.jpg": [
+1350,
+1800
+],
+"/images/gallery/eixample-03_shower-wall.jpg": [
+1753,
+1344
+],
+"/images/gallery/eixample-04_shower-shelves.jpg": [
+1350,
+1800
+],
+"/images/gallery/eixample-05_basin.jpg": [
+1176,
+1795
+],
+"/images/gallery/eixample-06_tap-detail.jpg": [
+1752,
+1344
+],
+"/images/gallery/eixample-07_floor-tiles.jpg": [
+1350,
+1800
+],
+"/images/gallery/heaven-01_garden-facade.jpg": [
+1800,
+1446
+],
+"/images/gallery/heaven-02_bar.jpg": [
+1741,
+1345
+],
+"/images/gallery/heaven-03_bar-at-night.jpg": [
+1735,
+1348
+],
+"/images/gallery/heaven-04_kitchen-island.jpg": [
+1194,
+1800
+],
+"/images/gallery/heaven-05_kitchen-under-the-roof.jpg": [
+1312,
+1794
+],
+"/images/gallery/heaven-06_dining-room.jpg": [
+1186,
+1797
+],
+"/images/gallery/heaven-07_bathroom.jpg": [
+1350,
+1800
+],
+"/images/gallery/heaven-08_bath-and-niches.jpg": [
+1288,
+1795
+],
+"/images/gallery/heaven-09_hot-tub-terrace.jpg": [
+1800,
+1446
+],
+"/images/gallery/industrial-01_landing.jpg": [
+1800,
+1014
+],
+"/images/gallery/industrial-02_kitchen-and-garden.jpg": [
+1669,
+1008
+],
+"/images/gallery/industrial-03_kitchen-and-glass-bridge.jpg": [
+1800,
+1013
+],
+"/images/gallery/industrial-04_shower-room.jpg": [
+1013,
+1800
+],
+"/images/gallery/industrial-05_cloakroom.jpg": [
+1013,
+1800
+],
 "/images/gallery/sant-antoni-01_kitchen-and-dining.jpg": [
 1800,
 1099
@@ -274,31 +210,47 @@ export const imageSizes: Record<string, [number, number]> = {
 ],
 "/images/gallery/sant-antoni-03_curved-wall-and-shelves.jpg": [
 1800,
-1235
+1200
 ],
 "/images/gallery/sant-antoni-04_corridor.jpg": [
-1206,
+1250,
 1800
 ],
 "/images/gallery/sant-antoni-05_bathroom.jpg": [
 1800,
-1290
+1225
 ],
 "/images/gallery/sant-antoni-06_shower-detail.jpg": [
-1135,
+1200,
 1800
 ],
 "/images/gallery/sant-antoni-07_green-bathroom.jpg": [
-1323,
+1342,
 1800
 ],
 "/images/gallery/sant-antoni-08_bar-niche.jpg": [
-1062,
+1071,
 1800
 ],
 "/images/gallery/sant-antoni-09_kids-room.jpg": [
-1195,
+1248,
 1800
+],
+"/images/gallery/solar-01_roof-and-sea-view.jpg": [
+1600,
+1197
+],
+"/images/gallery/solar-02_panels-towards-the-sea.jpg": [
+1197,
+1600
+],
+"/images/gallery/solar-03_installing.jpg": [
+1600,
+1197
+],
+"/images/gallery/solar-04_panels-and-skylights.jpg": [
+1197,
+1600
 ],
 "/images/hero-japandi-clot-living.jpg": [
 2000,

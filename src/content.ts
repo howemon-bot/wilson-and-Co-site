@@ -134,59 +134,48 @@ export const allProjects: Project[] = [
     text: "A small bathroom, completely rethought. We restored the original volta catalana ceiling, which brings back height and character, and laid Nolla tiles for a durable, geometric floor.\n\nThe brief was about making the most of the space: careful planning, built-in storage and materials chosen to last. The result is a compact bathroom that is practical day to day and beautifully finished.",
     location: 'Eixample, Barcelona',
     image: '/images/eixample-bathroom.jpg',
-    images: [2, 3, 1, 6, 5, 4, 7, 8].map((n) => shot(`bathroom_wco_${n}-scaled.jpg`)),
-  },
-  {
+    // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
+    images: ['01_vaulted-bathroom', '02_vanity-and-window', '03_shower-wall', '04_shower-shelves', '05_basin', '06_tap-detail', '07_floor-tiles'].map((n) => shot(`eixample-${n}.jpg`)),
     slug: 'classical-beauty',
     title: 'Classical Beauty',
     categories: ['Electrical'],
     text: "A three-bedroom house extended into a four-storey home, with a full basement designed as an entertainment room and library. Lighting was central to the brief, inside and out, and everything had to be integrated cleanly into the architecture.",
     location: 'Wandsworth, London',
     image: '/images/hero-wandsworth.jpg',
-    images: [1, 2, 3, 4, 5, 6, 7, 9, 8].map((n) => shot(`WilsonAndCo_ClassicalBeauty${n}.jpg`)),
-  },
-  {
+    // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
+    images: ['01_garden-at-dusk', '02_rear-extension', '03_lightwell-glazing', '04_terrace-steps', '05_library', '06_green-kitchen', '07_kitchen-island'].map((n) => shot(`classical-${n}.jpg`)),
     slug: 'industrial-clapham',
     title: 'Industrial Clapham',
     categories: ['Automation', 'Electrical'],
     text: "A two-bedroom house in the heart of Clapham, completely stripped back. We planned and installed all the automation and lighting to work with the architecture, giving the home a soft, warm feel.",
     location: 'Clapham, London',
     image: '/images/industrial-clapham.jpg',
-    images: [1, 2, 3, 4, 5, 6].map((n) =>
-      shot(`WilsonAndCo_Industrial_Clapham${n}${n >= 5 ? '-scaled' : ''}.jpg`),
-    ),
-  },
-  {
+    // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
+    images: ['01_landing', '02_kitchen-and-garden', '03_kitchen-and-glass-bridge', '04_shower-room', '05_cloakroom'].map((n) => shot(`industrial-${n}.jpg`)),
     slug: 'coastal-solar-panels',
     title: 'Coastal Solar Panels',
     categories: ['Electrical', 'Solar'],
     location: "Castelldefels, Barcelona",
     text: "A 6kW solar system for a three-storey house in Castelldefels. We placed panels on both sides of the pitched roof to make the most of the sun throughout the day, ran the cabling neatly along the façade and connected it to a three-phase inverter. We also took care of all the paperwork and licensing for the client.",
     image: '/images/coastal-solar.jpg',
-    images: [1, 2, 3, 6, 5, 4].map((n) => shot(`Solar_${n}.jpg`)),
-  },
-  {
+    // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
+    images: ['01_roof-and-sea-view', '02_panels-towards-the-sea', '03_installing', '04_panels-and-skylights'].map((n) => shot(`solar-${n}.jpg`)),
     slug: 'entertainment-heaven',
     title: 'Entertainment Heaven',
     categories: ['Automation', 'Electrical'],
     location: "South East London",
     text: "A refurbishment of a four-storey house in south-east London. We designed and installed the full electrical system, along with wifi throughout and integrated audio and visual. The project even included a lit tree house for the children.",
     image: '/images/entertainment-heaven.jpg',
-    images: [
-      ...[1, 2, 3, 4, 5, 6].map((n) => shot(`WilsonAndCo_Entertaining_Heaven${n}-scaled.jpg`)),
-      ...[7, 8, 9, 10, 11, 12].map((n) => shot(`WilsonAndCo_Entertaining_Heaven${n}.jpg`)),
-    ],
-  },
-  {
+    // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
+    images: ['01_garden-facade', '02_bar', '03_bar-at-night', '04_kitchen-island', '05_kitchen-under-the-roof', '06_dining-room', '07_bathroom', '08_bath-and-niches', '09_hot-tub-terrace'].map((n) => shot(`heaven-${n}.jpg`)),
     slug: 'clapham-south',
     title: 'Clapham South',
     categories: ['Automation', 'Electrical'],
     text: "A completely new electrical installation on the ground floor and basement. So the owners could keep living in the house, the three floors above were wired temporarily and later connected to the new consumer boards. Both lower floors have Rako home automation, with lighting scenes that change through the day.",
     location: 'Clapham South, London',
     image: '/images/clapham-south.jpg',
-    images: [1, 2, 3, 7, 5, 4, 6, 8, 9].map((n) => shot(`WilsonAndCo_Clapham_South${n}.jpg`)),
-  },
-  {
+    // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
+    images: ['01_kitchen-and-dining', '02_dining-room', '03_rear-extension', '04_garden-seating', '05_joinery-and-steel-door', '06_library'].map((n) => shot(`claphamsouth-${n}.jpg`)),
     slug: 'barnes',
     title: 'Barnes',
     categories: ['Automation', 'Electrical'],
