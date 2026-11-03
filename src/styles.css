@@ -340,7 +340,7 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
    it and opening one doesn't change the section's height. */
 .services-body ul { display: grid; grid-template-rows: repeat(3, 1fr); }
 .services-body li { grid-template-columns: minmax(0, 1fr); align-content: start; }
-.house { width: min(100%, calc(78vh * 0.693)); justify-self: end; aspect-ratio: 1083 / 1563; }
+.house { width: min(80%, calc(60vh * 0.693)); justify-self: end; aspect-ratio: 1083 / 1563; } /* a detail, not a hero */
 .house svg { display: block; width: 100%; height: auto; overflow: visible; }
 .house path { transition: opacity 0.6s ease; }
 /* Drawn in like a pen: lines first, top to bottom, then the fills. */
@@ -783,7 +783,8 @@ html.is-project-open { overflow: hidden; }
   .services li { grid-template-columns: minmax(0, 1fr); padding-bottom: 1.6rem; }
   .services-body { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; }
   .services-body ul { grid-template-rows: none; }
-  .house { order: -1; width: 88%; justify-self: center; }
+  /* Small enough that the drawing and the three services fit on one screen. */
+  .house { order: -1; width: min(60%, calc(40svh * 0.693)); justify-self: center; }
   .services p { padding-top: 1rem; }
   .plus-circle { top: 0.6rem; }
   .projects { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
