@@ -138,6 +138,17 @@ export const allProjects: Project[] = [
     images: ['01_vaulted-bathroom', '02_vanity-and-window', '03_shower-wall', '04_shower-shelves', '05_basin', '06_tap-detail', '07_floor-tiles'].map((n) => shot(`eixample-${n}.jpg`)),
   },
   {
+    slug: 'anna-kitchen',
+    title: 'Anna Kitchen',
+    categories: ['Interior design'],
+    // Text and location to come from Monica.
+    image: '/images/gallery/anna-01_kitchen.jpg',
+    images: [
+      '01_kitchen', '02_window-and-breakfast-nook', '03_glazed-dresser', '04_kitchen-from-the-side',
+      '05_oven-column', '06_hob-and-extractor', '07_sink', '08_floor-tiles',
+    ].map((n) => shot(`anna-${n}.jpg`)),
+  },
+  {
     slug: 'classical-beauty',
     title: 'Classical Beauty',
     categories: ['Electrical'],

@@ -20,6 +20,38 @@ export const imageSizes: Record<string, [number, number]> = {
 1920,
 1080
 ],
+"/images/gallery/anna-01_kitchen.jpg": [
+1200,
+1800
+],
+"/images/gallery/anna-02_window-and-breakfast-nook.jpg": [
+1800,
+1200
+],
+"/images/gallery/anna-03_glazed-dresser.jpg": [
+1200,
+1800
+],
+"/images/gallery/anna-04_kitchen-from-the-side.jpg": [
+1200,
+1800
+],
+"/images/gallery/anna-05_oven-column.jpg": [
+1200,
+1800
+],
+"/images/gallery/anna-06_hob-and-extractor.jpg": [
+1200,
+1800
+],
+"/images/gallery/anna-07_sink.jpg": [
+1800,
+1200
+],
+"/images/gallery/anna-08_floor-tiles.jpg": [
+1800,
+1200
+],
 "/images/gallery/claphamsouth-01_kitchen-and-dining.jpg": [
 1800,
 1350
