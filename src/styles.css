@@ -812,7 +812,7 @@ html.is-project-open { overflow: hidden; }
     grid-column: 1; flex-direction: column; gap: 16px; margin-block: 0;
   }
   .photo-row figure { flex: none; width: 100%; }
-  .photo-row.is-small { grid-column: 1; }
+  .photo-row.is-small.is-left, .photo-row.is-small.is-right { grid-column: 1; }
   .photo-row.is-small figure { width: 72%; }
   .photo-row.is-small.is-right figure { margin-left: auto; }
   .project-head { padding: 22px 20px 0; }
