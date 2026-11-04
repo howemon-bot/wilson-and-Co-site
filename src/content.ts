@@ -87,6 +87,8 @@ export type Project = {
   categories: string[];
   /** Picture numbers (1 = first) shown larger, on a row of their own. Default: [1]. */
   featured?: number[];
+  /** Picture numbers shown smaller, alone to one side with cream around them. */
+  small?: number[];
   /** Neighbourhood and city, shown on the project page. */
   location?: string;
   /** A few sentences for the project page, from the current site. Blank lines split paragraphs. */
@@ -107,10 +109,13 @@ export const allProjects: Project[] = [
     text: "A full renovation of a 1950s apartment in Sant Antoni. We reworked the layout, especially in the living area, to make it more open and better suited to the way people live today.\n\nThe original parquet floor was kept, restored and treated, so the home holds on to its history. Wood runs through the whole project, from made-to-measure joinery to the finishes, keeping it warm and consistent. Clean lines, soft tones and natural materials make it calm and easy to live in.",
     location: 'Sant Antoni, Barcelona',
     image: '/images/warm-minimalism.jpg',
-    // Retouched set (straightened, one white); see Drive: Wilson/WEB_site_2026.
+    // Final set from Photoshop; see Drive: Wilson/WEB_site_2026.
+    // Larger: galley kitchen, curved wall, bar niche. Smaller: kitchen and dining (grainy), bathroom.
+    featured: [1, 3, 7],
+    small: [2, 6],
     images: [
-      '01_kitchen-and-dining', '02_galley-kitchen', '03_curved-wall-and-shelves', '04_corridor', '05_bathroom',
-      '06_shower-detail', '07_green-bathroom', '08_bar-niche', '09_kids-room',
+      '02_galley-kitchen', '01_kitchen-and-dining', '03_curved-wall-and-shelves', '04_corridor', '06_shower-detail',
+      '05_bathroom', '08_bar-niche', '07_green-bathroom', '09_kids-room',
     ].map((n) => shot(`sant-antoni-${n}.jpg`)),
   },
   {

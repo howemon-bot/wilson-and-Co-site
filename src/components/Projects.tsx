@@ -8,20 +8,26 @@ import { imageSizes } from '../imageSizes';
 // Project page photos: one calm structure on two equal columns. Landscapes pair
 // with landscapes and portraits with portraits (in the order they come), so the
 // two photos in a row are always the same size. Featured photos get a row of
-// their own, a little larger.
+// their own, a little larger; small photos sit alone to one side (alternating
+// left and right), leaving cream around them.
 type Photo = { src: string; n: number; portrait: boolean };
-type Row = { kind: 'feature' | 'pair' | 'single'; portrait: boolean; photos: Photo[] };
+type Row = { kind: 'feature' | 'pair' | 'single' | 'small'; portrait: boolean; photos: Photo[]; side?: 'left' | 'right' };
 const isPortrait = (src: string) => {
   const s = imageSizes[src];
   return s ? s[1] > s[0] : false;
 };
-function galleryRows(images: string[], featured: number[] = [1]): Row[] {
+function galleryRows(images: string[], featured: number[] = [1], small: number[] = []): Row[] {
   const rows: Row[] = [];
+  let smalls = 0;
   const waiting: Record<'land' | 'port', { photo: Photo; row: number } | null> = { land: null, port: null };
   images.forEach((src, i) => {
     const p = { src, n: i + 1, portrait: isPortrait(src) };
     if (featured.includes(p.n)) {
       rows.push({ kind: 'feature', portrait: p.portrait, photos: [p] });
+      return;
+    }
+    if (small.includes(p.n)) {
+      rows.push({ kind: 'small', portrait: p.portrait, photos: [p], side: smalls++ % 2 ? 'right' : 'left' });
       return;
     }
     const key = p.portrait ? 'port' : 'land';
@@ -50,7 +56,7 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
   const i = list.findIndex((p) => p.slug === project.slug);
   const prev = list[(i - 1 + list.length) % list.length];
   const next = list[(i + 1) % list.length];
-  const rows = galleryRows(project.images, project.featured);
+  const rows = galleryRows(project.images, project.featured, project.small);
 
   useEffect(() => {
     pageRef.current?.scrollTo?.({ top: 0 });
@@ -109,7 +115,7 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
         {rows.map((row) => (
           <div
             key={row.photos[0].src}
-            className={`photo-row is-${row.kind}${row.portrait ? ' is-portrait' : ''}`}
+            className={`photo-row is-${row.kind}${row.portrait ? ' is-portrait' : ''}${row.side ? ` is-${row.side}` : ''}`}
           >
             {row.photos.map((p) => (
               <figure key={p.src}>

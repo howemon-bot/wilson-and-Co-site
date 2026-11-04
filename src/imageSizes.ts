@@ -190,7 +190,7 @@ export const imageSizes: Record<string, [number, number]> = {
 ],
 "/images/gallery/sant-antoni-03_curved-wall-and-shelves.jpg": [
 1800,
-1200
+1220
 ],
 "/images/gallery/sant-antoni-04_corridor.jpg": [
 1250,
