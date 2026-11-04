@@ -521,9 +521,9 @@ html.is-project-open { overflow: hidden; }
 .project-tags { grid-column: 1 / span 2; }
 .project-tags li { font-size: var(--t-label-sm); }
 .project-tags li + li { margin-top: 0.3rem; }
-.project-text { grid-column: 3 / span 5; }
+.project-text { grid-column: 3 / span 6; }
 .project-facts { grid-column: 10 / span 3; }
-.project-text p { max-width: 36rem; font-size: var(--t-small); line-height: 1.6; letter-spacing: 0.01em; }
+.project-text p { max-width: 41rem; font-size: var(--t-small); line-height: 1.6; letter-spacing: 0.01em; }
 .project-text p + p { margin-top: 1em; }
 .project-facts { margin: 0; }
 .project-facts div {
