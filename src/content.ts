@@ -114,8 +114,15 @@ export const allProjects: Project[] = [
     location: 'Sant Antoni, Barcelona',
     image: '/images/warm-minimalism.jpg',
     // Final set from Photoshop; see Drive: Wilson/WEB_site_2026.
-    // Featured: galley kitchen, bar niche. Bathroom pairs with kitchen and dining; the curved wall stands alone.
-    featured: [1, 7],
+    // Bathroom big with the (grainy) kitchen and dining small; the curved wall full width.
+    layout: [
+      { kind: 'feature', photos: [1] },
+      { kind: 'right', photos: [3, 2] },
+      { kind: 'pair', photos: [5, 6] },
+      { kind: 'full', photos: [4] },
+      { kind: 'feature', photos: [7] },
+      { kind: 'pair', photos: [8, 9] },
+    ],
     images: [
       '02_galley-kitchen', '05_bathroom', '01_kitchen-and-dining', '03_curved-wall-and-shelves', '04_corridor',
       '06_shower-detail', '08_bar-niche', '07_green-bathroom', '09_kids-room',
