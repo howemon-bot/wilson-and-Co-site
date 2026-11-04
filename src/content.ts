@@ -87,8 +87,6 @@ export type Project = {
   categories: string[];
   /** Picture numbers (1 = first) shown larger, on a row of their own. Default: [1]. */
   featured?: number[];
-  /** Picture numbers shown smaller, alone to one side with cream around them. */
-  small?: number[];
   /** Neighbourhood and city, shown on the project page. */
   location?: string;
   /** A few sentences for the project page, from the current site. Blank lines split paragraphs. */
@@ -110,12 +108,11 @@ export const allProjects: Project[] = [
     location: 'Sant Antoni, Barcelona',
     image: '/images/warm-minimalism.jpg',
     // Final set from Photoshop; see Drive: Wilson/WEB_site_2026.
-    // Larger: galley kitchen, curved wall, bar niche. Smaller: kitchen and dining (grainy), bathroom.
-    featured: [1, 3, 7],
-    small: [2, 6],
+    // Featured: galley kitchen, bar niche. Bathroom pairs with kitchen and dining; the curved wall stands alone.
+    featured: [1, 7],
     images: [
-      '02_galley-kitchen', '01_kitchen-and-dining', '03_curved-wall-and-shelves', '04_corridor', '06_shower-detail',
-      '05_bathroom', '08_bar-niche', '07_green-bathroom', '09_kids-room',
+      '02_galley-kitchen', '05_bathroom', '01_kitchen-and-dining', '03_curved-wall-and-shelves', '04_corridor',
+      '06_shower-detail', '08_bar-niche', '07_green-bathroom', '09_kids-room',
     ].map((n) => shot(`sant-antoni-${n}.jpg`)),
   },
   {

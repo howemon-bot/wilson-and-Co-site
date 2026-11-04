@@ -21,6 +21,7 @@
   --t-small: 0.9375rem;                        /* 15px, side paragraphs */
   --gap-section: clamp(6.5rem, 17vh, 10rem);      /* the one space between sections */
   --t-label: 0.8125rem;                        /* 13px */
+  --t-label-sm: 0.75rem;                       /* 12px, project services list */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -446,23 +447,18 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   row-gap: clamp(1rem, 2vw, 2rem); /* the same gap between photos both ways */
   padding: 0 40px clamp(5rem, 12vh, 8rem);
 }
-/* Every size sits on the 12 columns:
-   landscape pair 6 + 6 · portrait pair 4 + 4, centred · a photo left over: centred, same size
-   featured: landscape 10 columns, portrait 6 (a little larger than in a pair). */
-.photo-row { display: flex; gap: clamp(1rem, 2vw, 2rem); grid-column: 1 / -1; }
+/* Photos sit in the space from the project text (column 4) to the right margin:
+   9 columns. Pairs fill it; single photos are centred in it:
+   featured landscape 7 · other landscape 5 · featured portrait 5 · other portrait 3. */
+.photo-row { display: flex; gap: clamp(1rem, 2vw, 2rem); grid-column: 4 / span 9; }
 .photo-row figure { flex: 1 1 0; margin: 0; min-width: 0; aspect-ratio: 3 / 2; }
 .photo-row.is-portrait figure { aspect-ratio: 2 / 3; }
 .photo-row img, .photo-row .ph { display: block; width: 100%; height: 100%; object-fit: cover; }
-.photo-row.is-pair.is-portrait { grid-column: 3 / span 8; }
-.photo-row.is-single { grid-column: 4 / span 6; }
-.photo-row.is-single.is-portrait { grid-column: 5 / span 4; }
-.photo-row.is-feature { grid-column: 2 / span 10; margin-block: clamp(1rem, 3vw, 2.5rem); }
-.photo-row.is-feature.is-portrait { grid-column: 4 / span 6; }
-/* Small: alone to one side, lined up with the edges of the large photos. */
-.photo-row.is-small.is-left { grid-column: 2 / span 5; }
-.photo-row.is-small.is-right { grid-column: 7 / span 5; }
-.photo-row.is-small.is-portrait.is-left { grid-column: 2 / span 3; }
-.photo-row.is-small.is-portrait.is-right { grid-column: 9 / span 3; }
+.photo-row.is-pair.is-portrait { grid-column: 4 / span 9; }
+.photo-row.is-single { grid-column: 6 / span 5; }
+.photo-row.is-single.is-portrait { grid-column: 7 / span 3; }
+.photo-row.is-feature { grid-column: 5 / span 7; }
+.photo-row.is-feature.is-portrait { grid-column: 6 / span 5; }
 
 /* Project page: full screen over the site. */
 html.is-project-open { overflow: hidden; }
@@ -521,9 +517,10 @@ html.is-project-open { overflow: hidden; }
   font-size: var(--t-small);
   letter-spacing: 0.02em;
 }
-.project-tags { grid-column: 1 / span 2; }
+.project-tags { grid-column: 1 / span 3; }
+.project-tags li { font-size: var(--t-label-sm); }
 .project-tags li + li { margin-top: 0.3rem; }
-.project-text { grid-column: 3 / span 6; }
+.project-text { grid-column: 4 / span 5; }
 .project-facts { grid-column: 10 / span 3; }
 .project-text p { max-width: 36rem; font-size: var(--t-small); line-height: 1.6; letter-spacing: 0.01em; }
 .project-text p + p { margin-top: 1em; }
@@ -812,9 +809,6 @@ html.is-project-open { overflow: hidden; }
     grid-column: 1; flex-direction: column; gap: 16px; margin-block: 0;
   }
   .photo-row figure { flex: none; width: 100%; }
-  .photo-row.is-small.is-left, .photo-row.is-small.is-right, .photo-row.is-small.is-portrait.is-left, .photo-row.is-small.is-portrait.is-right { grid-column: 1; }
-  .photo-row.is-small figure { width: 72%; }
-  .photo-row.is-small.is-right figure { margin-left: auto; }
   .project-head { padding: 22px 20px 0; }
   .project-meta { grid-template-columns: minmax(0, 1fr); row-gap: 1.75rem; padding-inline: 20px; }
   .project-tags, .project-text, .project-facts { grid-column: 1; }
