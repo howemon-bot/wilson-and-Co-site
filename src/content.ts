@@ -160,6 +160,13 @@ export const allProjects: Project[] = [
     location: 'Eixample, Barcelona',
     image: '/images/eixample-bathroom.jpg',
     // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
+    // Final set from Photoshop; see Drive: Website_2026/Eixample Bathroom.
+    layout: [
+      { kind: 'feature', photos: [1] },
+      { kind: 'right', photos: [4, 3] },
+      { kind: 'pair', photos: [2, 5] },
+      { kind: 'left', photos: [6, 7] },
+    ],
     images: ['01_vaulted-bathroom', '02_vanity-and-window', '03_shower-wall', '04_shower-shelves', '05_basin', '06_tap-detail', '07_floor-tiles'].map((n) => shot(`eixample-${n}.jpg`)),
   },
   {

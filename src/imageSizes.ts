@@ -121,8 +121,8 @@ export const imageSizes: Record<string, [number, number]> = {
 1800
 ],
 "/images/gallery/eixample-02_vanity-and-window.jpg": [
-1350,
-1800
+1302,
+1750
 ],
 "/images/gallery/eixample-03_shower-wall.jpg": [
 1800,
