@@ -1,25 +1,40 @@
 import { useEffect, useRef, useState } from 'react';
-import { featuredProjects, projects, type Project } from '../content';
+import { featuredProjects, projects, type Project, type RowKind } from '../content';
 import { Img } from './Img';
 import { withItalics } from '../italics';
 import { PagerArrow } from './Icons';
 import { imageSizes } from '../imageSizes';
 
-// Project page photos: one calm structure on two equal columns. Landscapes pair
-// with landscapes and portraits with portraits (in the order they come), so the
-// two photos in a row are always the same size. Featured photos get a row of
-// their own, a little larger.
+// Project page photos. By default: landscapes pair with landscapes and portraits
+// with portraits (in the order they come), so the two photos in a row are the same
+// size; featured photos get a row of their own, a little larger. A project can
+// instead set its own rows (`layout`), which also allows a full-width photo and a
+// big photo set against a small one, on either side.
 type Photo = { src: string; n: number; portrait: boolean };
-type Row = { kind: 'feature' | 'pair' | 'single'; portrait: boolean; photos: Photo[] };
+type Row = { kind: RowKind; portrait: boolean; photos: Photo[] };
 const isPortrait = (src: string) => {
   const s = imageSizes[src];
   return s ? s[1] > s[0] : false;
 };
-function galleryRows(images: string[], featured: number[] = [1]): Row[] {
+const photo = (images: string[], n: number): Photo => ({ src: images[n - 1], n, portrait: isPortrait(images[n - 1]) });
+function galleryRows(images: string[], featured: number[] = [1], layout?: Project['layout']): Row[] {
+  if (layout) {
+    const rows: Row[] = layout.map(({ kind, photos }) => {
+      const ps = photos.filter((n) => images[n - 1]).map((n) => photo(images, n));
+      return { kind, portrait: ps.every((p) => p.portrait), photos: ps };
+    });
+    // Any photo the layout leaves out still shows, in the default way, at the end.
+    const used = new Set(layout.flatMap((r) => r.photos));
+    const rest = images.map((_, i) => i + 1).filter((n) => !used.has(n));
+    return rows.filter((r) => r.photos.length).concat(rest.length ? autoRows(images, rest, []) : []);
+  }
+  return autoRows(images, images.map((_, i) => i + 1), featured);
+}
+function autoRows(images: string[], numbers: number[], featured: number[]): Row[] {
   const rows: Row[] = [];
   const waiting: Record<'land' | 'port', { photo: Photo; row: number } | null> = { land: null, port: null };
-  images.forEach((src, i) => {
-    const p = { src, n: i + 1, portrait: isPortrait(src) };
+  numbers.forEach((n) => {
+    const p = photo(images, n);
     if (featured.includes(p.n)) {
       rows.push({ kind: 'feature', portrait: p.portrait, photos: [p] });
       return;
@@ -50,7 +65,7 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
   const i = list.findIndex((p) => p.slug === project.slug);
   const prev = list[(i - 1 + list.length) % list.length];
   const next = list[(i + 1) % list.length];
-  const rows = galleryRows(project.images, project.featured);
+  const rows = galleryRows(project.images, project.featured, project.layout);
 
   useEffect(() => {
     pageRef.current?.scrollTo?.({ top: 0 });
@@ -112,7 +127,7 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
             className={`photo-row is-${row.kind}${row.portrait ? ' is-portrait' : ''}`}
           >
             {row.photos.map((p) => (
-              <figure key={p.src}>
+              <figure key={p.src} className={p.portrait ? 'is-portrait' : undefined}>
                 <Img src={p.src} alt={`${project.title}, picture ${p.n}`} />
               </figure>
             ))}

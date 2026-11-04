@@ -81,12 +81,18 @@ export const services: Service[] = [
   },
 ];
 
+/** Project page rows: full (edge to edge), feature (one large), pair, single (centred),
+ *  left (big photo left, small right), right (small left, big photo right). */
+export type RowKind = 'full' | 'feature' | 'pair' | 'single' | 'left' | 'right';
+
 export type Project = {
   slug: string;
   title: string;
   categories: string[];
   /** Picture numbers (1 = first) shown larger, on a row of their own. Default: [1]. */
   featured?: number[];
+  /** Optional hand-set rows of picture numbers; replaces the default pairing. */
+  layout?: { kind: RowKind; photos: number[] }[];
   /** Neighbourhood and city, shown on the project page. */
   location?: string;
   /** A few sentences for the project page, from the current site. Blank lines split paragraphs. */
@@ -122,7 +128,17 @@ export const allProjects: Project[] = [
     text: "A three-storey house in El Clot, redesigned with a Japandi-inspired interior: the simplicity of Scandinavian design with the warmth of Japanese craft. Natural materials, clean lines and soft, muted tones run through every room.\n\nThe rooftop terrace now works as part of the living space, bringing in light and a sense of calm. A complete electrical upgrade sits quietly behind it all, so the home feels modern without losing its simplicity.",
     location: 'Clot, Barcelona',
     image: '/images/hero-japandi-clot-living.jpg',
-    // Retouched set (straightened, one white); see Drive: Reve&Rory/WEB_site_2026.
+    // Final set from Photoshop; see Drive: Reve&Rory/WEB_site_2026.
+    // Bigger: patio through the window, sideboard, terrace dining (full width).
+    layout: [
+      { kind: 'feature', photos: [1] },
+      { kind: 'left', photos: [2, 3] },
+      { kind: 'right', photos: [4, 5] },
+      { kind: 'pair', photos: [6, 7] },
+      { kind: 'feature', photos: [8] },
+      { kind: 'full', photos: [9] },
+      { kind: 'left', photos: [10, 11] },
+    ],
     images: [
       '01_living-room', '02_patio-through-steel-window', '03_patio', '04_bar-room', '05_green-tile-bar',
       '06_green-tile-detail', '07_open-plan-ground-floor', '08_sideboard-and-mirror', '09_terrace-dining',
