@@ -159,7 +159,6 @@ export const allProjects: Project[] = [
     text: "A small bathroom, completely rethought. We restored the original volta catalana ceiling, which brings back height and character, and laid Nolla tiles for a durable, geometric floor.\n\nThe brief was about making the most of the space: careful planning, built-in storage and materials chosen to last. The result is a compact bathroom that is practical day to day and beautifully finished.",
     location: 'Eixample, Barcelona',
     image: '/images/eixample-bathroom.jpg',
-    // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
     // Final set from Photoshop; see Drive: Website_2026/Eixample Bathroom.
     layout: [
       { kind: 'feature', photos: [1] },
