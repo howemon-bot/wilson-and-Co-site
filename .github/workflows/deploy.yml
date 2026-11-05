@@ -68,6 +68,30 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p "$SG_PORT" "$SG_HOST" >> ~/.ssh/known_hosts
 
+      # If the folder still holds WordPress, move it aside (next to the folder,
+      # not public) instead of letting rsync delete it. Runs only once.
+      - name: Keep old WordPress files
+        if: steps.ready.outputs.ok == 'true'
+        env:
+          SG_HOST: ${{ secrets.SG_HOST }}
+          SG_PORT: ${{ secrets.SG_PORT }}
+          SG_USER: ${{ secrets.SG_USER }}
+          SG_PATH: ${{ secrets.SG_PATH }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "$SG_PORT" "$SG_USER@$SG_HOST" bash -s -- "$SG_PATH" <<'EOF'
+          set -e
+          d="$1"
+          if [ -f "$d/wp-config.php" ]; then
+            b="$d.wordpress-backup-$(date +%Y%m%d-%H%M)"
+            mv "$d" "$b"
+            mkdir "$d"
+            if [ -d "$b/.well-known" ]; then cp -a "$b/.well-known" "$d/"; fi
+            echo "WordPress moved to $b"
+          else
+            echo "No WordPress here; nothing to move."
+          fi
+          EOF
+
       - name: Upload with rsync
         if: steps.ready.outputs.ok == 'true'
         env:
