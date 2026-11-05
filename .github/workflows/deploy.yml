@@ -1,7 +1,10 @@
 name: Deploy to SiteGround
 
-# Manual only. A push must not replace the live site.
+# Every push to main uploads the built site to SiteGround (folder in SG_PATH).
+# Until the SG_* secrets are added, the upload step is skipped.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
@@ -31,12 +34,29 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
+      - name: Check SiteGround secrets
+        id: ready
+        env:
+          SG_SSH_KEY: ${{ secrets.SG_SSH_KEY }}
+          SG_HOST: ${{ secrets.SG_HOST }}
+          SG_PORT: ${{ secrets.SG_PORT }}
+          SG_USER: ${{ secrets.SG_USER }}
+          SG_PATH: ${{ secrets.SG_PATH }}
+        run: |
+          if [ -n "$SG_SSH_KEY" ] && [ -n "$SG_HOST" ] && [ -n "$SG_PORT" ] && [ -n "$SG_USER" ] && [ -n "$SG_PATH" ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::SiteGround secrets not set yet; skipping upload."
+          fi
+
       - uses: actions/download-artifact@v4
+        if: steps.ready.outputs.ok == 'true'
         with:
           name: dist
           path: dist
 
       - name: Set up SSH
+        if: steps.ready.outputs.ok == 'true'
         env:
           SG_SSH_KEY: ${{ secrets.SG_SSH_KEY }}
           SG_HOST: ${{ secrets.SG_HOST }}
@@ -48,6 +68,7 @@ jobs:
           ssh-keyscan -p "$SG_PORT" "$SG_HOST" >> ~/.ssh/known_hosts
 
       - name: Upload with rsync
+        if: steps.ready.outputs.ok == 'true'
         env:
           SG_HOST: ${{ secrets.SG_HOST }}
           SG_PORT: ${{ secrets.SG_PORT }}
