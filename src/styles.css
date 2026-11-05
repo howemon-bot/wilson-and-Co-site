@@ -461,7 +461,7 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
 .photo-row.is-feature.is-portrait { grid-column: 1 / -1; }
 .photo-row.is-feature.is-portrait figure { flex: 0 0 40%; }
 /* Full width: margin to margin, a wider frame so it fits the screen. */
-.photo-row.is-full { grid-column: 1 / -1; }
+.photo-row.is-full { grid-column: 2 / span 10; } /* same width as the two-photo rows */
 .photo-row.is-full figure { aspect-ratio: 16 / 9; }
 /* Big and small: the big photo 6 columns, the small one 3 (portrait) or 4
    (landscape), centred on each other, with a column of cream between them. */
