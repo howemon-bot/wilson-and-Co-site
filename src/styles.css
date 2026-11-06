@@ -481,6 +481,9 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
 .photo-row.is-right figure:nth-child(1) { grid-column: 1 / span 4; }
 .photo-row.is-right figure.is-portrait:nth-child(1) { grid-column: 2 / span 3; }
 .photo-row.is-right figure:nth-child(2) { grid-column: 6 / span 6; }
+/* A portrait as the big photo: 4 columns, same width as a portrait in a pair. */
+.photo-row.is-left figure.is-portrait:nth-child(1) { grid-column: 3 / span 4; }
+.photo-row.is-right figure.is-portrait:nth-child(2) { grid-column: 7 / span 4; }
 
 /* Project page: full screen over the site. */
 html.is-project-open { overflow: hidden; }
