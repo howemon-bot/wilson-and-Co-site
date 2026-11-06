@@ -20,6 +20,7 @@
   --t-body: clamp(1.0625rem, 1.25vw, 1.125rem); /* 17 → 18px */
   --t-small: 0.9375rem;                        /* 15px, side paragraphs */
   --gap-section: clamp(6.5rem, 17vh, 10rem);      /* the one space between sections */
+  --gap-photo-rows: clamp(2.5rem, 6vw, 5.5rem);   /* the one space between rows of project photos */
   --t-label: 0.8125rem;                        /* 13px */
   --t-label-sm: 0.75rem;                       /* 12px, project services list */
 }
@@ -444,7 +445,7 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: clamp(1rem, 2vw, 2rem);
-  row-gap: clamp(1rem, 2vw, 2rem); /* the same gap between photos both ways */
+  row-gap: var(--gap-photo-rows);
   padding: 0 40px clamp(5rem, 12vh, 8rem);
 }
 /* Photos centred on the page. Pairs and the featured landscape run from where the
@@ -471,7 +472,6 @@ strong, b { font-family: var(--font-display); font-weight: 500; }
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: inherit;
   align-items: center;
-  margin-block: clamp(1.5rem, 4vw, 3.5rem);
 }
 .photo-row.is-left figure, .photo-row.is-right figure { aspect-ratio: 3 / 2; }
 .photo-row figure.is-portrait { aspect-ratio: 2 / 3; }
