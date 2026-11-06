@@ -176,15 +176,13 @@ export const allProjects: Project[] = [
     location: 'Sarrià, Barcelona',
     image: '/images/gallery/sarria-04_sink-and-breakfast-nook.jpg', // home page card
     // Monica's edits from Drive (Website_2026/Anna Kitchen), white balance evened out.
-    // Details and the best photos bigger; the kitchen (leaning), dresser (soft) and the
-    // two window shots (burnt windows) smaller. Kitchen and hob (same angle) kept apart.
+    // Mostly pairs, with one big + small row. Kitchen and hob (same angle) kept apart.
     layout: [
       { kind: 'feature', photos: [2] },
       { kind: 'left', photos: [9, 5] },
-      { kind: 'right', photos: [1, 7] },
-      { kind: 'feature', photos: [6] },
-      { kind: 'left', photos: [8, 3] },
-      { kind: 'single', photos: [4] },
+      { kind: 'pair', photos: [1, 7] },
+      { kind: 'pair', photos: [6, 8] },
+      { kind: 'pair', photos: [3, 4] },
     ],
     images: [
       '01_kitchen', '02_hob-and-oven-column', '03_sink-and-window', '04_sink-and-breakfast-nook',

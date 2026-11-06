@@ -43,7 +43,7 @@ export const imageVersions: Record<string, string> = {
 "/images/gallery/heaven-04_kitchen-island.jpg": "68e1e65f",
 "/images/gallery/heaven-05_kitchen-under-the-roof.jpg": "c0c3f8c2",
 "/images/gallery/heaven-06_dining-room.jpg": "b163bd64",
-"/images/gallery/heaven-07_bathroom.jpg": "c3459ee9",
+"/images/gallery/heaven-07_bathroom.jpg": "8f0c13e4",
 "/images/gallery/heaven-08_bath-and-niches.jpg": "f3ca0fe2",
 "/images/gallery/heaven-09_hot-tub-terrace.jpg": "c2277575",
 "/images/gallery/sant-antoni-01_kitchen-and-dining.jpg": "34982a00",
