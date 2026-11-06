@@ -175,7 +175,14 @@ export const allProjects: Project[] = [
     text: "A full renovation of the kitchen area in a home in Sarrià. We redesigned the space around the way the family cooks and gathers, with a breakfast corner by the window and storage planned for everyday life.\n\nWhite quartz runs from the worktops up the walls, soft grey shaker cabinets keep it calm, and a glazed dresser with reeded glass and warm under-cabinet light brings depth. The patterned floor tiles and *rose walls* give the room its character.",
     location: 'Sarrià, Barcelona',
     image: '/images/gallery/sarria-04_sink-and-breakfast-nook.jpg', // home page card
-    // Monica's own edits, used as supplied.
+    // Monica's edits from Drive (Website_2026/Anna Kitchen), white balance evened out.
+    // The two views from the same angle (kitchen, hob) are kept apart.
+    layout: [
+      { kind: 'feature', photos: [2] },
+      { kind: 'pair', photos: [3, 4] },
+      { kind: 'pair', photos: [5, 1] },
+      { kind: 'pair', photos: [6, 7] },
+    ],
     images: [
       '01_kitchen', '02_hob-and-oven-column', '03_sink-and-window', '04_sink-and-breakfast-nook',
       '05_glazed-dresser-and-arch', '06_reeded-glass', '07_drawers-and-tiles', '08_brass-handle',
