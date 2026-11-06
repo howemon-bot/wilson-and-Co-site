@@ -221,40 +221,40 @@ export const imageSizes: Record<string, [number, number]> = {
 1800
 ],
 "/images/gallery/sarria-01_kitchen.jpg": [
-1322,
-2000
+1190,
+1800
 ],
 "/images/gallery/sarria-02_hob-and-oven-column.jpg": [
-1333,
-2000
+1200,
+1800
 ],
 "/images/gallery/sarria-03_sink-and-window.jpg": [
-2000,
-1352
+1800,
+1217
 ],
 "/images/gallery/sarria-04_sink-and-breakfast-nook.jpg": [
-2000,
-1333
+1800,
+1200
 ],
 "/images/gallery/sarria-05_glazed-dresser-and-arch.jpg": [
-1396,
-2000
+1257,
+1800
 ],
 "/images/gallery/sarria-06_reeded-glass.jpg": [
-1500,
-2000
+1350,
+1800
 ],
 "/images/gallery/sarria-07_drawers-and-tiles.jpg": [
-1500,
-2000
+1350,
+1800
 ],
 "/images/gallery/sarria-08_brass-handle.jpg": [
-1333,
-2000
+1200,
+1800
 ],
 "/images/gallery/sarria-09_floor-tiles.jpg": [
-2000,
-1289
+1800,
+1161
 ],
 "/images/gallery/solar-01_roof-and-sea-view.jpg": [
 1600,
