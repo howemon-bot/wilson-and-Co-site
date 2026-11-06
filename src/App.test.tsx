@@ -1,6 +1,7 @@
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
+import { asset } from './asset';
 import { company, contacts, featuredProjects, hero, heroSlides, projects, services, team, testimonials } from './content';
 
 describe('App', () => {
@@ -9,7 +10,7 @@ describe('App', () => {
   });
 
   it('opens on the oldest photograph, then the studio line', () => {
-    expect(document.querySelector('.hero .slide.is-active img')).toHaveAttribute('src', heroSlides[0].image);
+    expect(document.querySelector('.hero .slide.is-active img')).toHaveAttribute('src', asset(heroSlides[0].image));
     expect(screen.getByRole('heading', { level: 1, name: hero.heading })).toBeInTheDocument();
   });
 
