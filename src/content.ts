@@ -218,10 +218,10 @@ export const allProjects: Project[] = [
     text: "A refurbishment of a four-storey house in south-east London. We designed and installed the full electrical system, along with wifi throughout and integrated audio and visual. The project even included a lit tree house for the children.",
     image: '/images/entertainment-heaven.jpg',
     // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
-    // Mostly pairs, with one big + small row to finish.
+    // Mostly pairs; big + small for the bar and to finish.
     layout: [
       { kind: 'feature', photos: [1] },
-      { kind: 'pair', photos: [2, 3] },
+      { kind: 'right', photos: [2, 3] },
       { kind: 'pair', photos: [4, 5] },
       { kind: 'pair', photos: [6, 7] },
       { kind: 'right', photos: [8, 9] },
