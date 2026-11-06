@@ -12,6 +12,10 @@ export const imageSizes: Record<string, [number, number]> = {
 1020,
 1020
 ],
+"/images/email-logo.png": [
+300,
+300
+],
 "/images/entertainment-heaven.jpg": [
 1800,
 1702
