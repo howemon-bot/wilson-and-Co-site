@@ -972,6 +972,37 @@ html.is-project-open { overflow: hidden; }
 .cursor-dot.is-link::before { transform: scale(2.6); opacity: 0.35; }
 .cursor-dot.is-light::before { background: #fff; }
 
+/* EN | ES, just left of the menu button, in the small-capitals label style. */
+.lang-switch {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  margin-right: -0.75rem; /* 1.25rem from the menu button */
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  transition: color 0.4s ease;
+}
+.lang-switch + .menu-btn { margin-left: 0; }
+.lang-switch span { opacity: 0.35; }
+.lang-switch button {
+  padding: 0.5em 0.1em;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  opacity: 0.45;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.lang-switch button:hover,
+.lang-switch button[aria-pressed="true"] { opacity: 1; }
+.is-menu-open .site-header .lang-switch { color: var(--paper); }
+
 /* Menu: three lines in a cream circle, opening a full-screen menu. */
 .site-header .logo,
 .menu-btn { position: relative; z-index: 2; }

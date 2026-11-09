@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { testimonials } from '../content';
+import { useLang } from '../i18n';
 
 function Arrow({ dir }: { dir: 'left' | 'right' }) {
   return (
@@ -17,6 +18,7 @@ function Arrow({ dir }: { dir: 'left' | 'right' }) {
 const pad = (n: number) => String(n).padStart(2, '0');
 
 export function Testimonials() {
+  const { t: ui } = useLang();
   const [index, setIndex] = useState(0);
   const count = testimonials.length;
 
@@ -33,7 +35,7 @@ export function Testimonials() {
   return (
     <section className="quotes" id="clients" aria-labelledby="clients-title" aria-roledescription="carousel">
       <h2 id="clients-title" className="section-label">
-        Testimonials
+        {ui.testimonialsTitle}
       </h2>
       <div className="quotes-body">
         <div className="quotes-stack">
@@ -58,10 +60,10 @@ export function Testimonials() {
             {pad(index + 1)} / {pad(count)}
           </span>
           <span className="quote-arrows">
-            <button type="button" aria-label="Previous testimonial" onClick={() => go(-1)}>
+            <button type="button" aria-label={ui.prevTestimonial} onClick={() => go(-1)}>
               <Arrow dir="left" />
             </button>
-            <button type="button" aria-label="Next testimonial" onClick={() => go(1)}>
+            <button type="button" aria-label={ui.nextTestimonial} onClick={() => go(1)}>
               <Arrow dir="right" />
             </button>
           </span>

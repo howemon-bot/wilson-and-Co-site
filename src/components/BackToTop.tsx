@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useLang } from '../i18n';
 
 // A small cream circle with a thin arrow, so it reads on any background.
 export function BackToTop() {
+  const { t } = useLang();
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -15,7 +17,7 @@ export function BackToTop() {
     <a
       className={show ? 'to-top is-shown' : 'to-top'}
       href="#top"
-      aria-label="Back to top"
+      aria-label={t.backToTop}
       aria-hidden={!show}
       tabIndex={show ? undefined : -1}
     >

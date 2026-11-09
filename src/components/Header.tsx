@@ -1,16 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { Logo } from './Logo';
-import { company, contacts } from '../content';
+import { company } from '../content';
+import { useLang } from '../i18n';
 import { InstagramIcon, MailIcon } from './Icons';
 
 const links = [
-  { href: '#projects', label: 'Projects' },
-  { href: '#services', label: 'Services' },
-  { href: '#contact', label: 'Contact' },
-];
-
-// The two founders' emails, with what each one looks after.
-const people = contacts.filter((c) => c.name !== 'General enquiries');
+  { href: '#projects', key: 'projects' },
+  { href: '#services', key: 'services' },
+  { href: '#contact', key: 'contact' },
+] as const;
 
 // The section in view is the last one whose top has passed 40% of the screen.
 function sectionInView() {
@@ -23,6 +21,9 @@ function sectionInView() {
 }
 
 export function Header() {
+  const { lang, setLang, t, c } = useLang();
+  // The two founders' emails, with what each one looks after.
+  const people = c.contacts.filter((p) => !p.general);
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState('');
@@ -68,11 +69,20 @@ export function Header() {
       <a className="logo" href="#top" onClick={() => setOpen(false)}>
         <Logo />
       </a>
+      <div className="lang-switch" role="group" aria-label={t.language}>
+        <button type="button" lang="en" aria-label="English" aria-pressed={lang === 'en'} onClick={() => setLang('en')}>
+          EN
+        </button>
+        <span aria-hidden="true">|</span>
+        <button type="button" lang="es" aria-label="Español" aria-pressed={lang === 'es'} onClick={() => setLang('es')}>
+          ES
+        </button>
+      </div>
       <button
         ref={button}
         className="menu-btn"
         type="button"
-        aria-label={open ? 'Close menu' : 'Open menu'}
+        aria-label={open ? t.closeMenu : t.openMenu}
         aria-expanded={open}
         aria-controls="site-menu"
         onClick={() => setOpen((v) => !v)}
@@ -84,7 +94,7 @@ export function Header() {
       <div ref={menu} id="site-menu" className={open ? 'menu is-open' : 'menu'} aria-hidden={!open}>
         <div className="menu-scrim" onClick={() => setOpen(false)} />
         <div className="menu-panel">
-          <nav aria-label="Main">
+          <nav aria-label={t.mainNav}>
             <ul className="menu-links">
               {links.map((l, i) => (
                 <li key={l.href}>
@@ -94,19 +104,19 @@ export function Header() {
                     aria-current={active === l.href ? 'true' : undefined}
                     onClick={() => setOpen(false)}
                   >
-                    <span>{l.label}</span>
+                    <span>{t.nav[l.key]}</span>
                   </a>
                 </li>
               ))}
             </ul>
           </nav>
           <div className="menu-foot">
-            {people.map((c) => (
-              <p key={c.email}>
-                <span className="menu-topic">{c.topic}</span>
-                <a href={`mailto:${c.email}`}>
+            {people.map((p) => (
+              <p key={p.email}>
+                <span className="menu-topic">{p.topic}</span>
+                <a href={`mailto:${p.email}`}>
                   <MailIcon />
-                  {c.email}
+                  {p.email}
                 </a>
               </p>
             ))}

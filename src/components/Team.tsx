@@ -1,4 +1,4 @@
-import { team } from '../content';
+import { useLang } from '../i18n';
 import { Img } from './Img';
 
 function Instagram() {
@@ -32,6 +32,8 @@ function Mail() {
 }
 
 export function Team() {
+  const { t, c } = useLang();
+  const team = c.team;
   return (
     <section className="team" id="team" aria-labelledby="team-title">
       <h2 id="team-title" className="section-label">
@@ -43,7 +45,7 @@ export function Team() {
         {team.members.map((m) => (
           <li key={m.name}>
             <div className="portrait">
-              <Img src={m.image} alt={`Portrait of ${m.name}`} />
+              <Img src={m.image} alt={t.portraitOf(m.name)} />
             </div>
             <h3>{m.name}</h3>
             <p className="role">{m.role}</p>
@@ -56,7 +58,7 @@ export function Team() {
                   <WhatsApp />
                 </a>
               )}
-              <a href={`mailto:${m.email}`} aria-label={`Email ${m.name}`}>
+              <a href={`mailto:${m.email}`} aria-label={t.emailTo(m.name)}>
                 <Mail />
               </a>
             </p>

@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import { hero, heroSlides } from '../content';
+import { useLang } from '../i18n';
 import { Img } from './Img';
 import { withItalics } from '../italics';
 
 const STAY_MS = 6500;
 
 export function Hero() {
+  const { t, c } = useLang();
+  const { hero, heroSlides } = c;
   const [current, setCurrent] = useState(0);
   const count = heroSlides.length;
 
@@ -21,7 +23,7 @@ export function Hero() {
         <h1 id="hero-title">{hero.heading}</h1>
         <p>{withItalics(hero.text)}</p>
       </div>
-      <div className="hero-media" aria-roledescription="carousel" aria-label="Featured projects">
+      <div className="hero-media" aria-roledescription="carousel" aria-label={t.heroCarousel}>
         {heroSlides.map((s, i) => (
           <div
             key={i}

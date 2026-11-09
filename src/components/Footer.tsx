@@ -1,13 +1,15 @@
 import { company, contacts } from '../content';
 import { InstagramIcon, MailIcon, OutArrow } from './Icons';
+import { useLang } from '../i18n';
 
-const general = contacts.find((c) => c.name === 'General enquiries') ?? contacts[contacts.length - 1];
+const general = contacts.find((c) => c.general) ?? contacts[contacts.length - 1];
 
 export function Footer() {
+  const { t } = useLang();
   return (
     <footer className="site-footer">
       <div className="footer-main">
-        <p className="footer-place">Barcelona, Spain</p>
+        <p className="footer-place">{t.place}</p>
         <a className="footer-link footer-email" href={`mailto:${general.email}`}>
           <MailIcon />
           {general.email} <OutArrow />
@@ -20,8 +22,8 @@ export function Footer() {
       <div className="footer-base">
         <p>© {new Date().getFullYear()} Wilson &amp; Co</p>
         <details id="privacy" className="privacy">
-          <summary>Privacy policy</summary>
-          <p>We use your name and email only to answer an enquiry. We don’t sell or share those details.</p>
+          <summary>{t.privacy}</summary>
+          <p>{t.privacyText}</p>
         </details>
       </div>
     </footer>

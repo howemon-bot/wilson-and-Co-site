@@ -63,19 +63,22 @@ export const film = {
   label: 'Wilson & Co film',
 };
 
-export type Service = { title: string; text: string };
+export type Service = { id: 'interiors' | 'renovations' | 'installations'; title: string; text: string };
 
 // Three rows after the film. *word* is set in italics.
 export const services: Service[] = [
   {
+    id: 'interiors',
     title: 'Interiors',
     text: 'Spaces planned around the way you live. We design the layout, joinery, lighting and finishes, working with *local materials* and makers, and see every detail through to the day you move in.',
   },
   {
+    id: 'renovations',
     title: 'Renovations',
     text: 'From a single room to a full *reforma*, we rethink a space or your whole home with one team throughout. We manage the work from the first sketch to the final detail, so you have one point of contact and no loose ends.',
   },
   {
+    id: 'installations',
     title: 'Installations',
     text: 'Electrical work from maintenance to full rewiring, plumbing, underfloor heating and air conditioning, solar panels and EV chargers, and simple home automation for lighting, heating, blinds and security. All *quietly built in*, and installed to last.',
   },
@@ -252,7 +255,7 @@ export const allProjects: Project[] = [
 
 // Projects without photos stay off the site until they have some.
 // Interior design always leads the list of work done.
-const interiorsFirst = (c: string[]) => [...c.filter((x) => x === 'Interior design'), ...c.filter((x) => x !== 'Interior design')];
+export const interiorsFirst = (c: string[]) => [...c.filter((x) => x === 'Interior design'), ...c.filter((x) => x !== 'Interior design')];
 export const projects = allProjects
   .filter((p) => p.images.length > 0)
   .map((p) => ({ ...p, categories: interiorsFirst(p.categories) }));
@@ -355,8 +358,10 @@ export const team = {
   ],
 };
 
-export const contacts = [
+export type ContactPerson = { name: string; topic: string; email: string; general?: boolean };
+
+export const contacts: ContactPerson[] = [
   { name: 'Monica Howe', topic: 'Interiors and innovation', email: 'monica@wilsonandco.es' },
   { name: 'Rohan Wilson', topic: 'Construction and installations', email: 'rohan@wilsonandco.es' },
-  { name: 'General enquiries', topic: 'Anything else', email: 'hola@wilsonandco.es' },
+  { name: 'General enquiries', topic: 'Anything else', email: 'hola@wilsonandco.es', general: true },
 ];

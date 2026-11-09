@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Logo } from './Logo';
+import { useLang } from '../i18n';
 
 // The opening sequence on a first visit:
 // the W appears, the three trades come in one by one, the W opens out into
@@ -18,7 +19,6 @@ const STEPS: [Phase, number][] = [
 ];
 const END_MS = 6500;
 const SEEN_KEY = 'wco-opening-seen';
-const WORDS = ['Interiors.', 'Renovations.', 'Installations.'];
 
 function shouldPlay() {
   if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return false;
@@ -32,6 +32,7 @@ function shouldPlay() {
 }
 
 export function Opening() {
+  const { t } = useLang();
   const [phase, setPhase] = useState<Phase | null>(() => (shouldPlay() ? 'enter' : null));
   const [settleTo, setSettleTo] = useState<string | undefined>();
   const markRef = useRef<HTMLDivElement>(null);
@@ -78,7 +79,7 @@ export function Opening() {
       className={`opening is-${phase}`}
       aria-hidden="true"
       onClick={() => setPhase(null)}
-      title="Skip"
+      title={t.skip}
     >
       <div className="opening-paper" />
       <div className="opening-stage">
@@ -88,7 +89,7 @@ export function Opening() {
           </div>
         </div>
         <p className="opening-words">
-          {WORDS.map((w, i) => (
+          {t.openingWords.map((w, i) => (
             <span key={w} style={{ transitionDelay: `${i * 0.38}s` }}>
               {w}
             </span>

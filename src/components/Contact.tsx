@@ -1,14 +1,15 @@
-import { contacts } from '../content';
 import { OutArrow } from './Icons';
-
-const general = contacts.find((c) => c.name === 'General enquiries') ?? contacts[contacts.length - 1];
+import { useLang } from '../i18n';
 
 export function Contact() {
+  const { t, c: content } = useLang();
+  const contacts = content.contacts;
+  const general = contacts.find((c) => c.general) ?? contacts[contacts.length - 1];
   const [user, domain] = general.email.split('@');
   return (
     <section className="contact" id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title" className="section-label">
-        Contact
+        {t.contactTitle}
       </h2>
       <a className="contact-big" href={`mailto:${general.email}`}>
         <span>{user}@</span>
@@ -17,7 +18,7 @@ export function Contact() {
       <ul>
         {contacts.map((c) => (
           <li key={c.email}>
-            <p>{c.name === 'General enquiries' ? c.name : c.topic}</p>
+            <p>{c.general ? c.name : c.topic}</p>
             <a className="link" href={`mailto:${c.email}`}>
               {c.email}
               <OutArrow className="out-arrow contact-arrow" />

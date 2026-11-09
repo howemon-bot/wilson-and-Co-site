@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { featuredProjects, projects, type Project, type RowKind } from '../content';
+import { type Project, type RowKind } from '../content';
+import { useLang } from '../i18n';
 import { Img } from './Img';
 import { withItalics } from '../italics';
 import { PagerArrow } from './Icons';
@@ -54,14 +55,15 @@ function autoRows(images: string[], numbers: number[], featured: number[]): Row[
 
 // Home card details: the neighbourhood and the main kind of work.
 const place = (p: Project) => (p.location ?? '').split(',')[0];
-const kind = (p: Project) =>
-  p.categories.includes('Interior design') ? 'Interior design' : p.categories.slice(0, 2).join(', ');
+const kind = (p: Project, interiorDesign: string) =>
+  p.categories.includes(interiorDesign) ? interiorDesign : p.categories.slice(0, 2).join(', ');
 
 function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: () => void; onGo: (p: Project) => void }) {
+  const { t, c } = useLang();
   const closeRef = useRef<HTMLButtonElement>(null);
   const pageRef = useRef<HTMLDivElement>(null);
   // Previous / Next move through the projects shown on the home page only.
-  const list = featuredProjects;
+  const list = c.featuredProjects;
   const i = list.findIndex((p) => p.slug === project.slug);
   const prev = list[(i - 1 + list.length) % list.length];
   const next = list[(i + 1) % list.length];
@@ -90,10 +92,10 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
     <div ref={pageRef} className="project-page" role="dialog" aria-modal="true" aria-labelledby="project-title">
       <div className="project-head">
         <h2 id="project-title">{project.title}</h2>
-        <button ref={closeRef} type="button" className="close-x" aria-label="Close project" onClick={onClose} />
+        <button ref={closeRef} type="button" className="close-x" aria-label={t.closeProject} onClick={onClose} />
       </div>
       <div className="project-meta">
-        <ul className="project-tags" aria-label="Work done">
+        <ul className="project-tags" aria-label={t.workDone}>
           {project.categories.map((c) => (
             <li key={c}>{c}</li>
           ))}
@@ -105,18 +107,18 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
         </div>
         <dl className="project-facts">
           <div>
-            <dt>Design</dt>
+            <dt>{t.design}</dt>
             <dd>Wilson &amp; Co</dd>
           </div>
           {project.location && (
             <div>
-              <dt>Location</dt>
+              <dt>{t.location}</dt>
               <dd>{project.location}</dd>
             </div>
           )}
           <div>
-            <dt>Status</dt>
-            <dd>Completed</dd>
+            <dt>{t.status}</dt>
+            <dd>{t.completed}</dd>
           </div>
         </dl>
       </div>
@@ -128,19 +130,19 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
           >
             {row.photos.map((p) => (
               <figure key={p.src} className={p.portrait ? 'is-portrait' : undefined}>
-                <Img src={p.src} alt={`${project.title}, picture ${p.n}`} />
+                <Img src={p.src} alt={t.picture(project.title, p.n)} />
               </figure>
             ))}
           </div>
         ))}
       </div>
-      <nav className="project-pager" aria-label="More projects">
+      <nav className="project-pager" aria-label={t.moreProjects}>
         <button type="button" onClick={() => onGo(prev)}>
           <PagerArrow dir="left" />
-          <span>Previous</span>
+          <span>{t.previous}</span>
         </button>
         <button type="button" onClick={() => onGo(next)}>
-          <span>Next</span>
+          <span>{t.next}</span>
           <PagerArrow dir="right" />
         </button>
       </nav>
@@ -149,30 +151,34 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
 }
 
 export function Projects() {
-  const [active, setActive] = useState<Project | null>(null);
+  const { t, c } = useLang();
+  // The open project is kept by slug, so it follows a change of language.
+  const [activeSlug, setActiveSlug] = useState<string | null>(null);
+  const active = c.projects.find((p) => p.slug === activeSlug) ?? null;
+  const setActive = (p: Project | null) => setActiveSlug(p ? p.slug : null);
 
   return (
     <section className="projects" id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title" className="section-label projects-label">
-        Featured projects
+        {t.projectsTitle}
       </h2>
       {/* Large cards that stack over each other as you scroll. */}
       <ul className="project-cards">
-        {featuredProjects.map((p, i) => (
+        {c.featuredProjects.map((p, i) => (
           <li key={p.slug} className="project-card">
             <Img src={p.image} alt="" />
             <div className="card-meta" aria-hidden="true">
               <span>{String(i + 1).padStart(2, '0')}</span>
               <span>{p.title}</span>
               <span>{place(p)}</span>
-              <span>{kind(p)}</span>
+              <span>{kind(p, t.interiorDesign)}</span>
             </div>
             <div className="card-title">
               <h3>{p.title}</h3>
               {p.location && <p>{p.location}</p>}
             </div>
             {/* Its click area covers the whole card. */}
-            <button type="button" className="card-open" onClick={() => setActive(p)} aria-label={`${p.title}, open project`} />
+            <button type="button" className="card-open" onClick={() => setActive(p)} aria-label={t.openProject(p.title)} />
           </li>
         ))}
       </ul>

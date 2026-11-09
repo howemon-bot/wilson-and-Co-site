@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { film } from '../content';
+import { useLang } from '../i18n';
 import { Img } from './Img';
 import { asset } from '../asset';
 
@@ -22,6 +22,7 @@ function reducedMotion() {
 // the W is a window onto the film, the film rises to fill the screen,
 // the W turns white over it and then fades away.
 export function Film() {
+  const { film } = useLang().c;
   const [failed, setFailed] = useState(false);
   const [size, setSize] = useState({ w: 1440, h: 900 });
   const [still] = useState(reducedMotion);

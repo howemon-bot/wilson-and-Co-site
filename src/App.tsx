@@ -10,10 +10,11 @@ import { Footer } from './components/Footer';
 import { BackToTop } from './components/BackToTop';
 import { Opening } from './components/Opening';
 import { CursorDot } from './components/CursorDot';
+import { LangProvider } from './i18n';
 
 export default function App() {
   return (
-    <>
+    <LangProvider>
       <Header />
       <main>
         <Hero />
@@ -28,6 +29,6 @@ export default function App() {
       <BackToTop />
       <Opening />
       <CursorDot />
-    </>
+    </LangProvider>
   );
 }

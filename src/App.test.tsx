@@ -3,10 +3,15 @@ import userEvent from '@testing-library/user-event';
 import App from './App';
 import { asset } from './asset';
 import { company, contacts, featuredProjects, hero, heroSlides, projects, services, team, testimonials } from './content';
+import { es } from './content.es';
 
 describe('App', () => {
   beforeEach(() => {
     render(<App />);
+  });
+  afterEach(() => {
+    window.localStorage.clear();
+    window.history.replaceState(null, '', '/');
   });
 
   it('opens on the oldest photograph, then the studio line', () => {
@@ -124,5 +129,24 @@ describe('App', () => {
     for (const link of screen.getAllByRole('link', { name: 'Instagram' })) {
       expect(link).toHaveAttribute('href', company.instagram);
     }
+  });
+
+  it('switches the whole page to Spanish with EN | ES', async () => {
+    const user = userEvent.setup();
+    expect(document.documentElement.lang).toBe('en');
+    await user.click(screen.getByRole('button', { name: 'Español' }));
+    expect(document.documentElement.lang).toBe('es');
+    expect(screen.getByRole('button', { name: 'Español' })).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('heading', { level: 1, name: es.hero.heading })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: es.services.interiors.title })).toBeInTheDocument();
+    expect(screen.getByRole('region', { name: es.team.heading })).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Abrir menú' }));
+    const nav = screen.getByRole('navigation', { name: 'Principal' });
+    expect(within(nav).getByRole('link', { name: 'Proyectos' })).toHaveAttribute('href', '#projects');
+    expect(window.location.search).toBe('?lang=es');
+    await user.keyboard('{Escape}');
+    await user.click(screen.getByRole('button', { name: 'English' }));
+    expect(screen.getByRole('heading', { level: 1, name: hero.heading })).toBeInTheDocument();
+    expect(window.location.search).toBe('');
   });
 });
