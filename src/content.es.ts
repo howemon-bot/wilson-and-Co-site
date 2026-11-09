@@ -21,11 +21,11 @@ export const es = {
       caption: 'Ampliación con jardín, Wandsworth',
     },
     {
-      alt: 'El salón del piso japandi en el Clot: un sofá terracota, una mesa de centro de teca y una butaca de ratán bajo un lucernario',
+      alt: 'El salón de la casa japandi en el Clot: un sofá terracota, una mesa de centro de teca y una butaca de ratán bajo un lucernario',
       caption: 'Salón japandi, Clot',
     },
     {
-      alt: 'La terraza del piso japandi en el Clot: sillas de ratán y una mesa de piedra bajo plantas trepadoras, vista a través de una puerta de vidrio con perfilería negra',
+      alt: 'La terraza de la casa japandi en el Clot: sillas de ratán y una mesa de piedra bajo plantas trepadoras, vista a través de una puerta de vidrio con perfilería negra',
       caption: 'Patio interior, Barcelona',
     },
   ],

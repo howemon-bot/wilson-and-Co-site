@@ -42,14 +42,14 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     image: '/images/hero-japandi-clot-living.jpg',
-    alt: 'The living room of the Japandi apartment in Clot: a terracotta sofa, a teak coffee table and a rattan chair under a skylight',
+    alt: 'The living room of the Japandi house in Clot: a terracotta sofa, a teak coffee table and a rattan chair under a skylight',
     caption: 'Japandi Living Room, Clot',
     focus: '35% 62%', // more of the right wall, the rattan chair still whole
     zoom: 1,
   },
   {
     image: '/images/hero-japandi-clot-terrace.jpg',
-    alt: 'The terrace of the Japandi apartment in Clot: rattan chairs and a stone table under climbing plants, seen through a black-framed glass door',
+    alt: 'The terrace of the Japandi house in Clot: rattan chairs and a stone table under climbing plants, seen through a black-framed glass door',
     caption: 'Indoor Courtyard, Barcelona',
     focus: '18% 100%', // slightly right; anchored low so the table shows more than the top
     zoom: 1.12,
@@ -197,7 +197,7 @@ export const allProjects: Project[] = [
     slug: 'classical-beauty',
     title: 'Classical Beauty',
     categories: ['Electrical', 'Automation'],
-    text: "A three-bedroom house extended into a four-storey home, with a full basement designed as an entertainment room and library. Lighting was central to the brief, inside and out, and everything had to be integrated cleanly into the architecture.",
+    text: "A three-bedroom house extended into a four-storey home, with a full basement designed as a living room and library. Lighting was central to the brief, inside and out, and everything had to be integrated cleanly into the architecture.",
     location: 'Wandsworth, London',
     image: '/images/hero-wandsworth.jpg',
     // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
@@ -208,7 +208,7 @@ export const allProjects: Project[] = [
     title: 'Entertainment Heaven',
     categories: ['Electrical', 'Automation'],
     location: "South East London",
-    text: "A refurbishment of a four-storey house in south-east London. We designed and installed the full electrical system and the bar area, along with wifi throughout and integrated audio and visual. The project even included a lit tree house for the children.",
+    text: "A refurbishment of a four-storey house in south-east London. We designed and installed the full electrical system and designed the bar area, along with wifi throughout and integrated audio and visual. The project even included a lit tree house for the children.",
     image: '/images/entertainment-heaven.jpg',
     // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
     // Mostly pairs; big + small for the bar and to finish.
@@ -269,7 +269,7 @@ export const testimonials: Testimonial[] = [
       'Our experience with Rohan at Wilson & Co was very positive. He quickly resolved major electrical issues in our older home, coordinated well with other contractors, and handled our many changes professionally. He also installed a powerful, efficient solar system and took care of all the paperwork. In under two years, it’s already cut our bill significantly. Rohan met every challenge—our home is now fossil fuel free and safely wired. Him being a native English speaker was a big plus.',
     highlight: 'Rohan met every challenge—our home is now fossil fuel free and safely wired.',
     name: 'Ron H',
-    place: 'Sant Feliu de Guixols',
+    place: 'Sant Feliu de Guíxols',
   },
   {
     lang: 'es',
@@ -291,7 +291,7 @@ export const testimonials: Testimonial[] = [
     lang: 'en',
     quote:
       'Rohan and his team installed a total of 6kW solar panels on my house roof plus the 3-phase electrical installation that goes with it. The work was done quick, flawless and the treat with him was hassle-free, friendly and to the point. I would recommend working with him at Wilson & Co.',
-    highlight: 'The work was done quick, flawless and the treat with him was hassle-free, friendly and to the point.',
+    highlight: 'I would recommend working with him at Wilson & Co.',
     name: 'Martin Tromp',
     place: 'Castelldefels',
   },
