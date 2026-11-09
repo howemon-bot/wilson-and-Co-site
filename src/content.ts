@@ -12,6 +12,8 @@ export const company = {
   city: 'Barcelona',
   instagram: 'https://www.instagram.com/wilson.andco/',
   whatsapp: 'https://wa.me/34662395047',
+  // Aviso legal (LSSI): who runs the site.
+  owner: { name: 'Monica Howe Montesinos', nif: '46980326C', city: 'Barcelona', email: 'monica@wilsonandco.es' },
 };
 
 export const hero = {
@@ -177,7 +179,7 @@ export const allProjects: Project[] = [
     categories: ['Interior design', 'Full renovation', 'Electrical', 'Plumbing', 'Air conditioning'],
     text: "A full renovation of the kitchen area in a home in Sarrià. We redesigned the space around the way the family cooks and gathers, with a breakfast corner by the window and storage planned for everyday life.\n\nWhite quartz runs from the worktops up the walls, soft grey shaker cabinets keep it calm, and a glazed dresser with reeded glass and warm under-cabinet light brings depth. The patterned floor tiles and *rose walls* give the room its character.",
     location: 'Sarrià, Barcelona',
-    image: '/images/gallery/sarria-04_sink-and-breakfast-nook.jpg', // home page card
+    image: '/images/gallery/sarria-02_hob-and-oven-column.jpg', // home page card: rose wall, quartz, hob
     // Monica's edits from Drive (Website_2026/Anna Kitchen), white balance evened out.
     // Mostly pairs, with one big + small row. Kitchen and hob (same angle) kept apart.
     layout: [

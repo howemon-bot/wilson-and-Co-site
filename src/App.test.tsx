@@ -84,9 +84,9 @@ describe('App', () => {
     const gallery = document.getElementById('project-gallery')!;
     const frames = within(gallery).getAllByRole('img');
     // Every photo is shown (rows pair photos by shape, so the order can shift by one).
-    expect(frames.map((img) => img.getAttribute('aria-label') || img.getAttribute('alt')).sort()).toEqual(
-      coastal.images.map((_, i) => `${coastal.title}, picture ${i + 1}`).sort(),
-    );
+    expect(frames.map((img) => img.getAttribute('src')!.split('?')[0]).sort()).toEqual([...coastal.images].sort());
+    // Each photo is described, starting with the project name.
+    for (const img of frames) expect(img.getAttribute('alt')).toMatch(new RegExp(`^${coastal.title}: `));
     expect(coastal.images[0]).toContain('sarria-01_kitchen.jpg');
     await user.click(within(screen.getByRole('dialog')).getByRole('button', { name: /^Next/ }));
     expect(screen.getByRole('heading', { level: 2, name: 'Entertainment Heaven' })).toBeInTheDocument();
@@ -142,10 +142,10 @@ describe('App', () => {
     await user.click(screen.getByRole('button', { name: 'Abrir menú' }));
     const nav = screen.getByRole('navigation', { name: 'Principal' });
     expect(within(nav).getByRole('link', { name: 'Proyectos' })).toHaveAttribute('href', '#projects');
-    expect(window.location.search).toBe('?lang=es');
+    expect(window.location.pathname).toBe('/es/');
     await user.keyboard('{Escape}');
     await user.click(screen.getByRole('button', { name: 'English' }));
     expect(screen.getByRole('heading', { level: 1, name: hero.heading })).toBeInTheDocument();
-    expect(window.location.search).toBe('');
+    expect(window.location.pathname).toBe('/');
   });
 });

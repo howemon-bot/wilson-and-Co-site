@@ -2,13 +2,22 @@ import { createContext, useContext, useEffect, useMemo, useState, type ReactNode
 import * as en from './content';
 import { es } from './content.es';
 
-// English or Spanish. The choice comes from ?lang= in the address, then the
-// visitor's last choice, then their browser (Spanish or Catalan → Spanish).
+// English at wilsonandco.es/, Spanish at wilsonandco.es/es/. The language comes
+// from the address, then an old ?lang= link, then the visitor's last choice,
+// then their browser (Spanish or Catalan → Spanish).
 export type Lang = 'en' | 'es';
 const KEY = 'wco-lang';
+const BASE = import.meta.env.BASE_URL; // "/" on the live site
+
+function pathLang(): Lang | null {
+  const rest = window.location.pathname.slice(BASE.length);
+  return rest === 'es' || rest.startsWith('es/') ? 'es' : null;
+}
 
 function startLang(): Lang {
   if (typeof window === 'undefined') return 'en';
+  const fromPath = pathLang();
+  if (fromPath) return fromPath;
   const fromUrl = new URLSearchParams(window.location.search).get('lang');
   if (fromUrl === 'en' || fromUrl === 'es') return fromUrl;
   try {
@@ -52,6 +61,8 @@ const UI = {
     nextTestimonial: 'Next testimonial',
     place: 'Barcelona, Spain',
     privacy: 'Privacy policy',
+    legal: 'Legal notice',
+    legalLabels: { owner: 'Owner', nif: 'NIF', address: 'Address', email: 'Email' },
     privacyText: 'We use your name and email only to answer an enquiry. We don’t sell or share those details.',
     backToTop: 'Back to top',
     openingWords: ['Interiors.', 'Renovations.', 'Installations.'],
@@ -86,6 +97,8 @@ const UI = {
     nextTestimonial: 'Testimonio siguiente',
     place: 'Barcelona, España',
     privacy: 'Política de privacidad',
+    legal: 'Aviso legal',
+    legalLabels: { owner: 'Titular', nif: 'NIF', address: 'Domicilio', email: 'Correo electrónico' },
     privacyText:
       'Solo usamos tu nombre y tu correo electrónico para responder a tu consulta. No vendemos ni compartimos esos datos.',
     backToTop: 'Volver arriba',
@@ -157,8 +170,8 @@ export function LangProvider({ children }: { children: ReactNode }) {
       /* storage blocked: the choice lasts until the page closes */
     }
     const url = new URL(window.location.href);
-    if (lang === 'es') url.searchParams.set('lang', 'es');
-    else url.searchParams.delete('lang');
+    url.pathname = lang === 'es' ? `${BASE}es/` : BASE;
+    url.searchParams.delete('lang');
     if (url.href !== window.location.href) history.replaceState(history.state, '', url);
   }, [lang]);
 

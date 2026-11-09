@@ -756,6 +756,7 @@ html.is-project-open { overflow: hidden; }
   font-size: 0.8125rem;
   letter-spacing: 0.02em;
 }
+.footer-legal { display: flex; flex-wrap: wrap; gap: 0.8rem 2rem; }
 .privacy summary { cursor: pointer; list-style: none; }
 .privacy summary::-webkit-details-marker { display: none; }
 .privacy summary:hover { opacity: 0.75; }

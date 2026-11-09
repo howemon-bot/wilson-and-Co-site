@@ -21,10 +21,24 @@ export function Footer() {
       </div>
       <div className="footer-base">
         <p>© {new Date().getFullYear()} Wilson &amp; Co</p>
-        <details id="privacy" className="privacy">
-          <summary>{t.privacy}</summary>
-          <p>{t.privacyText}</p>
-        </details>
+        <div className="footer-legal">
+          <details id="legal" className="privacy">
+            <summary>{t.legal}</summary>
+            <p>
+              {t.legalLabels.owner}: {company.owner.name}
+              <br />
+              {t.legalLabels.nif}: {company.owner.nif}
+              <br />
+              {t.legalLabels.address}: {company.owner.city}
+              <br />
+              {t.legalLabels.email}: <a href={`mailto:${company.owner.email}`}>{company.owner.email}</a>
+            </p>
+          </details>
+          <details id="privacy" className="privacy">
+            <summary>{t.privacy}</summary>
+            <p>{t.privacyText}</p>
+          </details>
+        </div>
       </div>
     </footer>
   );

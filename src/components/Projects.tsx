@@ -5,6 +5,7 @@ import { Img } from './Img';
 import { withItalics } from '../italics';
 import { PagerArrow } from './Icons';
 import { imageSizes } from '../imageSizes';
+import { altFor } from '../photoAlt';
 
 // Project page photos. By default: landscapes pair with landscapes and portraits
 // with portraits (in the order they come), so the two photos in a row are the same
@@ -59,7 +60,7 @@ const kind = (p: Project, interiorDesign: string) =>
   p.categories.includes(interiorDesign) ? interiorDesign : p.categories.slice(0, 2).join(', ');
 
 function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: () => void; onGo: (p: Project) => void }) {
-  const { t, c } = useLang();
+  const { lang, t, c } = useLang();
   const closeRef = useRef<HTMLButtonElement>(null);
   const pageRef = useRef<HTMLDivElement>(null);
   // Previous / Next move through the projects shown on the home page only.
@@ -130,7 +131,10 @@ function ProjectPage({ project, onClose, onGo }: { project: Project; onClose: ()
           >
             {row.photos.map((p) => (
               <figure key={p.src} className={p.portrait ? 'is-portrait' : undefined}>
-                <Img src={p.src} alt={t.picture(project.title, p.n)} />
+                <Img src={p.src} alt={(() => {
+                    const d = altFor(p.src, lang);
+                    return d ? `${project.title}: ${d}` : t.picture(project.title, p.n);
+                  })()} />
               </figure>
             ))}
           </div>
