@@ -69,7 +69,7 @@ export type Service = { title: string; text: string };
 export const services: Service[] = [
   {
     title: 'Interiors',
-    text: 'Spaces planned around the way you live. We design the layout, joinery, lighting and finishes, working with *local materials* and makers wherever we can, and see every detail through to the day you move in.',
+    text: 'Spaces planned around the way you live. We design the layout, joinery, lighting and finishes, working with *local materials* and makers, and see every detail through to the day you move in.',
   },
   {
     title: 'Renovations',
