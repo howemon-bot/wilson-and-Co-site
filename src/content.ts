@@ -204,16 +204,6 @@ export const allProjects: Project[] = [
     images: ['01_garden-at-dusk', '02_rear-extension', '03_lightwell-glazing', '04_terrace-steps', '05_library', '06_green-kitchen', '07_kitchen-island'].map((n) => shot(`classical-${n}.jpg`)),
   },
   {
-    slug: 'coastal-solar-panels',
-    title: 'Coastal Solar Panels',
-    categories: ['Electrical', 'Solar'],
-    location: "Castelldefels, Barcelona",
-    text: "A 6kW solar system for a three-storey house in Castelldefels. We placed panels on both sides of the pitched roof to make the most of the sun throughout the day, ran the cabling neatly along the façade and connected it to a three-phase inverter. We also took care of all the paperwork and licensing for the client.",
-    image: '/images/coastal-solar.jpg',
-    // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
-    images: ['01_roof-and-sea-view', '02_panels-towards-the-sea', '03_installing', '04_panels-and-skylights'].map((n) => shot(`solar-${n}.jpg`)),
-  },
-  {
     slug: 'entertainment-heaven',
     title: 'Entertainment Heaven',
     categories: ['Electrical', 'Automation'],
@@ -231,26 +221,6 @@ export const allProjects: Project[] = [
     ],
     images: ['01_garden-facade', '02_bar', '03_bar-at-night', '04_kitchen-island', '05_kitchen-under-the-roof', '06_dining-room', '07_bathroom', '08_bath-and-niches', '09_hot-tub-terrace'].map((n) => shot(`heaven-${n}.jpg`)),
   },
-  {
-    slug: 'clapham-south',
-    title: 'Clapham South',
-    categories: ['Electrical', 'Automation'],
-    text: "A completely new electrical installation on the ground floor and basement. So the owners could keep living in the house, the three floors above were wired temporarily and later connected to the new consumer boards. Both lower floors have Rako home automation, with lighting scenes that change through the day.",
-    location: 'Clapham South, London',
-    image: '/images/clapham-south.jpg',
-    // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
-    images: ['01_kitchen-and-dining', '02_dining-room', '03_rear-extension', '04_garden-seating', '05_joinery-and-steel-door', '06_library'].map((n) => shot(`claphamsouth-${n}.jpg`)),
-  },
-  {
-    slug: 'barnes',
-    title: 'Barnes',
-    categories: ['Electrical', 'Automation'],
-    location: 'Barnes, London',
-    text: "A two-storey house extended into a four-storey home, with a full basement and loft. The basement became a cinema room with a complete audio and visual setup. Strip lighting in the ceiling bulkhead and indirect lighting on the vertical garden give the space the modern feel the client was looking for.",
-    // No photos yet.
-    image: '',
-    images: [],
-  },
 ];
 
 // Projects without photos stay off the site until they have some.
@@ -260,7 +230,7 @@ export const projects = allProjects
   .filter((p) => p.images.length > 0)
   .map((p) => ({ ...p, categories: interiorsFirst(p.categories) }));
 
-// The six on the home page, in order. Swap Entertainment Heaven for Barnes once Barnes has photos.
+// The six on the home page, in order.
 const FEATURED = [
   'warm-minimalism-in-sant-antoni',
   'japandi-style-in-clot',

@@ -54,7 +54,6 @@ export const es = {
     Plumbing: 'Fontanería',
     'Air conditioning': 'Climatización',
     Automation: 'Domótica',
-    Solar: 'Energía solar',
   } as Record<string, string>,
 
   // Project names in Spanish, by slug; the rest keep their English name.
@@ -68,8 +67,6 @@ export const es = {
   locations: {
     'South East London': 'Sudeste de Londres',
     'Wandsworth, London': 'Wandsworth, Londres',
-    'Clapham South, London': 'Clapham South, Londres',
-    'Barnes, London': 'Barnes, Londres',
   } as Record<string, string>,
 
   // Project page text, by slug.
@@ -84,14 +81,8 @@ export const es = {
       'El proyecto contempla la reforma integral de la cocina de una vivienda en Sarrià. El espacio se replantea a partir de la manera en que la familia cocina y se reúne, con un rincón de desayuno junto a la ventana y un almacenaje pensado para el uso diario.\n\nEl cuarzo blanco se prolonga desde la encimera hasta las paredes, mientras que los muebles de estilo shaker en gris suave aportan calma al conjunto. Un aparador con puertas de vidrio acanalado y luz cálida bajo los muebles altos da profundidad a la estancia. El pavimento de baldosa estampada y las paredes en tono rosa completan el espacio y le dan su carácter.',
     'classical-beauty':
       'Una casa de tres dormitorios se amplía hasta convertirse en una vivienda de cuatro plantas, con un sótano completo pensado como sala de estar y biblioteca. La iluminación, tanto interior como exterior, fue una de las prioridades del encargo, y se plantea de manera que quede integrada en la arquitectura sin restarle protagonismo.',
-    'coastal-solar-panels':
-      'Una instalación solar de 6 kW para una casa de tres plantas en Castelldefels. Colocamos paneles en las dos vertientes del tejado para aprovechar el sol a lo largo del día, llevamos el cableado de forma ordenada por la fachada y lo conectamos a un inversor trifásico. También nos encargamos de todo el papeleo y las licencias para el cliente.',
     'entertainment-heaven':
       'Reforma de una casa de cuatro plantas en el sudeste de Londres. El proyecto incluye el diseño y la instalación de todo el sistema eléctrico, el diseño de la zona de bar, la cobertura wifi en toda la vivienda y la integración del audio y el vídeo. También se ilumina la casa del árbol de los niños.',
-    'clapham-south':
-      'Una instalación eléctrica completamente nueva en la planta baja y el sótano. Para que los propietarios pudieran seguir viviendo en la casa, las tres plantas superiores se cablearon de forma provisional y después se conectaron a los nuevos cuadros eléctricos. Las dos plantas inferiores tienen domótica Rako, con escenas de iluminación que cambian a lo largo del día.',
-    barnes:
-      'Una casa de dos plantas ampliada hasta convertirse en una vivienda de cuatro, con sótano y buhardilla. El sótano se convirtió en una sala de cine con un equipo completo de audio y vídeo. Las tiras de luz en el cajeado del techo y la iluminación indirecta del jardín vertical dan al espacio el aire moderno que buscaba el cliente.',
   } as Record<string, string>,
 
   team: {
