@@ -113,7 +113,7 @@ export const allProjects: Project[] = [
     slug: 'warm-minimalism-in-sant-antoni',
     title: 'Warm Minimalism',
     categories: ['Interior design', 'Full renovation', 'Electrical', 'Plumbing', 'Air conditioning', 'Automation'],
-    text: "A full renovation of a 1950s apartment in Sant Antoni. We reworked the layout, especially in the living area, to make it more open and better suited to the way people live today.\n\nThe original parquet floor was kept, restored and treated, so the home holds on to its history. Wood runs through the whole project, from made-to-measure joinery to the finishes, keeping it warm and consistent. Clean lines, soft tones and natural materials make it calm and easy to live in.",
+    text: "A full renovation of a 1950s apartment in Sant Antoni. We reworked the layout, especially in the living area, to make it more open and better suited to the way people live today.\n\nThe original herringbone parquet floor was kept, restored and treated, so the home holds on to its history. Wood runs through the whole project, from made-to-measure joinery to the finishes, keeping it warm and consistent. Clean lines, soft tones and natural materials make it calm and easy to live in.",
     location: 'Sant Antoni, Barcelona',
     image: '/images/warm-minimalism.jpg',
     // Final set from Photoshop; see Drive: Wilson/WEB_site_2026.
@@ -218,7 +218,7 @@ export const allProjects: Project[] = [
     title: 'Entertainment Heaven',
     categories: ['Electrical', 'Automation'],
     location: "South East London",
-    text: "A refurbishment of a four-storey house in south-east London. We designed and installed the full electrical system, along with wifi throughout and integrated audio and visual. The project even included a lit tree house for the children.",
+    text: "A refurbishment of a four-storey house in south-east London. We designed and installed the full electrical system and the bar area, along with wifi throughout and integrated audio and visual. The project even included a lit tree house for the children.",
     image: '/images/entertainment-heaven.jpg',
     // Retouched set (straight, one white); see Drive: *_Photography/Website_2026.
     // Mostly pairs; big + small for the bar and to finish.

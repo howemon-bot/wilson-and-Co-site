@@ -17,7 +17,7 @@ export const es = {
   // In the same order as heroSlides in content.ts.
   heroSlides: [
     {
-      alt: 'Classical Beauty: la casa reformada en Wandsworth al atardecer, vista desde el jardín',
+      alt: 'Belleza clásica: la casa reformada en Wandsworth al atardecer, vista desde el jardín',
       caption: 'Ampliación con jardín, Wandsworth',
     },
     {
@@ -57,8 +57,16 @@ export const es = {
     Solar: 'Energía solar',
   } as Record<string, string>,
 
+  // Project names in Spanish, by slug; the rest keep their English name.
+  titles: {
+    'warm-minimalism-in-sant-antoni': 'Minimalismo cálido',
+    'japandi-style-in-clot': 'Calma japandi',
+    'sarria-kitchen': 'Rosa & Cuarzo',
+    'classical-beauty': 'Belleza clásica',
+  } as Record<string, string>,
+
   locations: {
-    'South East London': 'Sureste de Londres',
+    'South East London': 'Sudeste de Londres',
     'Wandsworth, London': 'Wandsworth, Londres',
     'Clapham South, London': 'Clapham South, Londres',
     'Barnes, London': 'Barnes, Londres',
@@ -67,19 +75,19 @@ export const es = {
   // Project page text, by slug.
   projects: {
     'warm-minimalism-in-sant-antoni':
-      'Reforma integral de un piso de los años cincuenta en Sant Antoni. Replanteamos la distribución, sobre todo en la zona de día, para hacerla más abierta y adaptada a la forma de vivir de hoy.\n\nEl parquet original se conservó, se restauró y se trató, para que la casa mantenga su historia. La madera recorre todo el proyecto, desde la carpintería a medida hasta los acabados, y le da calidez y coherencia. Líneas limpias, tonos suaves y materiales naturales hacen de ella una casa tranquila y fácil de vivir.',
+      'El proyecto contempla la reforma integral de un piso de los años cincuenta en Sant Antoni. La distribución original se replantea, sobre todo en la zona de día, para abrir los espacios y adaptarlos a una forma de vivir más actual, en la que cocina, comedor y sala se entienden como un único ambiente.\n\nEl parquet original de espiga se conserva, se restaura y se trata, de manera que la vivienda mantiene parte de su historia. La madera actúa como hilo conductor de todo el proyecto, desde la carpintería a medida hasta los acabados, y aporta calidez y coherencia al conjunto. Las líneas limpias, los tonos suaves y los materiales naturales dan como resultado un espacio sereno y fácil de habitar.',
     'japandi-style-in-clot':
-      'Una casa de tres plantas en El Clot, rediseñada con un interiorismo de inspiración japandi: la sencillez del diseño escandinavo con la calidez de la artesanía japonesa. Materiales naturales, líneas limpias y tonos suaves y apagados recorren cada estancia.\n\nLa terraza de la cubierta funciona ahora como parte de la vivienda, y aporta luz y calma. Una renovación eléctrica completa queda discretamente detrás de todo, para que la casa resulte actual sin perder su sencillez.',
+      'La casa, de tres plantas, se encuentra en el barrio del Clot. El interior se rediseña desde una mirada japandi, que combina la sencillez del diseño escandinavo con la calidez de la artesanía japonesa. Los materiales naturales, las líneas limpias y una paleta de tonos apagados se repiten en todas las estancias para dar continuidad al conjunto.\n\nLa terraza de la cubierta se incorpora como una extensión natural de la vivienda, aportando luz y una sensación de calma. La renovación completa de la instalación eléctrica queda integrada de forma discreta, de modo que la casa gana en confort sin perder su sencillez.',
     'eixample-bathroom':
-      'Un baño pequeño, completamente replanteado. Recuperamos el techo original de volta catalana, que devuelve altura y carácter al espacio, y colocamos baldosas Nolla para un suelo geométrico y duradero.\n\nEl encargo consistía en aprovechar al máximo el espacio: una planificación cuidadosa, almacenaje integrado y materiales elegidos para durar. El resultado es un baño compacto, práctico en el día a día y con unos acabados preciosos.',
+      'El proyecto parte de un baño de dimensiones reducidas en un piso del Eixample. Se recupera la volta catalana original del techo, que devuelve altura y carácter al espacio, y se colocan baldosas Nolla en el pavimento, un material duradero cuyo dibujo geométrico dialoga con la arquitectura de la finca.\n\nEl encargo se centra en aprovechar al máximo cada centímetro. La distribución se estudia con detalle, el almacenaje se integra en el propio diseño y los materiales se eligen por su resistencia al uso diario. El resultado es un baño compacto, práctico y cuidado en sus acabados.',
     'sarria-kitchen':
-      'Reforma integral de la zona de cocina de una vivienda en Sarrià. Rediseñamos el espacio en torno a la forma en que la familia cocina y se reúne, con un rincón para desayunar junto a la ventana y un almacenaje pensado para el día a día.\n\nEl cuarzo blanco sube desde la encimera por las paredes, los muebles shaker en gris suave aportan calma y un aparador acristalado con vidrio acanalado y luz cálida bajo los muebles da profundidad. Las baldosas estampadas del suelo y las *paredes rosas* dan carácter a la estancia.',
+      'El proyecto contempla la reforma integral de la cocina de una vivienda en Sarrià. El espacio se replantea a partir de la manera en que la familia cocina y se reúne, con un rincón de desayuno junto a la ventana y un almacenaje pensado para el uso diario.\n\nEl cuarzo blanco se prolonga desde la encimera hasta las paredes, mientras que los muebles de estilo shaker en gris suave aportan calma al conjunto. Un aparador con puertas de vidrio acanalado y luz cálida bajo los muebles altos da profundidad a la estancia. El pavimento de baldosa estampada y las paredes en tono rosa completan el espacio y le dan su carácter.',
     'classical-beauty':
-      'Una casa de tres dormitorios ampliada hasta convertirse en una vivienda de cuatro plantas, con un sótano completo diseñado como sala de ocio y biblioteca. La iluminación era clave en el encargo, dentro y fuera, y todo debía integrarse limpiamente en la arquitectura.',
+      'Una casa de tres dormitorios se amplía hasta convertirse en una vivienda de cuatro plantas, con un sótano completo pensado como sala de estar y biblioteca. La iluminación, tanto interior como exterior, fue una de las prioridades del encargo, y se plantea de manera que quede integrada en la arquitectura sin restarle protagonismo.',
     'coastal-solar-panels':
       'Una instalación solar de 6 kW para una casa de tres plantas en Castelldefels. Colocamos paneles en las dos vertientes del tejado para aprovechar el sol a lo largo del día, llevamos el cableado de forma ordenada por la fachada y lo conectamos a un inversor trifásico. También nos encargamos de todo el papeleo y las licencias para el cliente.',
     'entertainment-heaven':
-      'Reforma de una casa de cuatro plantas en el sureste de Londres. Diseñamos e hicimos toda la instalación eléctrica, además del wifi en toda la casa y el audio y vídeo integrados. El proyecto incluyó incluso una casa en el árbol iluminada para los niños.',
+      'Reforma de una casa de cuatro plantas en el sudeste de Londres. El proyecto incluye el diseño y la instalación de todo el sistema eléctrico, el diseño de la zona de bar, la cobertura wifi en toda la vivienda y la integración del audio y el vídeo. También se ilumina la casa del árbol de los niños.',
     'clapham-south':
       'Una instalación eléctrica completamente nueva en la planta baja y el sótano. Para que los propietarios pudieran seguir viviendo en la casa, las tres plantas superiores se cablearon de forma provisional y después se conectaron a los nuevos cuadros eléctricos. Las dos plantas inferiores tienen domótica Rako, con escenas de iluminación que cambian a lo largo del día.',
     barnes:

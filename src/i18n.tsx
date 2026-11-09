@@ -112,6 +112,7 @@ function contentFor(lang: Lang): Content {
   const cat = (c: string) => es.categories[c] ?? c;
   const localise = (p: en.Project): en.Project => ({
     ...p,
+    title: es.titles[p.slug] ?? p.title,
     categories: p.categories.map(cat),
     location: p.location && (es.locations[p.location] ?? p.location),
     text: es.projects[p.slug] ?? p.text,
