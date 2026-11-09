@@ -972,14 +972,20 @@ html.is-project-open { overflow: hidden; }
 .cursor-dot.is-link::before { transform: scale(2.6); opacity: 0.35; }
 .cursor-dot.is-light::before { background: #fff; }
 
-/* EN | ES, just left of the menu button, in the small-capitals label style. */
+/* EN | ES, just left of the menu button: a cream pill the height of the button,
+   so it reads over the photographs too. Small-capitals label style. */
 .lang-switch {
   position: relative;
   z-index: 2;
   display: flex;
   align-items: center;
   gap: 0.45em;
-  margin-right: -0.75rem; /* 1.25rem from the menu button */
+  height: 52px;
+  margin-right: -1.4rem; /* 0.6rem from the menu button */
+  padding: 0 1.1rem;
+  border-radius: 26px;
+  background: var(--paper);
+  color: var(--ink);
   font-size: var(--t-label);
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -1001,7 +1007,7 @@ html.is-project-open { overflow: hidden; }
 }
 .lang-switch button:hover,
 .lang-switch button[aria-pressed="true"] { opacity: 1; }
-.is-menu-open .site-header .lang-switch { color: var(--paper); }
+@media (max-width: 800px) { .lang-switch { height: 44px; padding: 0 0.9rem; } }
 
 /* Menu: three lines in a cream circle, opening a full-screen menu. */
 .site-header .logo,
