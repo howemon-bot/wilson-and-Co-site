@@ -64,6 +64,13 @@ const UI = {
     legal: 'Legal notice',
     legalLabels: { owner: 'Owner', nif: 'NIF', address: 'Address', email: 'Email' },
     privacyText: 'We use your name and email only to answer an enquiry. We don’t sell or share those details.',
+    privacyCookies:
+      'If you accept cookies, we use Google Analytics to count visits and see which pages are read, and Google Ads to measure our adverts. You can change your choice at any time under Cookies.',
+    cookieLabel: 'Cookies',
+    cookieText: 'We use cookies to see how the site is used and to measure our adverts, only if you agree.',
+    cookieAccept: 'Accept',
+    cookieDecline: 'Decline',
+    cookieSettings: 'Cookies',
     backToTop: 'Back to top',
     openingWords: ['Interiors.', 'Renovations.', 'Installations.'],
     skip: 'Skip',
@@ -101,6 +108,13 @@ const UI = {
     legalLabels: { owner: 'Titular', nif: 'NIF', address: 'Domicilio', email: 'Correo electrónico' },
     privacyText:
       'Solo usamos tu nombre y tu correo electrónico para responder a tu consulta. No vendemos ni compartimos esos datos.',
+    privacyCookies:
+      'Si aceptas las cookies, usamos Google Analytics para contar las visitas y ver qué páginas se leen, y Google Ads para medir nuestros anuncios. Puedes cambiar tu elección cuando quieras en Cookies.',
+    cookieLabel: 'Cookies',
+    cookieText: 'Usamos cookies para saber cómo se usa la web y medir nuestros anuncios, solo si estás de acuerdo.',
+    cookieAccept: 'Aceptar',
+    cookieDecline: 'Rechazar',
+    cookieSettings: 'Cookies',
     backToTop: 'Volver arriba',
     openingWords: ['Interiorismo.', 'Reformas.', 'Instalaciones.'],
     skip: 'Saltar',
