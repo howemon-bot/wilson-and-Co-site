@@ -1,6 +1,7 @@
 import { company, contacts } from '../content';
 import { InstagramIcon, MailIcon, OutArrow } from './Icons';
 import { useLang } from '../i18n';
+import { openConsent } from '../analytics';
 
 const general = contacts.find((c) => c.general) ?? contacts[contacts.length - 1];
 
@@ -37,7 +38,11 @@ export function Footer() {
           <details id="privacy" className="privacy">
             <summary>{t.privacy}</summary>
             <p>{t.privacyText}</p>
+            <p>{t.privacyCookies}</p>
           </details>
+          <button type="button" className="cookie-settings" onClick={openConsent}>
+            {t.cookieSettings}
+          </button>
         </div>
       </div>
     </footer>
