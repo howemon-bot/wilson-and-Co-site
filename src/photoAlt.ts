@@ -12,6 +12,7 @@ export const photoAlt: Record<string, { en: string; es: string }> = {
   'sant-antoni-07_green-bathroom': { en: 'Green-tiled bathroom', es: 'Baño con azulejos verdes' },
   'sant-antoni-08_bar-niche': { en: 'Built-in bar niche', es: 'Hornacina de bar integrada' },
   'sant-antoni-09_kids-room': { en: 'Children’s bedroom', es: 'Dormitorio infantil' },
+  'sant-antoni-10_corner-shelves': { en: 'Oak corner shelves with built-in lighting', es: 'Estantería de roble en esquina con luz integrada' },
 
   // Japandi Calm, Clot
   'clot-01_living-room': { en: 'Living room with a terracotta sofa and a rattan chair under a skylight', es: 'Salón con sofá terracota y butaca de ratán bajo un lucernario' },

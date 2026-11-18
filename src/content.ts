@@ -125,12 +125,12 @@ export const allProjects: Project[] = [
       { kind: 'right', photos: [3, 2] },
       { kind: 'pair', photos: [5, 6] },
       { kind: 'full', photos: [4] },
-      { kind: 'feature', photos: [7] },
+      { kind: 'pair', photos: [10, 7] },
       { kind: 'pair', photos: [8, 9] },
     ],
     images: [
       '02_galley-kitchen', '05_bathroom', '01_kitchen-and-dining', '03_curved-wall-and-shelves', '04_corridor',
-      '06_shower-detail', '08_bar-niche', '07_green-bathroom', '09_kids-room',
+      '06_shower-detail', '08_bar-niche', '07_green-bathroom', '09_kids-room', '10_corner-shelves',
     ].map((n) => shot(`sant-antoni-${n}.jpg`)),
   },
   {
