@@ -188,6 +188,10 @@ export const imageSizes: Record<string, [number, number]> = {
 1248,
 1800
 ],
+"/images/gallery/sant-antoni-10_corner-shelves.jpg": [
+1350,
+1800
+],
 "/images/gallery/sarria-01_kitchen.jpg": [
 1190,
 1800
